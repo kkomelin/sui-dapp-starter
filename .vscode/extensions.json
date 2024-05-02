@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    // Backend
+    "damirka.move-syntax",
+    "tamasfe.even-better-toml",
+
+    // Frontend
+  ]
+}
