@@ -17,5 +17,9 @@
     "starter",
     "starter-template"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "!**/test/**"
+  ]
 }
