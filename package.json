@@ -4,9 +4,18 @@
   "description": "Better full-stack Sui dapp starter",
   "main": "index.js",
   "scripts": {
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm --filter frontend build",
+    "lint": "pnpm --filter frontend lint",
+    "preview": "pnpm --filter frontend preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "packageManager": "pnpm@9.0.6",
-  "keywords": [],
+  "keywords": [
+    "sui",
+    "blockchain",
+    "starter",
+    "starter-template"
+  ],
   "license": "MIT"
 }

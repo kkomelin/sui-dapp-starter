@@ -1,6 +1,7 @@
 {
   "recommendations": [
     // Backend
+    "mysten.move",
     "damirka.move-syntax",
     "tamasfe.even-better-toml",
 

@@ -12,4 +12,13 @@ While working with the official starter, I came up with a list of DX improvement
 ## Improvements (over the official starter template)
 
 - [x] Implemented a monorepo architecture with pnpm workspaces
+- [x] Added recommenced VSCode plugins through VSCode configuration
 - [ ] ...
+
+## Prerequisites
+
+TBD
+
+## Usage
+
+TBD
