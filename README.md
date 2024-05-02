@@ -11,9 +11,10 @@ While working with the official starter, I came up with a list of DX improvement
 
 ## Improvements (over the official starter template)
 
-- [x] Implemented a monorepo architecture with pnpm workspaces
-- [x] Added recommenced VSCode plugins through VSCode configuration
-- [ ] ...
+- [x] Implemented a monorepo architecture with pnpm workspaces.
+- [x] Added recommenced VSCode plugins through VSCode configuration.
+- [x] frontend: Added "@" import alias for the src folder to make the imports cleaner.
+- [x] frontend: Refactored the main code entry file by introducing reactRender() function.
 
 ## Prerequisites
 
