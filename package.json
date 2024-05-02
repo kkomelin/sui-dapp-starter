@@ -1,0 +1,12 @@
+{
+  "name": "sui-dapp-starter",
+  "version": "0.0.0",
+  "description": "Better full-stack Sui dapp starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@9.0.6",
+  "keywords": [],
+  "license": "MIT"
+}
