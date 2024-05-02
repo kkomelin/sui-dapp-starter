@@ -1,6 +1,6 @@
 # sui-dapp-starter
 
-Better full-stack Sui dapp starter.
+Better full-stack Sui dapp starter
 
 ## Motivation
 
