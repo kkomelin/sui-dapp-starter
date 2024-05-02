@@ -11,5 +11,5 @@ While working with the official starter, I came up with a list of DX improvement
 
 ## Improvements (over the official starter template)
 
-- [x] Implemented a monorepo structure with pnpm workspaces
+- [x] Implemented a monorepo architecture with pnpm workspaces
 - [ ] ...
