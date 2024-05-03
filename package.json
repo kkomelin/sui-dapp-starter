@@ -12,6 +12,8 @@
   "packageManager": "pnpm@9.0.6",
   "keywords": [
     "sui",
+    "sui-dapp",
+    "sui-dapp-starter",
     "blockchain",
     "starter",
     "starter-template"
