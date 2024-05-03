@@ -1,10 +1,13 @@
-import React from "react";
-import App from "./App.tsx";
+import App from "@/App.tsx";
 import { reactRender } from "@/helpers/misc.ts";
+import SuiProvider from "@/providers/SuiProvider.tsx";
+import React from "react";
 import "./index.css";
 
 reactRender(
   <React.StrictMode>
-    <App />
+    <SuiProvider>
+      <App />
+    </SuiProvider>
   </React.StrictMode>
 );
