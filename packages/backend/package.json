@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "network:start": "localnet start",
+    "network:stop": "localnet stop",
+    "network:status": "localnet status",
+    "network:faucet": "localnet faucet",
+    "network:regen": "localnet regen",
+    "network:active-address": "lsui client active-address"
+  }
+}

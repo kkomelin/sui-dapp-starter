@@ -19,10 +19,13 @@ While working with the official starter, I came up with a list of DX improvement
 - [x] frontend: Added Tailwind CSS with auto-ordering Tailwind classes through Prettier.
 - [x] frontend: Added opinionated Prettier configuration.
 - [x] frontend: Added configuration for localnet and testnet.
+- [x] docs: Added Prerequisites section to README.
+- [x] backend: Added local network management commands via Suibase.
 
 ## Prerequisites
 
-TBD
+1) Install the [Sui prerequisites](https://docs.sui.io/build/install#prerequisites). _Skip installing the Sui binaries (unless you have an application that depends on ~/.sui/sui_config)._
+2) Install [Suibase](https://suibase.io/how-to/install.html).
 
 ## Usage
 
