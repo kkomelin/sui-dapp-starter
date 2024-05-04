@@ -18,6 +18,7 @@ While working with the official starter, I came up with a list of DX improvement
 - [x] frontend: Created SuiProvider which encapsulates all Sui-related providers.
 - [x] frontend: Added Tailwind CSS with auto-ordering Tailwind classes through Prettier.
 - [x] frontend: Added opinionated Prettier configuration.
+- [x] frontend: Added configuration for localnet and testnet.
 
 ## Prerequisites
 
