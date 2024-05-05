@@ -37,7 +37,7 @@ Before you begin, you need to install the following:
 - [pnpm](https://pnpm.io/installation)
 - [Git](https://git-scm.com/downloads)
 
-## Install
+## Installation
 
 ```bash
 pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
