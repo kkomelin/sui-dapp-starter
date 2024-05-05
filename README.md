@@ -37,7 +37,7 @@ Before you begin, you need to install the following:
 
 ## Install
 
-```console
+```bash
 pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
 cd my-first-sui-dapp
 pnpm install
@@ -45,8 +45,11 @@ pnpm install
 
 ## Usage
 
-```console
+```bash
+# Run the local Sui network.
 pnpm localnet:start
+# Deploy the demo contract to the local network.
 pnpm localnet:deploy
+# Run the frontend app.
 pnpm dev
 ```
