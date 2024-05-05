@@ -40,7 +40,7 @@ Before you begin, you need to install the following:
 ```console
 pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
 cd my-first-sui-dapp
-pnpm i
+pnpm install
 ```
 
 ## Usage
