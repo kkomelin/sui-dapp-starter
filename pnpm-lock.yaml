@@ -8,6 +8,8 @@ importers:
 
   .: {}
 
+  packages/backend: {}
+
   packages/frontend:
     dependencies:
       '@mysten/dapp-kit':

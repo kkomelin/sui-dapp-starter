@@ -3,11 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "network:start": "localnet start",
-    "network:stop": "localnet stop",
-    "network:status": "localnet status",
-    "network:faucet": "localnet faucet",
-    "network:regen": "localnet regen",
-    "network:active-address": "lsui client active-address"
+    "build": "lsui move build -d -p ./move/greeting",
+    "test": "lsui move test -d -p ./move/greeting",
+    "localnet:deploy": "cd move/greeting && localnet publish",
+
+    "localnet:start": "localnet start",
+    "localnet:stop": "localnet stop",
+    "localnet:status": "localnet status",
+    "localnet:faucet": "localnet faucet",
+    "localnet:regen": "localnet regen",
+    "localnet:active-address": "lsui client active-address"
   }
 }
