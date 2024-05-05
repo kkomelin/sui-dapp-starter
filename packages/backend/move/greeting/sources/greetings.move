@@ -3,34 +3,73 @@
 
 /// Module: greeting
 module greeting::greeting {
-  // Imports:
+  
+  // === Imports === //
 
-  // Constants:
-  const DEFAULT_GREETING: vector<u8> = b"Hello, World!";
+  // use std::debug;
+  use sui::event::emit;
 
-  // Errors:
-  // const EInvalidSomething: u8 = 10;
+  // === Constants === //
 
-  // Struct definitions:
+  // === Errors === //
+
+  const EEmptyName: u64 = 1;
+
+  // === Structs === //
+
   public struct Greeting has key, store {
     id: UID,
-    message: vector<u8>,
+    name: vector<u8>,
   }
 
-  // Events:
-  // public struct GreetingCreatedEvent has copy, drop {
-  //   greeting_id: ID,
-  // }
+  // === Events === //
 
-   /// Create and share a Greeting object.
-  public fun create(ctx: &mut TxContext) {
-    // Creating the Greeting object.
+  /// Emitted when the net is set.
+  public struct NameSetEvent has copy, drop {
+    greeting_id: ID,
+    old_name: vector<u8>,
+    new_name: vector<u8>
+  }
+
+  // === Initializer === //
+
+  /// Create and share a Greeting object.
+  fun init(ctx: &mut TxContext) {
+    // Create the Greeting object.
     let greeting = Greeting {
         id: object::new(ctx),
-        message: DEFAULT_GREETING
+        name: vector::empty<u8>()
     };
 
-    // Sharing the Greeting object with the sender.
+    // Share the Greeting object with everyone.
     transfer::share_object(greeting);
+  }
+
+  // === Public view functions === //
+
+  /// Returns the name of currently greeted person.
+  public fun name(self: &Greeting): vector<u8> {
+    self.name
+  }
+
+  // === Public mutate functions === //
+
+  /// Sets the name of currently greeted person.
+  public fun set_name(self: &mut Greeting, name: vector<u8>) {
+    assert!(vector::length(&name) == 0, EEmptyName);
+
+    let old_name = self.name;
+
+    // debug::print(self);
+    self.name = name;
+    // debug::print(self);
+
+    let greeting_id = object::uid_to_inner(&self.id);
+
+    emit(NameSetEvent {
+      greeting_id,
+      old_name,
+      new_name: self.name
+    });
   }
 }
