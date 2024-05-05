@@ -27,7 +27,7 @@ While working with the official starter, I came up with a list of DX improvement
 Before you begin, you need to install the following:
 
 Backend:
-- [Sui prerequisites](https://docs.sui.io/build/install#prerequisites). _Skip installing the Sui binaries (unless you have an application that depends on ~/.sui/sui_config)_
+- [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only; not Sui binaries themselves)
 - [Suibase](https://suibase.io/how-to/install.html)
 
 Frontend:
