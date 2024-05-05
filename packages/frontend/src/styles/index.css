@@ -16,6 +16,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #ffffff;
+    color: #242424;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -41,3 +48,4 @@ body {
   min-width: 100%;
   min-height: 100vh;
 }
+

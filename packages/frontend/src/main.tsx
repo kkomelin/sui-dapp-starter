@@ -1,13 +1,16 @@
 import App from '@/components/App'
 import { reactRender } from '@/helpers/misc.ts'
 import SuiProvider from '@/providers/SuiProvider.tsx'
-import React from 'react'
+import { StrictMode } from 'react'
+import Theme from './components/Theme'
 import './styles/index.css'
 
 reactRender(
-  <React.StrictMode>
-    <SuiProvider>
-      <App />
-    </SuiProvider>
-  </React.StrictMode>
+  <StrictMode>
+    <Theme>
+      <SuiProvider>
+        <App />
+      </SuiProvider>
+    </Theme>
+  </StrictMode>
 )

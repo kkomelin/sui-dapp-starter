@@ -22,6 +22,7 @@ While working with the official starter, I came up with a list of DX improvement
 - [x] docs: Added Prerequisites section to README.
 - [x] backend: Added local network management commands via Suibase.
 - [x] frontend: Implemented a Layout component to separate concerns.
+- [x] frontend: Added support for dark/light mode switching.
 
 ## Prerequisites
 
