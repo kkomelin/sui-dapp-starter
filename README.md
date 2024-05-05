@@ -26,11 +26,11 @@ While working with the official starter, I came up with a list of DX improvement
 
 Before you begin, you need to install the following:
 
-Backend:
+**Backend:**
 - [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only; not Sui binaries themselves)
 - [Suibase](https://suibase.io/how-to/install.html)
 
-Frontend:
+**Frontend:**
 - [Node (>= v20)](https://nodejs.org/en/download/)
 - [pnpm](https://pnpm.io/installation)
 - [Git](https://git-scm.com/downloads)
