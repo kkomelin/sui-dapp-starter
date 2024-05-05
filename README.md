@@ -45,11 +45,18 @@ pnpm install
 
 ## Usage
 
+Run the local Sui network:
 ```bash
-# Run the local Sui network.
 pnpm localnet:start
-# Deploy the demo contract to the local network.
+```
+
+Deploy the demo contract to the local network:
+
+```bash
 pnpm localnet:deploy
-# Run the frontend app.
+```
+
+Run the frontend app:
+```bash
 pnpm dev
 ```
