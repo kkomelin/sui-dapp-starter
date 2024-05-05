@@ -11,6 +11,7 @@
     "frontend:preview": "pnpm --filter frontend preview",
     
     "backend:build": "pnpm --filter backend build",
+    "backend:test": "pnpm --filter backend test",
     "localnet:start": "pnpm --filter backend localnet:start",
     "localnet:stop": "pnpm --filter backend localnet:stop",
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
