@@ -4,6 +4,7 @@
   "description": "Better full-stack Sui dapp starter",
   "scripts": {
     "dev": "pnpm frontend:dev",
+    "start": "pnpm dev",
 
     "frontend:dev": "pnpm --filter frontend dev",
     "frontend:build": "pnpm --filter frontend build",

@@ -1,18 +1,13 @@
 import { ConnectButton } from '@mysten/dapp-kit'
 import '@mysten/dapp-kit/dist/index.css'
 import { FC } from 'react'
-import AnimatedBackground from './components/AnimatedBackground'
+import Layout from './components/Layout'
 
 const App: FC = () => {
   return (
-    <>
-      <main className="flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center justify-center">
-          <ConnectButton />
-        </div>
-      </main>
-      <AnimatedBackground />
-    </>
+    <Layout>
+      <ConnectButton />
+    </Layout>
   )
 }
 

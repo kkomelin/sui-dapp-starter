@@ -21,6 +21,7 @@ While working with the official starter, I came up with a list of DX improvement
 - [x] frontend: Added configuration for localnet and testnet.
 - [x] docs: Added Prerequisites section to README.
 - [x] backend: Added local network management commands via Suibase.
+- [x] frontend: Implemented a Layout component to separate concerns.
 
 ## Prerequisites
 
