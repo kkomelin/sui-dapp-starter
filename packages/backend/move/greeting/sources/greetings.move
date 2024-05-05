@@ -74,45 +74,14 @@ module greeting::greeting {
     });
   }
 
-  #[test_only] use sui::test_utils;
+  // === Public functions for test === //
 
   #[test_only]
   /// Create a new Greeting for tests.
-  fun new_for_testing(name: vector<u8>, ctx: &mut TxContext): Greeting {
+  public fun new_for_testing(name: vector<u8>, ctx: &mut TxContext): Greeting {
     Greeting {
       id: object::new(ctx),
       name
     }
-  }
-
-  #[test]
-  /// Tests successful run of the set_name() function.
-  fun test_set_name() {
-    let ctx = &mut tx_context::dummy();
-
-    let mut greeting = new_for_testing(b"Bob", ctx);
-
-    assert!(name(&greeting) == b"Bob", 0);
-
-    set_name(&mut greeting, b"Alice");
-
-    assert!(name(&greeting) == b"Alice", 1);
-
-    test_utils::destroy(greeting);
-  }
-
-  #[test]
-  #[expected_failure]
-  /// Tests successful run of the set_name() function.
-  fun test_set_name_fail() {
-    let ctx = &mut tx_context::dummy();
-
-    let mut greeting = new_for_testing(b"Bob", ctx);
-
-    assert!(name(&greeting) == b"Bob", 0);
-
-    set_name(&mut greeting, b"");
-
-    test_utils::destroy(greeting);
   }
 }
