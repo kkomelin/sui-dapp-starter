@@ -1,8 +1,8 @@
-import App from '@/App.tsx'
+import App from '@/components/App'
 import { reactRender } from '@/helpers/misc.ts'
 import SuiProvider from '@/providers/SuiProvider.tsx'
 import React from 'react'
-import './index.css'
+import './styles/index.css'
 
 reactRender(
   <React.StrictMode>
