@@ -37,7 +37,7 @@ Before you begin, you need to install the following:
 
 ## Install
 
-```bash
+```console
 pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
 cd my-first-sui-dapp
 pnpm i
@@ -45,7 +45,7 @@ pnpm i
 
 ## Usage
 
-```bash
+```console
 pnpm localnet:start
 pnpm localnet:deploy
 pnpm dev
