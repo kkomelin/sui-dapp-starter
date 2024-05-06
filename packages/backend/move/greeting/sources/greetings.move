@@ -4,56 +4,46 @@
 /// Module: greeting
 module greeting::greeting {
 
-  // === Imports === //
+  // === Imports ===
 
   // use std::debug;
   use sui::event::emit;
 
-  // === Constants === //
+  // === Constants ===
 
-  // === Errors === //
+  // === Errors ===
 
   const EEmptyName: u64 = 1;
 
-  // === Structs === //
+  // === Structs ===
 
   public struct Greeting has key, store {
     id: UID,
     name: vector<u8>,
   }
 
-  // === Events === //
+  // === Events ===
 
   /// Emitted when the net is set.
-  public struct NameSetEvent has copy, drop {
+  public struct EventNameSet has copy, drop {
     greeting_id: ID,
     old_name: vector<u8>,
     new_name: vector<u8>
   }
 
-  // === Initializer === //
+  // === Initializer ===
 
   #[allow(lint(share_owned))]
   /// Create and share a Greeting object.
   fun init(ctx: &mut TxContext) {
     // Create the Greeting object.
-    let greeting = Greeting {
-      id: object::new(ctx),
-      name: vector::empty<u8>()
-    };
+    let greeting = new(ctx);
 
     // Share the Greeting object with everyone.
     transfer::share_object(greeting);
   }
 
-  // === Public view functions === //
-
-  /// Returns the name of currently greeted person.
-  public fun name(self: &Greeting): vector<u8> {
-    self.name
-  }
-
-  // === Public mutate functions === //
+  // === Public-Mutative Functions ===
 
   /// Sets the name of currently greeted person.
   public fun set_name(self: &mut Greeting, name: vector<u8>) {
@@ -67,21 +57,37 @@ module greeting::greeting {
 
     let greeting_id = object::uid_to_inner(&self.id);
 
-    emit(NameSetEvent {
+    emit(EventNameSet {
       greeting_id,
       old_name,
       new_name: self.name
     });
   }
 
-  // === Public functions for test === //
+  // === Public-View Functions ===
+
+  /// Returns the name of currently greeted person.
+  public fun name(self: &Greeting): vector<u8> {
+    self.name
+  }
+
+  // === Private Functions ===
+
+  fun new(ctx: &mut TxContext): Greeting {
+    Greeting {
+      id: object::new(ctx),
+      name: vector::empty<u8>()
+    }
+  }
+
+  // === Test Functions ===
 
   #[test_only]
   /// Create a new Greeting for tests.
   public fun new_for_testing(name: vector<u8>, ctx: &mut TxContext): Greeting {
-    Greeting {
-      id: object::new(ctx),
-      name
-    }
+    let mut greeting = new(ctx);
+    greeting.name = name;
+    
+    greeting
   }
 }
