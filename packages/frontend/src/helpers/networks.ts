@@ -1,4 +1,5 @@
 import {
+  CONTRACT_PACKAGE_VARIABLE_NAME,
   DEVNET_CONTRACT_PACKAGE_ID,
   LOCALNET_CONTRACT_PACKAGE_ID,
   MAINNET_CONTRACT_PACKAGE_ID,
@@ -13,25 +14,25 @@ export const getNetworkConfig = () => {
     [ENetwork.LOCALNET]: {
       url: getFullnodeUrl(ENetwork.LOCALNET),
       variables: {
-        contractPackageId: LOCALNET_CONTRACT_PACKAGE_ID,
+        [CONTRACT_PACKAGE_VARIABLE_NAME]: LOCALNET_CONTRACT_PACKAGE_ID,
       },
     },
     [ENetwork.DEVNET]: {
       url: getFullnodeUrl(ENetwork.DEVNET),
       variables: {
-        contractPackageId: DEVNET_CONTRACT_PACKAGE_ID,
+        [CONTRACT_PACKAGE_VARIABLE_NAME]: DEVNET_CONTRACT_PACKAGE_ID,
       },
     },
     [ENetwork.TESTNET]: {
       url: getFullnodeUrl(ENetwork.TESTNET),
       variables: {
-        contractPackageId: TESTNET_CONTRACT_PACKAGE_ID,
+        [CONTRACT_PACKAGE_VARIABLE_NAME]: TESTNET_CONTRACT_PACKAGE_ID,
       },
     },
     [ENetwork.MAINNET]: {
       url: getFullnodeUrl(ENetwork.MAINNET),
       variables: {
-        contractPackageId: MAINNET_CONTRACT_PACKAGE_ID,
+        [CONTRACT_PACKAGE_VARIABLE_NAME]: MAINNET_CONTRACT_PACKAGE_ID,
       },
     },
   })

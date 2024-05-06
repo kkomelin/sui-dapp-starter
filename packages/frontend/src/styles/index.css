@@ -5,22 +5,15 @@
 :root {
   @apply font-inter;
 
-  color-scheme: light dark;
+  --ssk-light: #ffffffde;
+  --ssk-dark: #242424;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #ffffff;
-    color: #242424;
-  }
 }
 
 a {

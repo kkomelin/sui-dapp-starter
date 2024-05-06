@@ -1,0 +1,1 @@
+type TTheme = 'dark' | 'light'

@@ -74,3 +74,4 @@ _Currently we have blockchain tests only._
 
 - [Sui: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
 - [Move Book](https://move-book.com/)
+- [@mysten/create-dapp](https://www.npmjs.com/package/@mysten/create-dapp)
