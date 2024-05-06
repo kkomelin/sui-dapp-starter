@@ -56,8 +56,8 @@ More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blo
 
 ## Testing
 
-**Backend/blockchain:**
-
 ```bash
-pnpm backend:test
+pnpm test
 ```
+
+_Currently we have blockchain tests only._
