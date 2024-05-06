@@ -1,3 +1,4 @@
+import { fromBytesToString } from '@/helpers/greeting'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
@@ -5,7 +6,7 @@ import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, MouseEvent, useState } from 'react'
 import useOwnGreeting from '../hooks/useOwnGreeting'
 
-const Greeting = () => {
+const GreetingForm = () => {
   const [name, setName] = useState<string>('')
 
   const { data, isPending, error, refetch } = useOwnGreeting()
@@ -73,13 +74,10 @@ const Greeting = () => {
       ) : (
         <div>
           {data.data[0].data?.content?.fields.name.length !== 0 ? (
-            <div className="flex max-w-lg flex-col gap-4">
+            <div className="flex max-w-lg flex-col gap-6">
               <h1 className="from-sds-blue to-sds-pink bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent">
                 Hello,{' '}
-                {String.fromCharCode.apply(
-                  null,
-                  data.data[0].data?.content?.fields.name
-                )}
+                {fromBytesToString(data.data[0].data?.content?.fields.name)}
               </h1>
               <Button
                 variant="solid"
@@ -93,7 +91,7 @@ const Greeting = () => {
               </Button>
             </div>
           ) : (
-            <div className="flex max-w-lg flex-col gap-4">
+            <div className="flex max-w-lg flex-col gap-6">
               <TextField.Root
                 size="3"
                 placeholder="Enter your name..."
@@ -118,4 +116,4 @@ const Greeting = () => {
   )
 }
 
-export default Greeting
+export default GreetingForm

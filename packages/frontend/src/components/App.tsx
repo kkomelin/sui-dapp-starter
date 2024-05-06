@@ -1,6 +1,6 @@
 import { ConnectButton } from '@mysten/dapp-kit'
 import { FC } from 'react'
-import Greeting from './Greeting'
+import GreetingForm from './GreetingForm'
 import Layout from './Layout'
 
 const App: FC = () => {
@@ -9,7 +9,7 @@ const App: FC = () => {
       <ConnectButton />
 
       <div className="mt-8">
-        <Greeting />
+        <GreetingForm />
       </div>
     </Layout>
   )

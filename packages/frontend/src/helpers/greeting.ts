@@ -13,3 +13,7 @@ export const fullStructName = (
 ): `${string}::${string}::${string}` => {
   return `${packageId}::${CONTRACT_MODULE_NAME}::${structName}`
 }
+
+export const fromBytesToString = (bytes: number[]) => {
+  return String.fromCharCode.apply(null, bytes)
+}
