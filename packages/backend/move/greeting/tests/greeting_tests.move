@@ -15,7 +15,7 @@ module greeting::greeting_tests {
 
     assert!(greeting::name(&g) == b"Bob", 0);
 
-    greeting::set_name(&mut g, b"Alice", ctx);
+    greeting::set_name(&mut g, b"Alice");
 
     assert!(greeting::name(&g) == b"Alice", 1);
 
@@ -31,7 +31,7 @@ module greeting::greeting_tests {
 
     assert!(greeting::name(&g) == b"Bob", 0);
 
-    greeting::set_name(&mut g, b"", ctx);
+    greeting::set_name(&mut g, b"");
 
     test_utils::destroy(g);
   }

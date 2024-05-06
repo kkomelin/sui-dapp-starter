@@ -1,4 +1,3 @@
-import { isGreetingOwnedByCurrentAccount } from '@/helpers/greeting'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Button } from '@radix-ui/themes'
@@ -9,7 +8,8 @@ const Greeting = () => {
   const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
   const { create } = useCreateGreeting({
-    onCreate: (_: string) => {
+    onCreate: (id: string) => {
+      console.log(id)
       refetch()
     },
   })
@@ -27,10 +27,7 @@ const Greeting = () => {
 
   return (
     <div className="my-2 flex flex-col">
-      {data.data.length === 0 ||
-      !data.data.some((data) =>
-        isGreetingOwnedByCurrentAccount(data.data, currentAccount)
-      ) ? (
+      {data.data.length === 0 ? (
         <div className="flex flex-col gap-2">
           <div>No greetings owned by the connected wallet</div>
           <Button variant="solid" onClick={handleCreateGreetingClick}>
@@ -38,19 +35,14 @@ const Greeting = () => {
           </Button>
         </div>
       ) : (
-        <div>Greetings owned by the connected wallet</div>
+        <div>
+          {data.data.map((object) => (
+            <div className="flex max-w-lg flex-col" key={object.data?.objectId}>
+              <div>{JSON.stringify(object, null, 2)}</div>
+            </div>
+          ))}
+        </div>
       )}
-      {data.data.map((object) => {
-        if (!isGreetingOwnedByCurrentAccount(object?.data, currentAccount)) {
-          return null
-        }
-
-        return (
-          <div className="flex" key={object.data?.objectId}>
-            Object ID: {object.data?.objectId}
-          </div>
-        )
-      })}
     </div>
   )
 }

@@ -13,14 +13,12 @@ module greeting::greeting {
 
   // === Errors ===
 
-  const ENotOwned: u64 = 1;
-  const EEmptyName: u64 = 2;
+  const EEmptyName: u64 = 1;
 
   // === Structs ===
 
   public struct Greeting has key {
     id: UID,
-    owner: address,
     name: vector<u8>,
   }
 
@@ -40,7 +38,6 @@ module greeting::greeting {
 
   // === Initializer ===
 
-  #[allow(lint(share_owned))]
   /// Create and share a Greeting object.
   public fun create(ctx: &mut TxContext) {
     // Create the Greeting object.
@@ -51,14 +48,13 @@ module greeting::greeting {
     });
 
     // Share the Greeting object with everyone.
-    transfer::share_object(greeting);
+    transfer::transfer(greeting, ctx.sender());
   }
 
   // === Public-Mutative Functions ===
 
   /// Sets the name of currently greeted person.
-  public fun set_name(self: &mut Greeting, name: vector<u8>, ctx: &TxContext) {
-    assert!(self.owner == ctx.sender(), ENotOwned);
+  public fun set_name(self: &mut Greeting, name: vector<u8>) {
     assert!(name.length() > 0, EEmptyName);
 
     let old_name = self.name;
@@ -78,11 +74,6 @@ module greeting::greeting {
 
   // === Public-View Functions ===
 
-  /// Returns the Greeting owner. 
-  public fun owner(self: &Greeting): address {
-    self.owner
-  }
-
   /// Returns the name of currently greeted person.
   public fun name(self: &Greeting): vector<u8> {
     self.name
@@ -93,7 +84,6 @@ module greeting::greeting {
   fun new(ctx: &mut TxContext): Greeting {
     Greeting {
       id: object::new(ctx),
-      owner: ctx.sender(),
       name: vector::empty<u8>()
     }
   }
