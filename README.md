@@ -9,6 +9,14 @@ It's a good starting point and it just works but it's also very basic.
 
 While working with the official starter, I came up with a [list of DX improvements](https://github.com/kkomelin/sui-dapp-starter/wiki), which I decided to wrap into a separate starter template.
 
+## Features
+
+TBD
+
+## Roadmap
+
+TBD
+
 ## Prerequisites
 
 Before you begin, you need to install the following:
@@ -61,3 +69,8 @@ pnpm test
 ```
 
 _Currently we have blockchain tests only._
+
+## Docs
+
+- [Sui: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
+- [Move Book](https://move-book.com/)
