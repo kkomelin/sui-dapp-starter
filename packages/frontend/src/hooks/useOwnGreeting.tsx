@@ -10,7 +10,7 @@ const useOwnGreeting = () => {
     // },
     options: {
       showContent: true,
-      showOwner: true,
+      // showOwner: true,
     },
   })
 }

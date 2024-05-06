@@ -10,7 +10,6 @@ const ThemeSwitcher = () => {
   })
 
   useEffect(() => {
-    console.log(theme)
     document.documentElement.classList.remove('light', 'dark')
     document.documentElement.classList.add(theme as TTheme)
   }, [theme])
