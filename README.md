@@ -78,8 +78,9 @@ pnpm test
 
 _Currently we have blockchain tests only._
 
-## Docs
+## Links
 
 - [Sui: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
 - [Move Book](https://move-book.com/)
-- [@mysten/create-dapp](https://www.npmjs.com/package/@mysten/create-dapp)
+- [Suibase Docs](https://suibase.io/intro.html)
+- [@mysten/create-dapp - official starter](https://www.npmjs.com/package/@mysten/create-dapp)
