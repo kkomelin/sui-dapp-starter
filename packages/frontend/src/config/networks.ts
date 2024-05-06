@@ -8,6 +8,7 @@ export const TESTNET_CONTRACT_PACKAGE_ID = '0xTODO'
 export const MAINNET_CONTRACT_PACKAGE_ID = '0xTODO'
 
 export const CONTRACT_PACKAGE_VARIABLE_NAME = 'contractPackageId'
+export const CONTRACT_MODULE_NAME = 'greeting'
 
 export const { networkConfig, useNetworkVariable, useNetworkVariables } =
   getNetworkConfig()

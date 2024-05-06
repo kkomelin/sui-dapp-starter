@@ -26,7 +26,12 @@ module greeting::greeting {
 
   // === Events ===
 
-  /// Emitted when the net is set.
+  /// Emitted when the greeting is created.
+  public struct EventGreetingCreated has copy, drop {
+    greeting_id: ID
+  }
+
+  /// Emitted when the name is set.
   public struct EventNameSet has copy, drop {
     greeting_id: ID,
     old_name: vector<u8>,
@@ -40,6 +45,10 @@ module greeting::greeting {
   public fun create(ctx: &mut TxContext) {
     // Create the Greeting object.
     let greeting = new(ctx);
+
+    emit(EventGreetingCreated {
+      greeting_id: greeting.id.to_inner(),
+    });
 
     // Share the Greeting object with everyone.
     transfer::share_object(greeting);
