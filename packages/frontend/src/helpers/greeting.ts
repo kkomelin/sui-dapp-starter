@@ -1,6 +1,4 @@
 import { CONTRACT_MODULE_NAME } from '@/config/networks'
-import { IGreeting } from '@/types/IGreeting'
-import { SuiObjectData } from '@mysten/sui.js/client'
 
 export const fullFunctionName = (
   packageId: string,

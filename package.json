@@ -23,7 +23,7 @@
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
     "localnet:address": "pnpm --filter backend localnet:address"
   },
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.0",
   "keywords": [
     "sui",
     "sui-dapp",

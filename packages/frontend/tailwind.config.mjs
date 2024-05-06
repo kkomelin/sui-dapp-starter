@@ -5,8 +5,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        light: 'var(--ssk-light)',
-        dark: 'var(--ssk-dark)',
+        'sds-light': 'var(--sds-light)',
+        'sds-dark': 'var(--sds-dark)',
+        'sds-pink': 'var(--sds-pink)',
+        'sds-blue': 'var(--sds-blue)',
       },
       fontFamily: {
         inter: [

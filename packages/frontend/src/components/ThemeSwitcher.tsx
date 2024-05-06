@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
 
   return (
     <Toggle.Root
-      className="border-dark dark:border-light rounded-full border p-2"
+      className="border-sds-dark dark:border-sds-light rounded-full border p-2"
       aria-label="Toggle theme"
       onPressedChange={toggleTheme}
     >

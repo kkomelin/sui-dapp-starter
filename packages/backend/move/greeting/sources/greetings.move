@@ -13,8 +13,6 @@ module greeting::greeting {
 
   // === Errors ===
 
-  const EEmptyName: u64 = 1;
-
   // === Structs ===
 
   public struct Greeting has key {
@@ -55,8 +53,6 @@ module greeting::greeting {
 
   /// Sets the name of currently greeted person.
   public fun set_name(self: &mut Greeting, name: vector<u8>) {
-    assert!(name.length() > 0, EEmptyName);
-
     let old_name = self.name;
 
     // debug::print(self);

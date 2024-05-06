@@ -14,12 +14,12 @@ const AnimatedBackground = () => {
       id="svg"
       viewBox="0 0 1440 590"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute bottom-0 left-0 -z-50 object-cover transition delay-150 duration-300 ease-in-out opacity-70"
+      className="absolute bottom-0 left-0 -z-50 object-cover opacity-70 transition delay-150 duration-300 ease-in-out"
     >
       <defs>
         <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-          <stop offset="5%" stopColor="#fed5f4"></stop>
-          <stop offset="95%" stopColor="#4da2ff"></stop>
+          <stop offset="5%" stopColor="var(--sds-pink)"></stop>
+          <stop offset="95%" stopColor="var(--sds-blue)"></stop>
         </linearGradient>
       </defs>
       <path
@@ -33,8 +33,8 @@ const AnimatedBackground = () => {
 
       <defs>
         <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-          <stop offset="5%" stopColor="#fed5f4"></stop>
-          <stop offset="95%" stopColor="#4da2ff"></stop>
+          <stop offset="5%" stopColor="var(--sds-pink)"></stop>
+          <stop offset="95%" stopColor="var(--sds-blue)"></stop>
         </linearGradient>
       </defs>
       <path
@@ -47,8 +47,8 @@ const AnimatedBackground = () => {
       ></path>
       <defs>
         <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-          <stop offset="5%" stopColor="#fed5f4"></stop>
-          <stop offset="95%" stopColor="#4da2ff"></stop>
+          <stop offset="5%" stopColor="var(--sds-pink)"></stop>
+          <stop offset="95%" stopColor="var(--sds-blue)"></stop>
         </linearGradient>
       </defs>
       <path

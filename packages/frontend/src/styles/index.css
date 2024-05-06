@@ -5,8 +5,10 @@
 :root {
   @apply font-inter;
 
-  --ssk-light: #ffffffde;
-  --ssk-dark: #242424;
+  --sds-light: #ffffffde;
+  --sds-dark: #242424;
+  --sds-pink: #fed5f4;
+  --sds-blue: #4da2ff;
 
   color-scheme: light dark;
 
