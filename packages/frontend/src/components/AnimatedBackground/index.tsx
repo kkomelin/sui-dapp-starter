@@ -1,5 +1,9 @@
 import './index.css'
 
+/**
+ * Animated background component.
+ * Generated with https://s.muz.li/ODM2MGYyMzQz and adapted to our needs.
+ */
 const AnimatedBackground = () => {
   // @todo: Extract colors to CSS variables.
 
