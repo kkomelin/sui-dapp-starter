@@ -74,7 +74,7 @@ const GreetingForm = () => {
       ) : (
         <div>
           {data.data[0].data?.content?.fields.name.length !== 0 ? (
-            <div className="flex max-w-lg flex-col gap-6">
+            <div className="flex max-w-sm flex-col gap-6 sm:max-w-lg">
               <h1 className="from-sds-blue to-sds-pink bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent">
                 Hello,{' '}
                 {fromBytesToString(data.data[0].data?.content?.fields.name)}
@@ -91,7 +91,7 @@ const GreetingForm = () => {
               </Button>
             </div>
           ) : (
-            <div className="flex max-w-lg flex-col gap-6">
+            <div className="flex max-w-sm flex-col gap-6 sm:max-w-lg">
               <TextField.Root
                 size="3"
                 placeholder="Enter your name..."
