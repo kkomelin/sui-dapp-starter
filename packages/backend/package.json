@@ -12,6 +12,6 @@
     "localnet:status": "localnet status",
     "localnet:faucet": "localnet faucet",
     "localnet:regen": "localnet regen",
-    "localnet:active-address": "lsui client active-address"
+    "localnet:address": "lsui client active-address"
   }
 }

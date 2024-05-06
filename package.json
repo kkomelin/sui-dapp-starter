@@ -15,7 +15,11 @@
     "backend:test": "pnpm --filter backend test",
     "localnet:start": "pnpm --filter backend localnet:start",
     "localnet:stop": "pnpm --filter backend localnet:stop",
+    "localnet:status": "pnpm --filter backend localnet:status",
+    "localnet:faucet": "pnpm --filter backend localnet:faucet",
+    "localnet:regen": "pnpm --filter backend localnet:regen",
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
+    "localnet:address": "pnpm --filter backend localnet:address",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
