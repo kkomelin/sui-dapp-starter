@@ -13,7 +13,7 @@ which I decided to wrap into a separate starter template.
 ## Features
 
 - **Suibase**: Painless work with the local network
-- **pnpm**: Faster package management
+- **pnpm with workspaces**: Wise package management for monorepos
 - **TypeScript**: Write better JavaScript
 - **React**: Good old React for truly decentralized apps
 - **Tailwind CSS**: Utility-first CSS for more efficient styling
