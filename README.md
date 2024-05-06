@@ -51,3 +51,13 @@ Run the frontend app:
 ```bash
 pnpm dev
 ```
+
+More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
+
+## Testing
+
+**Backend/blockchain:**
+
+```bash
+pnpm backend:test
+```
