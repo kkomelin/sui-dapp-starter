@@ -8,7 +8,7 @@ const App: FC = () => {
     <Layout>
       <ConnectButton />
 
-      <div className="mt-8">
+      <div className="mt-8 mb-36">
         <GreetingForm />
       </div>
     </Layout>

@@ -5,7 +5,7 @@ import ThemeSwitcher from './ThemeSwitcher'
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
-      <main className="flex flex-col items-center justify-center py-8">
+      <main className="flex flex-col items-center justify-center py-8 min-h-screen">
         {children}
       </main>
       <div className="absolute right-0 top-0 p-3">

@@ -1,6 +1,7 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
+import { useCurrentAccount } from '@mysten/dapp-kit'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, MouseEvent, useState } from 'react'
@@ -8,7 +9,7 @@ import useOwnGreeting from '../hooks/useOwnGreeting'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')
-
+  const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
   const { create } = useCreateGreeting({
     onCreate: () => {
@@ -57,6 +58,8 @@ const GreetingForm = () => {
     greetMe(objectId, '')
   }
 
+  if (currentAccount == null) return <div>Please connect your Sui wallet</div>
+
   if (isPending) return <div>Loading...</div>
 
   if (error) return <div>Error: {error.message}</div>
@@ -64,7 +67,7 @@ const GreetingForm = () => {
   if (!data.data) return <div>Not found</div>
 
   return (
-    <div className="my-2 flex flex-col">
+    <div className="my-2 flex flex-col justify-center items-center">
       {data.data.length === 0 ? (
         <div className="flex flex-col">
           <Button variant="solid" size="4" onClick={handleCreateGreetingClick}>
@@ -74,8 +77,8 @@ const GreetingForm = () => {
       ) : (
         <div>
           {getContentField(data.data[0], 'name')?.length !== 0 ? (
-            <div className="flex max-w-sm flex-col gap-6 sm:max-w-lg">
-              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-5xl font-bold text-transparent">
+            <div className="flex w-full max-w-xs flex-col gap-6 sm:max-w-lg px-2">
+              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-4xl sm:text-5xl font-bold text-transparent">
                 Hello,{' '}
                 {fromBytesToString(getContentField(data.data[0], 'name'))}
               </h1>
@@ -91,7 +94,7 @@ const GreetingForm = () => {
               </Button>
             </div>
           ) : (
-            <div className="flex max-w-sm flex-col gap-6 sm:max-w-lg">
+            <div className="flex w-full max-w-xs flex-col gap-6 sm:max-w-lg px-2">
               <TextField.Root
                 size="3"
                 placeholder="Enter your name..."
