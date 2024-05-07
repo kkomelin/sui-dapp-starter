@@ -31,6 +31,10 @@ export const getContentField = (
     return null
   }
 
+  if (response.data.content?.dataType !== 'moveObject') {
+    return null
+  }
+
   // @todo Find a better way to extract fields from SuiParsedData.
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const content = response.data.content as any

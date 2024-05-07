@@ -1,4 +1,5 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
+import { handleError } from '@/helpers/misc'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
 import { useCurrentAccount } from '@mysten/dapp-kit'
@@ -12,11 +13,13 @@ const GreetingForm = () => {
   const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
   const { create } = useCreateGreeting({
+    onError: (e) => handleError(e),
     onCreate: () => {
       refetch()
     },
   })
   const { greetMe } = useGreetMe({
+    onError: (e) => handleError(e),
     onSuccess: () => {
       refetch()
     },
@@ -34,14 +37,12 @@ const GreetingForm = () => {
 
   const handleGreetMe = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      alert('Error: Object ID is not valid')
-      // @fixme: Report error properly.
+      handleError(null, 'Error: Object ID is not valid')
       return
     }
 
     if (name.trim().length === 0) {
-      alert('Error: Name is empty')
-      // @fixme: Report error properly.
+      handleError(null, 'Error: Name is empty')
       return
     }
 
@@ -50,8 +51,7 @@ const GreetingForm = () => {
 
   const handleReset = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      alert('Error: Object ID is not valid')
-      // @fixme: Report error properly.
+      handleError(null, 'Error: Object ID is not valid')
       return
     }
 
@@ -67,7 +67,7 @@ const GreetingForm = () => {
   if (!data.data) return <div>Not found</div>
 
   return (
-    <div className="my-2 flex flex-col justify-center items-center">
+    <div className="my-2 flex flex-col items-center justify-center">
       {data.data.length === 0 ? (
         <div className="flex flex-col">
           <Button variant="solid" size="4" onClick={handleCreateGreetingClick}>
@@ -77,8 +77,8 @@ const GreetingForm = () => {
       ) : (
         <div>
           {getContentField(data.data[0], 'name')?.length !== 0 ? (
-            <div className="flex w-full max-w-xs flex-col gap-6 sm:max-w-lg px-2">
-              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-4xl sm:text-5xl font-bold text-transparent">
+            <div className="flex w-full max-w-xs flex-col gap-6 px-2 sm:max-w-lg">
+              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
                 Hello,{' '}
                 {fromBytesToString(getContentField(data.data[0], 'name'))}
               </h1>
@@ -94,7 +94,7 @@ const GreetingForm = () => {
               </Button>
             </div>
           ) : (
-            <div className="flex w-full max-w-xs flex-col gap-6 sm:max-w-lg px-2">
+            <div className="flex w-full max-w-xs flex-col gap-6 px-2 sm:max-w-lg">
               <TextField.Root
                 size="3"
                 placeholder="Enter your name..."
