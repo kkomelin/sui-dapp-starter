@@ -28,7 +28,7 @@ Before you begin, install the following:
 
 ## Installation
 
-[Use the template on Github ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin)
+[![Use this template on Github](https://img.shields.io/badge/use%20this-template-blue?logo=github)](https://github.com/kkomelin/sui-dapp-starter/generate)
 
 or
 
