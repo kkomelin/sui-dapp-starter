@@ -1,5 +1,5 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
-import { handleError } from '@/helpers/misc'
+import { handleError, handleSuccess } from '@/helpers/misc'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
 import { useCurrentAccount } from '@mysten/dapp-kit'
@@ -16,12 +16,21 @@ const GreetingForm = () => {
     onError: (e) => handleError(e),
     onCreate: () => {
       refetch()
+      handleSuccess('Ready to greet')
     },
   })
   const { greetMe } = useGreetMe({
     onError: (e) => handleError(e),
-    onSuccess: () => {
+    onSuccess: (name: string) => {
       refetch()
+
+      // If name is empty, then it's reset.
+      if (name.length === 0) {
+        handleSuccess('Ready to greet again')
+        return
+      }
+
+      handleSuccess('Successfully greeted!')
     },
   })
 
@@ -37,12 +46,12 @@ const GreetingForm = () => {
 
   const handleGreetMe = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      handleError(null, 'Error: Object ID is not valid')
+      handleError(null, 'Object ID is not valid')
       return
     }
 
     if (name.trim().length === 0) {
-      handleError(null, 'Error: Name is empty')
+      handleError(null, 'Name cannot be empty')
       return
     }
 
@@ -51,7 +60,7 @@ const GreetingForm = () => {
 
   const handleReset = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      handleError(null, 'Error: Object ID is not valid')
+      handleError(null, 'Object ID is not valid')
       return
     }
 

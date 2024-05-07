@@ -5,14 +5,14 @@ export const fullFunctionName = (
   packageId: string,
   functionName: string
 ): `${string}::${string}::${string}` => {
-  return `${packageId}::${CONTRACT_MODULE_NAME}::${functionName}`
+  return `${fullModuleName(packageId)}::${functionName}`
 }
 
 export const fullStructName = (
   packageId: string,
   structName: string
 ): `${string}::${string}::${string}` => {
-  return `${packageId}::${CONTRACT_MODULE_NAME}::${structName}`
+  return `${fullModuleName(packageId)}::${structName}`
 }
 
 export const fromBytesToString = (bytes: number[]): string => {
@@ -44,4 +44,8 @@ export const getContentField = (
   }
 
   return content.fields[field]
+}
+
+const fullModuleName = (packageId: string): `${string}::${string}` => {
+  return `${packageId}::${CONTRACT_MODULE_NAME}`
 }

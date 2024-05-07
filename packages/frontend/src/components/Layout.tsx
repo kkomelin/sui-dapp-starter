@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from 'react'
+import { Toaster } from 'react-hot-toast'
 import AnimatedBackground from './AnimatedBackground'
 import ThemeSwitcher from './ThemeSwitcher'
 
@@ -12,6 +13,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
         <ThemeSwitcher />
       </div>
       <AnimatedBackground />
+      <Toaster />
     </>
   )
 }

@@ -11,7 +11,7 @@ import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
 
 interface IParams {
-  onSuccess: () => void
+  onSuccess: (name: string) => void
   onError?: (e: Error) => void
 }
 
@@ -46,7 +46,7 @@ export const useGreetMe = ({ onSuccess, onError }: IParams) => {
               digest: tx.digest,
             })
             .then(() => {
-              onSuccess()
+              onSuccess(name)
             })
         },
       }

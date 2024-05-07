@@ -74,7 +74,7 @@ _Currently we have blockchain tests only._
 ## Roadmap
 
 - [x] Release ready-to-use fully-functional beta version to start collecting community feedback
-- [ ] frontend: Better UI notifications
+- [x] frontend: Better UI notifications
 - [ ] frontend: Develop better Sui Kit, Tailwind and Radix theme integration
 - [ ] frontend: Develop Sui-specific UI components
 - [ ] frontend: Add Arweave deployment scripts
