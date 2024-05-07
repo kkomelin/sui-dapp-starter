@@ -6,5 +6,6 @@
     "tamasfe.even-better-toml",
 
     // Frontend
+    "esbenp.prettier-vscode"
   ]
 }
