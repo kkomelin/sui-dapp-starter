@@ -78,7 +78,7 @@ _Currently we have blockchain tests only._
 - [ ] frontend: Develop Sui-specific UI components
 - [ ] frontend: Add Arweave deployment scripts
 - [ ] backend: Add a Randomness usage example
-- [ ] YOUR FEATURE
+- [ ] [YOUR FEATURE](https://github.com/kkomelin/sui-dapp-starter/issues/new)
 
 ## Community
 
