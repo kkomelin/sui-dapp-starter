@@ -1,14 +1,10 @@
-# sui-dapp-starter
+# Sui dApp Starter - Full-Stack Sui Starter on Steroids
 
-Better full-stack Sui dapp starter
+[![](https://dcbadge.vercel.app/api/server/HuDPpXz4Hx)](https://discord.com/invite/HuDPpXz4Hx)
 
 ## Motivation
 
-I took the [official Sui e2e starter template](https://github.com/MystenLabs/sui/tree/main/sdk/create-dapp) and tried to develop with it. 
-It's a good starting point and it just works but it's also very basic. 
-
-While working with the official starter, I came up with a [list of DX improvements](https://github.com/kkomelin/sui-dapp-starter/wiki), 
-which I decided to wrap into a separate starter template.
+The [official Sui e2e starter template](https://github.com/MystenLabs/sui/tree/main/sdk/create-dapp) is a good starting point but it's very basic. While working with it, I came up with a [list of DX improvements](https://github.com/kkomelin/sui-dapp-starter/wiki), which I ended up wrapping into a separate starter template.
 
 ## Features
 
@@ -73,6 +69,10 @@ _Currently we have blockchain tests only._
 ## Roadmap
 
 TBD
+
+## Community
+
+[Join our Discord](https://discord.com/invite/HuDPpXz4Hx)
 
 ## Links
 
