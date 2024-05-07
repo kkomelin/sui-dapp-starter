@@ -51,10 +51,16 @@ Deploy the demo contract to the local network:
 pnpm localnet:deploy
 ```
 
-Run the frontend app:
+Fund your localnet account via Sui Wallet or the faucet:
 ```bash
-pnpm dev
+pnpm localnet:faucet 0xYOURADDRESS
 ```
+
+Run the app:
+```bash
+pnpm start
+```
+
 
 More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
 

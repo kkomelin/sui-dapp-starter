@@ -7,6 +7,8 @@
     "start": "pnpm dev",
     "test": "pnpm backend:test",
     "build": "pnpm backend:build && pnpm frontend:build",
+    "lint": "pnpm frontend:lint",
+    "format": "pnpm frontend:format",
 
     "frontend:dev": "pnpm --filter frontend dev",
     "frontend:build": "pnpm --filter frontend build",
@@ -23,6 +25,9 @@
     "localnet:regen": "pnpm --filter backend localnet:regen",
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
     "localnet:address": "pnpm --filter backend localnet:address"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "packageManager": "pnpm@9.1.0",
   "keywords": [
