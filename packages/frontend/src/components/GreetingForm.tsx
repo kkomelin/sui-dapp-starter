@@ -71,6 +71,7 @@ const GreetingForm = () => {
 
   if (isPending) return <div>Loading...</div>
 
+  // @todo: Handle the following errors with toasts.
   if (error) return <div>Error: {error.message}</div>
 
   if (!data.data) return <div>Not found</div>
