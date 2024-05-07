@@ -11,7 +11,7 @@ const ThemeSwitcher = () => {
 
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark')
-    document.documentElement.classList.add(theme as TTheme)
+    document.documentElement.classList.add(theme!)
   }, [theme])
 
   const toggleTheme = () => {
@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
 
   return (
     <Toggle.Root
-      className="border-sds-dark dark:border-sds-light rounded-full border p-2"
+      className="rounded-full border border-sds-dark p-2 dark:border-sds-light"
       aria-label="Toggle theme"
       onPressedChange={toggleTheme}
     >

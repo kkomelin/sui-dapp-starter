@@ -12,6 +12,7 @@
     "frontend:build": "pnpm --filter frontend build",
     "frontend:lint": "pnpm --filter frontend lint",
     "frontend:preview": "pnpm --filter frontend preview",
+    "frontend:format": "pnpm --filter frontend format",
     
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",

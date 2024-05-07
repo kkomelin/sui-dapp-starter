@@ -1,4 +1,5 @@
 import { CONTRACT_MODULE_NAME } from '@/config/networks'
+import { SuiObjectResponse } from '@mysten/sui.js/client'
 
 export const fullFunctionName = (
   packageId: string,
@@ -14,6 +15,29 @@ export const fullStructName = (
   return `${packageId}::${CONTRACT_MODULE_NAME}::${structName}`
 }
 
-export const fromBytesToString = (bytes: number[]) => {
+export const fromBytesToString = (bytes: number[]): string => {
   return String.fromCharCode.apply(null, bytes)
+}
+
+export const getContentField = (
+  response: SuiObjectResponse | null | undefined,
+  field: string
+) => {
+  if (response == null) {
+    return null
+  }
+
+  if (response.data == null || response.data.content == null) {
+    return null
+  }
+
+  // @todo Find a better way to extract fields from SuiParsedData.
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  const content = response.data.content as any
+
+  if (content.fields == null) {
+    return null
+  }
+
+  return content.fields[field]
 }

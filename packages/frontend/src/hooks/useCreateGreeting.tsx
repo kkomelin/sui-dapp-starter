@@ -28,6 +28,8 @@ export const useCreateGreeting = ({ onCreate }: IParams) => {
 
     signAndExecute(
       {
+        // @todo: Handle types properly.
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
         transactionBlock: txb as any,
         options: {
           showEffects: true,
