@@ -7,13 +7,15 @@ import {
   useSignAndExecuteTransactionBlock,
   useSuiClient,
 } from '@mysten/dapp-kit'
+import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
 
 interface IParams {
   onSuccess: () => void
+  onError?: (e: Error) => void
 }
 
-export const useGreetMe = ({ onSuccess }: IParams) => {
+export const useGreetMe = ({ onSuccess, onError }: IParams) => {
   const client = useSuiClient()
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
   const { mutate: signAndExecute } = useSignAndExecuteTransactionBlock()
@@ -37,7 +39,8 @@ export const useGreetMe = ({ onSuccess }: IParams) => {
         },
       },
       {
-        onSuccess: (tx) => {
+        onError,
+        onSuccess: (tx: SuiTransactionBlockResponse) => {
           client
             .waitForTransactionBlock({
               digest: tx.digest,
