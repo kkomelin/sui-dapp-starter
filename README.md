@@ -68,7 +68,17 @@ _Currently we have blockchain tests only._
 
 ## Roadmap
 
-TBD
+- [ ] docs: Develop a landing page
+- [ ] docs: Write how-to guides
+- [ ] infra: Develop a cli tool for easier project creation
+- [ ] infra: Enable Husky and lint-staged for pre-commit
+- [ ] infra: Enable Github Actions for linting and testing
+- [ ] frontend: Better UI notifications
+- [ ] frontend: Develop better Sui Kit, Tailwind and Radix theme integration
+- [ ] frontend: Develop Sui-specific UI components
+- [ ] frontend: Add Arweave deployment scripts
+- [ ] backend: Add a Randomness usage example
+- [ ] YOUR FEATURE
 
 ## Community
 
