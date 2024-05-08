@@ -8,8 +8,8 @@ The official [e2e Sui starter template](https://github.com/MystenLabs/sui/tree/m
 
 ## Features
 
-- **Suibase**: Painless work with the local network
-- **Local Sui Explorer**: Browse your transactions and objects locally
+- **[Suibase](https://suibase.io/)**: Painless work with the local network
+- **[Local Sui Explorer](https://github.com/kkomelin/sui-explorer-local)**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript
 - **React**: Good old React for truly decentralized apps
