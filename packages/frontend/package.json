@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@mysten/bcs": "^0.11.1",
-    "@mysten/dapp-kit": "^0.12.12",
+    "@mysten/dapp-kit": "^0.12.13",
     "@mysten/sui.js": "^0.52.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-toggle": "^1.0.3",

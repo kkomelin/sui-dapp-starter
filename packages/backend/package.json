@@ -6,14 +6,18 @@
     "build": "lsui move build -d -p ./move/greeting",
     "test": "lsui move test -d -p ./move/greeting",
     "localnet:deploy": "cd move/greeting && localnet publish && cd ../.. && pnpm copy-package-id",
-
     "copy-package-id": "node ./scripts/copy-package-id.mjs",
-
     "localnet:start": "localnet start",
     "localnet:stop": "localnet stop",
     "localnet:status": "localnet status",
     "localnet:faucet": "localnet faucet",
     "localnet:regen": "localnet regen",
-    "localnet:address": "lsui client active-address"
+    "localnet:address": "lsui client active-address",
+    "localnet:explorer:start": "sui-explorer-local start",
+    "localnet:explorer:stop": "sui-explorer-local stop",
+    "localnet:explorer:rebuild": "sui-explorer-local rebuild"
+  },
+  "devDependencies": {
+    "sui-explorer-local": "^0.1.2"
   }
 }

@@ -18,13 +18,16 @@
     
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",
-    "localnet:start": "pnpm --filter backend localnet:start",
-    "localnet:stop": "pnpm --filter backend localnet:stop",
+    "localnet:start": "pnpm --filter backend localnet:start && pnpm localnet:explorer:start",
+    "localnet:stop": "pnpm --filter backend localnet:stop && pnpm localnet:explorer:stop",
     "localnet:status": "pnpm --filter backend localnet:status",
     "localnet:faucet": "pnpm --filter backend localnet:faucet",
     "localnet:regen": "pnpm --filter backend localnet:regen",
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
-    "localnet:address": "pnpm --filter backend localnet:address"
+    "localnet:address": "pnpm --filter backend localnet:address",
+    "localnet:explorer:start":  "pnpm --filter backend localnet:explorer:start",
+    "localnet:explorer:stop":  "pnpm --filter backend localnet:explorer:stop",
+    "localnet:explorer:rebuild":  "pnpm --filter backend localnet:explorer:rebuild"
   },
   "engines": {
     "node": ">=20"
