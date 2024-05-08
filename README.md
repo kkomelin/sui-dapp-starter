@@ -9,6 +9,7 @@ The official [e2e Sui starter template](https://github.com/MystenLabs/sui/tree/m
 ## Features
 
 - **Suibase**: Painless work with the local network
+- **Local Sui Explorer**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript
 - **React**: Good old React for truly decentralized apps
@@ -40,23 +41,25 @@ pnpm install
 
 ## Usage
 
-Run the local Sui network:
+### Run the local Sui network:
 ```bash
 pnpm localnet:start
 ```
 
-Deploy the demo contract to the local network:
+Local Sui Explorer will be available on [http://localhost:9001/](http://localhost:9001/)
+
+### Deploy the demo contract to the local network:
 
 ```bash
 pnpm localnet:deploy
 ```
 
-Fund your localnet account via Sui Wallet or the faucet:
+### Fund your localnet account via Sui Wallet or the faucet:
 ```bash
 pnpm localnet:faucet 0xYOURADDRESS
 ```
 
-Run the app:
+### Run the app:
 ```bash
 pnpm start
 ```
@@ -81,6 +84,7 @@ _Currently we have blockchain tests only._
 - [ ] backend: Add a Randomness usage example
 - [ ] docs: Develop a landing page
 - [ ] docs: Write how-to guides
+- [x] infra: Integrate with Local Sui Explorer
 - [ ] infra: Develop a cli tool for easier project creation
 - [ ] infra: Enable Husky and lint-staged for pre-commit
 - [ ] infra: Enable Github Actions for linting and testing
