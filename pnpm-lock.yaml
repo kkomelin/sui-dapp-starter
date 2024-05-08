@@ -23,8 +23,8 @@ importers:
         specifier: ^0.12.13
         version: 0.12.13(@tanstack/react-query@5.35.1(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(svelte@4.2.15)(typescript@5.4.5)
       '@mysten/sui.js':
-        specifier: ^0.52.0
-        version: 0.52.0(svelte@4.2.15)(typescript@5.4.5)
+        specifier: ^0.53.0
+        version: 0.53.0(svelte@4.2.15)(typescript@5.4.5)
       '@radix-ui/react-icons':
         specifier: ^1.3.0
         version: 1.3.0(react@18.3.1)
@@ -385,10 +385,6 @@ packages:
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
       react: '*'
-
-  '@mysten/sui.js@0.52.0':
-    resolution: {integrity: sha512-oqfA0O/STWDJgnxvu07HsDRybG8yD3pfqAhADFawZTthbPdl6U01qJQVCzW7yf2OqG9AkYWHT+392rVcVjbcnw==}
-    engines: {node: '>=16'}
 
   '@mysten/sui.js@0.53.0':
     resolution: {integrity: sha512-OQ7QdZBS7+JOLEHpzsKQZIOSsqu8EH6qOGw51uIXa6jGA1m58c3dPGLYYfu8xHeRtqzHx19tOnO7WFAVEXyIYg==}
@@ -2842,25 +2838,6 @@ snapshots:
       - encoding
       - immer
       - react-dom
-      - svelte
-      - typescript
-
-  '@mysten/sui.js@0.52.0(svelte@4.2.15)(typescript@5.4.5)':
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
-      '@mysten/bcs': 0.11.1
-      '@noble/curves': 1.4.0
-      '@noble/hashes': 1.4.0
-      '@scure/bip32': 1.4.0
-      '@scure/bip39': 1.3.0
-      '@suchipi/femver': 1.0.0
-      bech32: 2.0.0
-      gql.tada: 1.7.0(graphql@16.8.1)(svelte@4.2.15)(typescript@5.4.5)
-      graphql: 16.8.1
-      superstruct: 1.0.4
-      tweetnacl: 1.0.3
-    transitivePeerDependencies:
-      - encoding
       - svelte
       - typescript
 
