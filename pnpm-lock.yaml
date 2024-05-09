@@ -11,8 +11,8 @@ importers:
   packages/backend:
     devDependencies:
       sui-explorer-local:
-        specifier: ^0.1.5
-        version: 0.1.5
+        specifier: ^0.1.6
+        version: 0.1.6
 
   packages/frontend:
     dependencies:
@@ -2368,8 +2368,8 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
 
-  sui-explorer-local@0.1.5:
-    resolution: {integrity: sha512-tGV1L03TuUg3GKvSVaN1PpXRr6OJ8mnTUmSocrgGbOt1SXRA6JICdPaORYz5bFfBws8FdZl5iZJFHyK0rqAeqA==}
+  sui-explorer-local@0.1.6:
+    resolution: {integrity: sha512-18KvI5z2Vea/HQXT2ufCWqsGzB4KuKX+jY1VyVSZ3H++uWXasPmVwR8BhtR/iQhTkkghk7Nkxl/2vRNgQDiYjw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -4903,7 +4903,7 @@ snapshots:
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
 
-  sui-explorer-local@0.1.5:
+  sui-explorer-local@0.1.6:
     dependencies:
       chalk: 5.3.0
       command-exists: 1.2.9
