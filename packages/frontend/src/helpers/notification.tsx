@@ -10,7 +10,7 @@ export const reportError = (
   id?: string
 ) => {
   if (error != null) {
-    console.log(error)
+    console.error(error)
   }
 
   const message =
