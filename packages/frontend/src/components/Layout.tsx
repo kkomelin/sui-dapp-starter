@@ -13,7 +13,12 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
         <ThemeSwitcher />
       </div>
       <AnimatedBackground />
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          className:
+            'dark:bg-sds-dark bg-sds-light text-sds-dark dark:text-sds-light',
+        }}
+      />
     </>
   )
 }

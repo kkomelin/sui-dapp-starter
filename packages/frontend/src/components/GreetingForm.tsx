@@ -1,8 +1,9 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
-import { handleError, handleSuccess } from '@/helpers/misc'
+import { reportError } from '@/helpers/notification'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
 import { useCurrentAccount } from '@mysten/dapp-kit'
+import { TransactionBlock } from '@mysten/sui.js/transactions'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, MouseEvent, useState } from 'react'
@@ -13,30 +14,22 @@ const GreetingForm = () => {
   const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
   const { create } = useCreateGreeting({
-    onError: (e) => handleError(e),
-    onCreate: () => {
+    onSuccess: () => {
       refetch()
-      handleSuccess('Ready to greet')
     },
   })
   const { greetMe } = useGreetMe({
-    onError: (e) => handleError(e),
-    onSuccess: (name: string) => {
+    onSuccess: () => {
       refetch()
-
-      // If name is empty, then it's reset.
-      if (name.length === 0) {
-        handleSuccess('Ready to greet again')
-        return
-      }
-
-      handleSuccess('Successfully greeted!')
     },
   })
 
   const handleCreateGreetingClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    create()
+
+    // @todo: Find a way to refactor this code.
+    const txb = new TransactionBlock()
+    create(txb)
   }
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -46,25 +39,31 @@ const GreetingForm = () => {
 
   const handleGreetMe = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      handleError(null, 'Object ID is not valid')
+      reportError(null, 'Object ID is not valid')
       return
     }
 
     if (name.trim().length === 0) {
-      handleError(null, 'Name cannot be empty')
+      reportError(null, 'Name cannot be empty')
       return
     }
 
-    greetMe(objectId, name)
+    // @todo: Find a way to refactor this code.
+    const txb = new TransactionBlock()
+    const args = [txb.object(objectId), txb.pure.string(name)]
+    greetMe(txb, args)
   }
 
   const handleReset = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      handleError(null, 'Object ID is not valid')
+      reportError(null, 'Object ID is not valid')
       return
     }
 
-    greetMe(objectId, '')
+    // @todo: Find a way to refactor this code.
+    const txb = new TransactionBlock()
+    const args = [txb.object(objectId), txb.pure.string('')]
+    greetMe(txb, args)
   }
 
   if (currentAccount == null) return <div>Please connect your Sui wallet</div>
