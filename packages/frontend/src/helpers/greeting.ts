@@ -16,7 +16,7 @@ export const fullStructName = (
 }
 
 export const fromBytesToString = (bytes: number[]): string => {
-  return String.fromCharCode.apply(null, bytes)
+  return new TextDecoder().decode(new Uint8Array(bytes))
 }
 
 export const getContentField = (
