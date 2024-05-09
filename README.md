@@ -84,7 +84,7 @@ _Currently we have blockchain tests only._
 - [ ] frontend: Add Arweave deployment scripts
 - [ ] backend: Add a Randomness usage example
 - [ ] docs: Develop a landing page
-- [ ] docs: Write how-to guides
+- [ ] docs: Write/record how-to guides
 - [x] infra: Integrate with Local Sui Explorer
 - [ ] infra: Develop a cli tool for easier project creation
 - [ ] infra: Enable Husky and lint-staged for pre-commit
