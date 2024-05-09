@@ -58,8 +58,6 @@ const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
               digest: tx.digest,
             })
             .then(() => {
-              // const objectId = tx.effects?.created?.[0]?.reference?.objectId
-              // if (objectId) {
               reportTxSuccess(
                 transactionUrl(explorerUrl, tx.digest),
                 notificationId
@@ -67,7 +65,6 @@ const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
               if (onSuccess != null) {
                 onSuccess(tx)
               }
-              // }
             })
         },
       }

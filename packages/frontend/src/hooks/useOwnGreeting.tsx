@@ -17,8 +17,6 @@ const useOwnGreeting = () => {
     },
     options: {
       showContent: true,
-      // showDisplay: true,
-      // showOwner: true,
     },
   })
 }
