@@ -1,10 +1,13 @@
+import Notification from '@/components/Notification'
 import toast, { Renderable } from 'react-hot-toast'
 
-export const reportLoading = (message: Renderable) => {
-  return toast.loading(message)
+const reportLoading = (message: Renderable) => {
+  const content = <Notification type="loading">{message}</Notification>
+
+  return toast.loading(content)
 }
 
-export const reportError = (
+const reportError = (
   error: Error | null,
   userFriendlyMessage?: string | null,
   id?: string
@@ -16,18 +19,30 @@ export const reportError = (
   const message =
     userFriendlyMessage || error?.message || 'An error has occurred'
 
-  return toast.error(message, { id })
+  const content = (
+    <Notification type="error" id={id}>
+      {message}
+    </Notification>
+  )
+
+  return toast.error(content, { id })
 }
 
-export const reportSuccess = (message: Renderable, id?: string) => {
-  return toast.success(message, { id, duration: 4000 })
+const reportSuccess = (message: Renderable, id?: string) => {
+  const content = (
+    <Notification type="success" id={id}>
+      {message}
+    </Notification>
+  )
+
+  return toast.success(content, { id, duration: 4000 })
 }
 
-export const reportTxLoading = () => {
+const reportTxLoading = () => {
   return reportLoading('Confirm this transaction in your wallet')
 }
 
-export const reportTxError = (
+const reportTxError = (
   error: Error | null,
   userFriendlyMessage?: string | null,
   id?: string
@@ -35,12 +50,20 @@ export const reportTxError = (
   return reportError(error, userFriendlyMessage, id)
 }
 
-export const reportTxSuccess = (transactionUrl: string, id?: string) => {
-  const content = (
-    <div className="flex flex-row gap-2">
-      <div>Transaction submitted</div>
-      <a href={transactionUrl}>(view)</a>
-    </div>
+const reportTxSuccess = (transactionUrl: string, id?: string) => {
+  return reportSuccess(
+    <>
+      Transaction submitted <a href={transactionUrl}>(view)</a>
+    </>,
+    id
   )
-  return reportSuccess(content, id)
+}
+
+export const notification = {
+  loading: reportLoading,
+  success: reportSuccess,
+  error: reportError,
+  txLoading: reportTxLoading,
+  txSuccess: reportTxSuccess,
+  txError: reportTxError,
 }

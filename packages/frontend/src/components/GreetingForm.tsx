@@ -1,5 +1,5 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
-import { reportError } from '@/helpers/notification'
+import { notification } from '@/helpers/notification'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
 import useGreetMe from '@/hooks/useGreetMe'
 import { useCurrentAccount } from '@mysten/dapp-kit'
@@ -39,12 +39,12 @@ const GreetingForm = () => {
 
   const handleGreetMe = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      reportError(null, 'Object ID is not valid')
+      notification.error(null, 'Object ID is not valid')
       return
     }
 
     if (name.trim().length === 0) {
-      reportError(null, 'Name cannot be empty')
+      notification.error(null, 'Name cannot be empty')
       return
     }
 
@@ -56,7 +56,7 @@ const GreetingForm = () => {
 
   const handleReset = (objectId: string | undefined) => {
     if (objectId == null || !isValidSuiObjectId(objectId)) {
-      reportError(null, 'Object ID is not valid')
+      notification.error(null, 'Object ID is not valid')
       return
     }
 

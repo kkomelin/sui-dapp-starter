@@ -3,11 +3,7 @@ import {
   useNetworkVariable,
 } from '@/config/networks'
 import { transactionUrl } from '@/helpers/networks'
-import {
-  reportTxError,
-  reportTxLoading,
-  reportTxSuccess,
-} from '@/helpers/notification'
+import { notification } from '@/helpers/notification'
 import {
   useSignAndExecuteTransactionBlock,
   useSuiClient,
@@ -33,7 +29,7 @@ const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
       target: functionName,
     })
 
-    const notificationId = reportTxLoading()
+    const notificationId = notification.txLoading()
 
     signAndExecute(
       {
@@ -47,7 +43,7 @@ const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
       },
       {
         onError: (e: Error) => {
-          reportTxError(e, null, notificationId)
+          notification.txError(e, null, notificationId)
           if (onError != null) {
             onError(e)
           }
@@ -58,7 +54,7 @@ const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
               digest: tx.digest,
             })
             .then(() => {
-              reportTxSuccess(
+              notification.txSuccess(
                 transactionUrl(explorerUrl, tx.digest),
                 notificationId
               )
