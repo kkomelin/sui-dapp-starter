@@ -97,6 +97,7 @@ _Currently we have blockchain tests only._
 
 ## Links
 
+- [Sui: Developers: Docs, tools and courses](https://sui.io/developers)
 - [Sui: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
 - [Move Book](https://move-book.com/)
 - [Suibase Docs](https://suibase.io/intro.html)
