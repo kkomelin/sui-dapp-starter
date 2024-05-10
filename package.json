@@ -1,7 +1,7 @@
 {
   "name": "sui-dapp-starter",
   "version": "0.0.0",
-  "description": "Better full-stack Sui dapp starter",
+  "description": "Full-Stack Sui Starter on Steroids",
   "repository": {
     "type": "git",
     "url": "https://github.com/kkomelin/sui-dapp-starter.git"
