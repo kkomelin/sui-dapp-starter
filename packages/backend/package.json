@@ -15,9 +15,10 @@
     "localnet:address": "lsui client active-address",
     "localnet:explorer:start": "sui-explorer-local start",
     "localnet:explorer:stop": "sui-explorer-local stop",
+    "localnet:explorer:restart": "sui-explorer-local restart",
     "localnet:explorer:rebuild": "sui-explorer-local rebuild"
   },
   "devDependencies": {
-    "sui-explorer-local": "^0.1.6"
+    "sui-explorer-local": "^0.2.0"
   }
 }
