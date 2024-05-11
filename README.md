@@ -30,37 +30,44 @@ Before you begin, install the following:
 
 ## Installation
 
-[![Use this template on Github](https://img.shields.io/badge/use%20this-template-blue?logo=github)](https://github.com/kkomelin/sui-dapp-starter/generate)
+### 1. Get the starter
+
+[Use this template](https://github.com/kkomelin/sui-dapp-starter/generate) on Github and then Git-clone the newly created project to your local machine.
 
 or
 
 ```bash
 pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
 cd my-first-sui-dapp
+```
+
+### 2. Install dependencies
+
+```bash
 pnpm install
 ```
 
 ## Usage
 
-### Run the local Sui network:
+### 1. Run the local Sui network:
 ```bash
 pnpm localnet:start
 ```
 
 Local Sui Explorer will be available on [http://localhost:9001/](http://localhost:9001/)
 
-### Deploy the demo contract to the local network:
+### 2. Deploy the demo contract to the local network:
 
 ```bash
 pnpm localnet:deploy
 ```
 
-### Fund your localnet account via Sui Wallet or the faucet:
+### 3. Fund your localnet account via Sui Wallet or the faucet:
 ```bash
 pnpm localnet:faucet 0xYOURADDRESS
 ```
 
-### Run the app:
+### 4. Run the app:
 ```bash
 pnpm start
 ```
