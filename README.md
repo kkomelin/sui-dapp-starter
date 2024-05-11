@@ -84,19 +84,7 @@ _Currently we have blockchain tests only._
 
 ## Roadmap
 
-- [x] Release ready-to-use fully-functional beta version to start collecting community feedback
-- [x] frontend: Better UI notifications
-- [ ] frontend: Develop better Sui Kit, Tailwind and Radix theme integration
-- [ ] frontend: Develop Sui-specific UI components
-- [ ] frontend: Add Arweave deployment scripts
-- [ ] backend: Add a Randomness usage example
-- [ ] docs: Develop a landing page
-- [ ] docs: Write/record how-to guides
-- [x] infra: Integrate with Local Sui Explorer
-- [ ] infra: Develop a cli tool for easier project creation
-- [ ] infra: Enable Husky and lint-staged for pre-commit
-- [x] infra: frontend: Enable Github Actions for linting
-- [ ] [YOUR FEATURE](https://github.com/kkomelin/sui-dapp-starter/issues/new)
+See the list of ideas for future improvement on our [Wiki](https://github.com/kkomelin/sui-dapp-starter/wiki).
 
 ## Community
 
