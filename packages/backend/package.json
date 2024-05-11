@@ -5,7 +5,7 @@
   "scripts": {
     "build": "lsui move build -d -p ./move/greeting",
     "test": "lsui move test -d -p ./move/greeting",
-    "localnet:deploy": "cd move/greeting && localnet publish && cd ../.. && pnpm copy-package-id",
+    "localnet:deploy": "localnet publish --path ${PWD}/move/greeting && pnpm copy-package-id",
     "copy-package-id": "node ./scripts/copy-package-id.mjs",
     "localnet:start": "localnet start",
     "localnet:stop": "localnet stop",
