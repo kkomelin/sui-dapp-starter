@@ -32,7 +32,7 @@ Before you begin, install the following:
 
 ### 1. Get the starter
 
-[Use this template](https://github.com/kkomelin/sui-dapp-starter/generate) on Github and then Git-clone the newly created project to your local machine.
+[Use this template](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp) on Github and then Git-clone the newly created project to your local machine.
 
 or
 
