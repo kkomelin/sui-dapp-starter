@@ -10,9 +10,12 @@ importers:
 
   packages/backend:
     devDependencies:
+      env-file-rw:
+        specifier: ^1.0.0
+        version: 1.0.0
       sui-explorer-local:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.1
+        version: 0.3.1
 
   packages/frontend:
     dependencies:
@@ -1571,8 +1574,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.4.762:
-    resolution: {integrity: sha512-rrFvGweLxPwwSwJOjIopy3Vr+J3cIPtZzuc74bmlvmBIgQO3VYJDvVrlj94iKZ3ukXUH64Ex31hSfRTLqvjYJQ==}
+  electron-to-chromium@1.4.763:
+    resolution: {integrity: sha512-k4J8NrtJ9QrvHLRo8Q18OncqBCB7tIUyqxRcJnlonQ0ioHKYB988GcDFF3ZePmnb8eHEopDs/wPHR/iGAFgoUQ==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1583,6 +1586,9 @@ packages:
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
+
+  env-file-rw@1.0.0:
+    resolution: {integrity: sha512-GK7IURurb/9Gxx3Q6i5bxVJ05nPJ4H2tRtCUZnzLLH+xR5GgAzIZwjWJb32kcGdli2jBnn4B3p1ArAFYN0WcSg==}
 
   error-stack-parser@2.1.4:
     resolution: {integrity: sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==}
@@ -2367,8 +2373,8 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
 
-  sui-explorer-local@0.2.0:
-    resolution: {integrity: sha512-WLSDJsqsTIp1eKqTsUOBD4lzY/ryLdU+KGvCiSbwQY0SKDSckDGnZlWYg1+9R2RXzmBulvJleIb9aVIItSstFw==}
+  sui-explorer-local@0.3.1:
+    resolution: {integrity: sha512-2po9pWsqUgaObU/+5th1iBoaTI64M6RM3EG7T2yQv9Gu0iwR1YPcA2w2u8yP5jFL1rHjSPm+/kdJelac1LPl+g==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -4008,7 +4014,7 @@ snapshots:
   browserslist@4.23.0:
     dependencies:
       caniuse-lite: 1.0.30001617
-      electron-to-chromium: 1.4.762
+      electron-to-chromium: 1.4.763
       node-releases: 2.0.14
       update-browserslist-db: 1.0.15(browserslist@4.23.0)
 
@@ -4133,13 +4139,15 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.4.762: {}
+  electron-to-chromium@1.4.763: {}
 
   emoji-regex@8.0.0: {}
 
   emoji-regex@9.2.2: {}
 
   entities@4.5.0: {}
+
+  env-file-rw@1.0.0: {}
 
   error-stack-parser@2.1.4:
     dependencies:
@@ -4899,7 +4907,7 @@ snapshots:
       pirates: 4.0.6
       ts-interface-checker: 0.1.13
 
-  sui-explorer-local@0.2.0:
+  sui-explorer-local@0.3.1:
     dependencies:
       chalk: 5.3.0
       command-exists: 1.2.9

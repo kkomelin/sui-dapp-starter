@@ -6,7 +6,7 @@
     "build": "lsui move build -d -p ./move/greeting",
     "test": "lsui move test -d -p ./move/greeting",
     "localnet:deploy": "localnet publish --path ${PWD}/move/greeting && pnpm copy-package-id",
-    "copy-package-id": "node ./scripts/copy-package-id.mjs",
+    "copy-package-id": "node ./scripts/copy-package-id",
     "localnet:start": "localnet start",
     "localnet:stop": "localnet stop",
     "localnet:status": "localnet status",
@@ -19,6 +19,7 @@
     "localnet:explorer:rebuild": "sui-explorer-local rebuild"
   },
   "devDependencies": {
-    "sui-explorer-local": "^0.2.0"
+    "env-file-rw": "^1.0.0",
+    "sui-explorer-local": "^0.3.1"
   }
 }
