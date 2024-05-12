@@ -6,7 +6,7 @@ import { useCurrentAccount } from '@mysten/dapp-kit'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 import { Button, TextField } from '@radix-ui/themes'
-import { ChangeEvent, MouseEvent, useState } from 'react'
+import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
 import useOwnGreeting from '../hooks/useOwnGreeting'
 
 const GreetingForm = () => {
@@ -66,14 +66,15 @@ const GreetingForm = () => {
     greetMe(txb, args)
   }
 
-  if (currentAccount == null) return <div>Please connect your Sui wallet</div>
+  if (currentAccount == null)
+    return <TextMessage>Please connect your Sui wallet</TextMessage>
 
-  if (isPending) return <div>Loading...</div>
+  if (isPending) return <TextMessage>Loading...</TextMessage>
 
   // @todo: Handle the following errors with toasts.
-  if (error) return <div>Error: {error.message}</div>
+  if (error) return <TextMessage>Error: {error.message}</TextMessage>
 
-  if (!data.data) return <div>Not found</div>
+  if (!data.data) return <TextMessage>Not found</TextMessage>
 
   return (
     <div className="my-2 flex flex-col items-center justify-center">
@@ -129,3 +130,7 @@ const GreetingForm = () => {
 }
 
 export default GreetingForm
+
+const TextMessage: FC<PropsWithChildren> = ({ children }) => (
+  <div className="text-center">{children}</div>
+)

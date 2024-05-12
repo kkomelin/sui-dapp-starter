@@ -6,7 +6,9 @@ import Layout from './Layout'
 const App: FC = () => {
   return (
     <Layout>
-      <ConnectButton />
+      <div className="flex flex-col items-center justify-center">
+        <ConnectButton />
+      </div>
 
       <div className="mb-36 mt-8">
         <GreetingForm />
