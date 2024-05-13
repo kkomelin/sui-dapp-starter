@@ -1,6 +1,5 @@
 # Sui dApp Starter - Full-Stack Sui Starter on Steroids
-
-[![](https://dcbadge.vercel.app/api/server/HuDPpXz4Hx)](https://discord.com/invite/HuDPpXz4Hx)
+[![Test Status](https://github.com/kkomelin/sui-dapp-starter/actions/workflows/build_and_lint.yml/badge.svg)](https://github.com/kkomelin/sui-dapp-starter/actions/workflows/build_and_lint.yml)
 
 ## Motivation
 
@@ -90,6 +89,7 @@ See the list of ideas for future improvement on our [Wiki](https://github.com/kk
 ## Community
 
 [Join our Discord](https://discord.com/invite/HuDPpXz4Hx)
+[![](https://dcbadge.vercel.app/api/server/HuDPpXz4Hx)](https://discord.com/invite/HuDPpXz4Hx)
 
 ## Links
 
