@@ -25,8 +25,8 @@ Before you begin, install the following:
 - [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only; not Sui binaries themselves)
 - [Suibase](https://suibase.io/how-to/install.html)
 - [Docker](https://docs.docker.com/engine/install/)
-- [Node (>= v20)](https://nodejs.org/en/download/)
-- [pnpm](https://pnpm.io/installation)
+- [Node (>= 20)](https://nodejs.org/en/download/)
+- [pnpm (>= 9)](https://pnpm.io/installation)
 
 ## Installation
 
