@@ -11,16 +11,16 @@ interface IParams {
   onError?: (e: Error) => void
 }
 
-export const useGreetMe = ({ onSuccess, onError }: IParams) => {
+export const useReset = ({ onSuccess, onError }: IParams) => {
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
 
   const { transact } = useTransact({
-    functionName: fullFunctionName(packageId, 'set_name'),
+    functionName: fullFunctionName(packageId, 'reset_greeting'),
     onSuccess,
     onError,
   })
 
-  return { greetMe: transact }
+  return { reset: transact }
 }
 
-export default useGreetMe
+export default useReset

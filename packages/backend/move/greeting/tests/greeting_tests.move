@@ -5,21 +5,42 @@
 module greeting::greeting_tests {
   use greeting::greeting;
   use sui::test_utils;
+  use sui::random::{Self, Random};
+  use sui::test_scenario as ts;
 
   #[test]
-  /// Tests successful run of the set_name() function.
-  fun test_set_name() {
-    let ctx = &mut tx_context::dummy();
+  /// Tests successful run of the set_greeting() and reset_greeting() functions.
+  fun test_greeting() {
+    let user1 = @0x0;
+    let mut ts = ts::begin(user1);
+     
+    // Setup randomness.
+    random::create_for_testing(ts.ctx());
+    ts.next_tx(user1);
+    let mut random_state: Random = ts.take_shared();
+    random_state.update_randomness_state_for_testing(
+        0,
+        x"1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F",
+        ts.ctx(),
+    );
 
-    let mut g = greeting::new_for_testing(b"Bob", ctx);
+    ts.next_tx(user1);
+    let mut g = greeting::new_for_testing(b"Bob", ts.ctx());
     assert!(greeting::name(&g) == b"Bob", 0);
+    assert!(greeting::emoji(&g) == 0, 1);
 
-    greeting::set_name(&mut g, b"Alice");
-    assert!(greeting::name(&g) == b"Alice", 1);
+    ts.next_tx(user1);
+    greeting::set_greeting(&mut g, b"Alice", &random_state, ts.ctx());
+    assert!(greeting::name(&g) == b"Alice", 2);
+    assert!(greeting::emoji(&g) <= greeting::maxEmojis(), 3);
 
-    greeting::set_name(&mut g, b"");
-    assert!(greeting::name(&g) == b"", 2);
+    ts.next_tx(user1);
+    greeting::reset_greeting(&mut g);
+    assert!(greeting::name(&g) == b"", 4);
+    assert!(greeting::emoji(&g) == 0, 5);
 
     test_utils::destroy(g);
+    ts::return_shared(random_state);
+    ts.end();
   }
 }

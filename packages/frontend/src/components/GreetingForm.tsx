@@ -1,13 +1,15 @@
 import { fromBytesToString, getContentField } from '@/helpers/greeting'
 import { notification } from '@/helpers/notification'
 import useCreateGreeting from '@/hooks/useCreateGreeting'
-import useGreetMe from '@/hooks/useGreetMe'
+import useGreet from '@/hooks/useGreet'
+import useReset from '@/hooks/useReset'
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
 import useOwnGreeting from '../hooks/useOwnGreeting'
+import AnimalEmoji from './Emoji'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')
@@ -18,7 +20,12 @@ const GreetingForm = () => {
       refetch()
     },
   })
-  const { greetMe } = useGreetMe({
+  const { greet } = useGreet({
+    onSuccess: () => {
+      refetch()
+    },
+  })
+  const { reset } = useReset({
     onSuccess: () => {
       refetch()
     },
@@ -50,8 +57,12 @@ const GreetingForm = () => {
 
     // @todo: Find a way to refactor this code.
     const txb = new TransactionBlock()
-    const args = [txb.object(objectId), txb.pure.string(name)]
-    greetMe(txb, args)
+    const args = [
+      txb.object(objectId),
+      txb.pure.string(name),
+      txb.object('0x8'),
+    ]
+    greet(txb, args)
   }
 
   const handleReset = (objectId: string | undefined) => {
@@ -62,8 +73,8 @@ const GreetingForm = () => {
 
     // @todo: Find a way to refactor this code.
     const txb = new TransactionBlock()
-    const args = [txb.object(objectId), txb.pure.string('')]
-    greetMe(txb, args)
+    const args = [txb.object(objectId)]
+    reset(txb, args)
   }
 
   if (currentAccount == null)
@@ -88,9 +99,11 @@ const GreetingForm = () => {
         <div>
           {getContentField(data.data[0], 'name')?.length !== 0 ? (
             <div className="flex w-full max-w-xs flex-col gap-6 px-2 sm:max-w-lg">
-              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
-                Hello,{' '}
-                {fromBytesToString(getContentField(data.data[0], 'name'))}
+              <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-center text-4xl font-bold !leading-tight text-transparent sm:text-5xl">
+                Greetings from{' '}
+                <AnimalEmoji index={getContentField(data.data[0], 'emoji')} />,
+                <br />
+                {fromBytesToString(getContentField(data.data[0], 'name'))}!
               </h1>
               <Button
                 variant="solid"
