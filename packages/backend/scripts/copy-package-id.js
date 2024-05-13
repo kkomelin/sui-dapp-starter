@@ -10,9 +10,12 @@ const { homedir } = require("node:os");
 const path = require("node:path");
 const EnvFileWriter = require("env-file-rw").default;
 
+const NETWORK_TYPE = "localnet";
+const DEPLOYED_MODULE_NAME = "greeting";
+
 const SOURCE_FILE = path.join(
   homedir(),
-  "/suibase/workdirs/localnet/published-data/greeting/most-recent/package-id.json"
+  `/suibase/workdirs/${NETWORK_TYPE}/published-data/${DEPLOYED_MODULE_NAME}/most-recent/package-id.json`
 );
 
 const TARGET_FILE = path.join(process.cwd(), "../frontend/.env.local");
