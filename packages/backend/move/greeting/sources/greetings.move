@@ -16,6 +16,8 @@ module greeting::greeting {
 
   // === Errors ===
 
+  const EEmptyName:u64 = 0;
+
   // === Structs ===
 
   public struct Greeting has key {
@@ -90,6 +92,8 @@ module greeting::greeting {
   /// functions are allowed, the calling function might abort the transaction depending on the winner.)
   /// Gas based attacks are not possible since the gas cost of this function is independent of the winner.
   entry fun set_greeting(g: &mut Greeting, name: vector<u8>, r: &Random, ctx: &mut TxContext) {
+    assert!(name != b"", EEmptyName);
+
     let mut generator = r.new_generator(ctx);
     let emoji = generator.generate_u8_in_range(0, MaxEmojis);
 
