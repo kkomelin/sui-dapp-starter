@@ -18,7 +18,7 @@ The official [e2e Sui starter template](https://github.com/MystenLabs/sui/tree/m
 - **Tailwind CSS**: Utility-first CSS for more efficient styling
 - **Vite + SWC**: Faster app bundling and optimizing
 - **Radix UI**: Accessible React components to prototype quicker 
-- **@mysten/dapp-kit** and **@mysten/sui.js**: All you need to build Sui frontends
+- **Sui dApp Kit**: All you need to work with Sui network on frontend
 - **On-Chain Randomness**: On-Chain Randomness example is included (currently on localnet/devnet only) 
 
 ## Prerequisites
