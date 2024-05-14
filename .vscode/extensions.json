@@ -4,6 +4,7 @@
     "mysten.move",
     "damirka.move-syntax",
     "tamasfe.even-better-toml",
+    "suibase.suibase",
 
     // Frontend
     "esbenp.prettier-vscode"
