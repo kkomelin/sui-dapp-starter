@@ -53,7 +53,10 @@ const reportTxError = (
 const reportTxSuccess = (transactionUrl: string, id?: string) => {
   return reportSuccess(
     <>
-      Transaction submitted <a href={transactionUrl}>(view)</a>
+      Transaction submitted{' '}
+      <a target="_blank" rel="noopener noreferrer" href={transactionUrl}>
+        (view)
+      </a>
     </>,
     id
   )
