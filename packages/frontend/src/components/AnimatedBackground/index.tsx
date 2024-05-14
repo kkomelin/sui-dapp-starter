@@ -9,7 +9,7 @@ const AnimatedBackground = () => {
     <svg
       // width="100%"
       // height="100%"
-      id="svg"
+      // id="svg"
       viewBox="0 0 1440 590"
       xmlns="http://www.w3.org/2000/svg"
       className="absolute bottom-0 left-0 -z-50 object-cover opacity-70 transition delay-150 duration-300 ease-in-out"

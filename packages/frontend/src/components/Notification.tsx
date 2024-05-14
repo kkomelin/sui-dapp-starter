@@ -1,6 +1,6 @@
-import { Cross1Icon } from '@radix-ui/react-icons'
 import { Button } from '@radix-ui/themes'
 import c from 'clsx'
+import { XIcon } from 'lucide-react'
 import { FC, PropsWithChildren } from 'react'
 import toast, { ToastType } from 'react-hot-toast'
 
@@ -21,10 +21,10 @@ const Notification: FC<PropsWithChildren<INotification>> = ({
       {isCloseButtonVisible && (
         <Button
           variant="ghost"
-          className="cursor-pointer text-sds-dark dark:text-sds-light"
+          className="cursor-pointer pr-0 text-sds-dark dark:text-sds-light"
           onClick={() => toast.dismiss(id)}
         >
-          <Cross1Icon />
+          <XIcon />
         </Button>
       )}
     </div>

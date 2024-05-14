@@ -1,6 +1,6 @@
 import { detectBrowserTheme } from '@/helpers/theme'
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 import * as Toggle from '@radix-ui/react-toggle'
+import { MoonIcon, SunIcon } from 'lucide-react'
 import { useEffect } from 'react'
 import { useLocalStorage } from 'react-use'
 
@@ -20,11 +20,15 @@ const ThemeSwitcher = () => {
 
   return (
     <Toggle.Root
-      className="rounded-full border border-sds-dark p-2 dark:border-sds-light"
+      className="rounded-full p-2 shadow"
       aria-label="Toggle theme"
       onPressedChange={toggleTheme}
     >
-      {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      {theme === 'dark' ? (
+        <SunIcon className="h-5 w-5" />
+      ) : (
+        <MoonIcon className="h-5 w-5" />
+      )}
     </Toggle.Root>
   )
 }
