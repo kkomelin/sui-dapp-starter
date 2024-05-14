@@ -19,7 +19,7 @@ The official [e2e Sui starter template](https://github.com/MystenLabs/sui/tree/m
 - **Vite + SWC**: Faster app bundling and optimizing
 - **Radix UI**: Accessible React components to prototype quicker 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
-- **On-Chain Randomness**: On-Chain Randomness example is included (currently on localnet/devnet only) 
+- **On-Chain Randomness**: On-Chain Randomness example (currently on localnet/devnet only) 
 
 ## Prerequisites
 
