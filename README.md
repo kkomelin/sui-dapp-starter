@@ -78,6 +78,10 @@ pnpm start
 
 More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
 
+## Frontend deployment
+
+Follow [this guide](https://github.com/kkomelin/sui-dapp-starter/wiki/Frontend:-Deployment-to-Firebase) to deploy the frontend app to Firebase.
+
 ## Testing
 
 ```bash
