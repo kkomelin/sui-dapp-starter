@@ -19,20 +19,14 @@ const main = async () => {
   const sourceFile = sourceFilePath(network, DEPLOYED_MODULE_NAME);
   const targetFile = targetFilePath();
 
-  // Read SuiBase packageId file.
-  const data = await promises.readFile(sourceFile, "utf8");
-  const packageId = JSON.parse(data)[0];
+  // Read package ID from SuiBase packageId file.
+  const packageId = await readPackageId(sourceFile);
 
   // Create .env.local file if it doesn't exist.
-  try {
-    await promises.writeFile(targetFile, "", { flag: "wx" });
-  } catch {}
+  await createFileIfNecessary(targetFile);
 
   // Add VITE_CONTRACT_PACKAGE_ID variable to .env.local or update its value if it exists.
-  const envFileWriter = new EnvFileWriter(targetFile, false);
-  await envFileWriter.parse();
-  envFileWriter.set("VITE_CONTRACT_PACKAGE_ID", packageId);
-  await envFileWriter.save();
+  await setEnvVar(targetFile, "VITE_CONTRACT_PACKAGE_ID", packageId);
 };
 
 const sourceFilePath = (network, deployedModuleName) => {
@@ -58,6 +52,45 @@ const getNetworkFromArgs = () => {
   }
 };
 
+/**
+ * Read package ID from SuiBase packageId file.
+ *
+ * @param {string} sourceFile
+ * @returns
+ */
+const readPackageId = async (sourceFile) => {
+  const data = await promises.readFile(sourceFile, "utf8");
+  return JSON.parse(data)[0];
+};
+
+/**
+ * Create a file if it doesn't exist.
+ *
+ * @param {string} filePath
+ * @returns
+ */
+const createFileIfNecessary = async (filePath) => {
+  try {
+    await promises.writeFile(filePath, "", { flag: "wx" });
+  } catch {}
+};
+
+/**
+ * Set the environment variable in the .env.local file.
+ *
+ * @param {string} envFilePath
+ * @param {string} name
+ * @param {string} value
+ * @returns
+ */
+const setEnvVar = async (envFilePath, name, value) => {
+  const envFileWriter = new EnvFileWriter(envFilePath, false);
+  await envFileWriter.parse();
+  envFileWriter.set(name, value);
+  await envFileWriter.save();
+};
+
+// Main entry point.
 main().catch((e) => {
   console.error(e);
 });
