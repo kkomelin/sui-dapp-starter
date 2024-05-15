@@ -20,6 +20,7 @@ The official [e2e Sui starter template](https://github.com/MystenLabs/sui/tree/m
 - **Radix UI**: Accessible React components to prototype quicker 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
 - **On-Chain Randomness**: On-Chain Randomness example (currently on localnet/devnet only) 
+- **Frontend Deployment Preconfigured**: Firebase deployment commands and configuration [provided](https://github.com/kkomelin/sui-dapp-starter/wiki/Frontend:-Deployment-to-Firebase)
 
 ## Prerequisites
 
