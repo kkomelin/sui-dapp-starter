@@ -1,7 +1,4 @@
-import {
-  EXPLORER_URL_VARIABLE_NAME,
-  useNetworkVariable,
-} from '@/config/networks'
+import { EXPLORER_URL_VARIABLE_NAME } from '@/config/networks'
 import { transactionUrl } from '@/helpers/networks'
 import { notification } from '@/helpers/notification'
 import {
@@ -10,6 +7,7 @@ import {
 } from '@mysten/dapp-kit'
 import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
+import useNetworkConfig from './useNetworkConfig'
 
 interface IProps {
   onSuccess?: (response: SuiTransactionBlockResponse) => void
@@ -19,6 +17,7 @@ interface IProps {
 const useTransact = ({ onSuccess, onError }: IProps) => {
   const client = useSuiClient()
   const { mutate: signAndExecute } = useSignAndExecuteTransactionBlock()
+  const { useNetworkVariable } = useNetworkConfig()
   const explorerUrl = useNetworkVariable(EXPLORER_URL_VARIABLE_NAME)
 
   const transact = (txb: TransactionBlock) => {

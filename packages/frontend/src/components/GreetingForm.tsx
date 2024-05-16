@@ -1,7 +1,4 @@
-import {
-  CONTRACT_PACKAGE_VARIABLE_NAME,
-  useNetworkVariable,
-} from '@/config/networks'
+import { CONTRACT_PACKAGE_VARIABLE_NAME } from '@/config/networks'
 import {
   fromBytesToString,
   getResponseContentField,
@@ -13,6 +10,7 @@ import {
   prepareSetGreetingTransaction,
 } from '@/helpers/greeting/transactions'
 import { notification } from '@/helpers/notification'
+import useNetworkConfig from '@/hooks/useNetworkConfig'
 import useTransact from '@/hooks/useTransact'
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Button, TextField } from '@radix-ui/themes'
@@ -24,6 +22,7 @@ const GreetingForm = () => {
   const [name, setName] = useState<string>('')
   const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
+  const { useNetworkVariable } = useNetworkConfig()
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
   const { transact: create } = useTransact({
     onSuccess: () => {
