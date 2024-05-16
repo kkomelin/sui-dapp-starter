@@ -7,11 +7,13 @@ import ThemeSwitcher from './ThemeSwitcher'
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 py-8">
-      <Header />
-      <main className="py-8">{children}</main>
       <div className="absolute right-0 top-0 p-3">
         <ThemeSwitcher />
       </div>
+
+      <Header />
+      <main className="py-8">{children}</main>
+
       <AnimatedBackground />
       <Toaster
         toastOptions={{

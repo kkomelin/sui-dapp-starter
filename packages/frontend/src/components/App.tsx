@@ -2,11 +2,13 @@ import { ConnectButton } from '@mysten/dapp-kit'
 import { FC } from 'react'
 import GreetingForm from './GreetingForm'
 import Layout from './Layout'
+import NetworkType from './NetworkType'
 
 const App: FC = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-3">
+        <NetworkType />
         <ConnectButton />
       </div>
 

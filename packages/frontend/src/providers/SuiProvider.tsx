@@ -14,7 +14,7 @@ const SuiProvider: FC<PropsWithChildren> = ({ children }) => {
         networks={networkConfig}
         defaultNetwork={ENetwork.LOCALNET}
       >
-        <WalletProvider autoConnect>{children}</WalletProvider>
+        <WalletProvider autoConnect={false}>{children}</WalletProvider>
       </SuiClientProvider>
     </QueryClientProvider>
   )
