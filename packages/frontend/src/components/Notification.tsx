@@ -16,12 +16,22 @@ const Notification: FC<PropsWithChildren<INotification>> = ({
   const isCloseButtonVisible = id !== null && type !== 'loading'
 
   return (
-    <div className="flex flex-row items-center gap-2">
-      <div className={c({ 'mr-2': isCloseButtonVisible })}>{children}</div>
+    <div className="flex w-full flex-row items-center justify-between gap-2">
+      <div
+        className={c('text-pretty', {
+          'mr-2': isCloseButtonVisible,
+        })}
+        style={{
+          wordBreak: 'break-word',
+          overflowWrap: 'break-word',
+        }}
+      >
+        {children}
+      </div>
       {isCloseButtonVisible && (
         <Button
           variant="ghost"
-          className="cursor-pointer pr-0 text-sds-dark dark:text-sds-light"
+          className="-mr-3 cursor-pointer px-1 text-sds-dark dark:text-sds-light"
           onClick={() => toast.dismiss(id)}
         >
           <XIcon />

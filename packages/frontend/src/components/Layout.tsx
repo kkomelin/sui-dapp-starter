@@ -18,7 +18,10 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       <Toaster
         toastOptions={{
           className:
-            'dark:bg-sds-dark bg-sds-light text-sds-dark dark:text-sds-light',
+            'dark:bg-sds-dark bg-sds-light text-sds-dark dark:text-sds-light w-full md:!max-w-xl ',
+          style: {
+            maxWidth: 'none',
+          },
         }}
       />
     </div>

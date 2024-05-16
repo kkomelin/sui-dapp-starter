@@ -19,6 +19,10 @@ const reportError = (
   const message =
     userFriendlyMessage || error?.message || 'An error has occurred'
 
+  if (id == null) {
+    id = Date.now().toString()
+  }
+
   const content = (
     <Notification type="error" id={id}>
       {message}
@@ -29,6 +33,10 @@ const reportError = (
 }
 
 const reportSuccess = (message: Renderable, id?: string) => {
+  if (id == null) {
+    id = Date.now().toString()
+  }
+
   const content = (
     <Notification type="success" id={id}>
       {message}
