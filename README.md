@@ -90,7 +90,7 @@ pnpm test
 
 _Currently we have blockchain tests only._
 
-## Troubleshooting
+## Troubleshoot
 
 If you have any issue with the starter, first try to find it in the [Troubleshooting section](https://github.com/kkomelin/sui-dapp-starter/wiki/Troubleshooting) on Wiki,
 then check our [issue queue](https://github.com/kkomelin/sui-dapp-starter/issues) for similar issues.
