@@ -1,5 +1,6 @@
 import { CONTRACT_MODULE_NAME } from '@/config/networks'
 import { SuiObjectResponse } from '@mysten/sui.js/client'
+import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 
 export const fullFunctionName = (
   packageId: string,
@@ -19,15 +20,15 @@ export const fromBytesToString = (bytes: number[]): string => {
   return new TextDecoder().decode(new Uint8Array(bytes))
 }
 
-export const getContentField = (
+export const getResponseContentField = (
   response: SuiObjectResponse | null | undefined,
   field: string
 ) => {
-  if (response == null) {
-    return null
-  }
-
-  if (response.data == null || response.data.content == null) {
+  if (
+    response == null ||
+    response.data == null ||
+    response.data?.content == null
+  ) {
     return null
   }
 
@@ -44,6 +45,26 @@ export const getContentField = (
   }
 
   return content.fields[field]
+}
+
+export const getResponseObjectId = (
+  response: SuiObjectResponse | null | undefined
+) => {
+  if (
+    response == null ||
+    response.data == null ||
+    response.data?.objectId == null
+  ) {
+    return null
+  }
+
+  const objectId = response.data.objectId
+
+  if (!isValidSuiObjectId(objectId)) {
+    return null
+  }
+
+  return objectId
 }
 
 const fullModuleName = (packageId: string): `${string}::${string}` => {

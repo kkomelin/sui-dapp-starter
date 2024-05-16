@@ -12,23 +12,16 @@ import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
 
 interface IProps {
-  functionName: `${string}::${string}::${string}`
   onSuccess?: (response: SuiTransactionBlockResponse) => void
   onError?: (e: Error) => void
 }
 
-const useTransact = ({ functionName, onSuccess, onError }: IProps) => {
+const useTransact = ({ onSuccess, onError }: IProps) => {
   const client = useSuiClient()
   const { mutate: signAndExecute } = useSignAndExecuteTransactionBlock()
   const explorerUrl = useNetworkVariable(EXPLORER_URL_VARIABLE_NAME)
 
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const transact = (txb: TransactionBlock, args: any[] = []) => {
-    txb.moveCall({
-      arguments: args,
-      target: functionName,
-    })
-
+  const transact = (txb: TransactionBlock) => {
     const notificationId = notification.txLoading()
 
     signAndExecute(

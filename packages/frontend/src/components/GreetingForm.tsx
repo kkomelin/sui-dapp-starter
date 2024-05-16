@@ -1,11 +1,20 @@
-import { fromBytesToString, getContentField } from '@/helpers/greeting'
+import {
+  CONTRACT_PACKAGE_VARIABLE_NAME,
+  useNetworkVariable,
+} from '@/config/networks'
+import {
+  fromBytesToString,
+  getResponseContentField,
+  getResponseObjectId,
+} from '@/helpers/greeting/misc'
+import {
+  prepareCreateGreetingTransaction,
+  prepareResetGreetingTransaction,
+  prepareSetGreetingTransaction,
+} from '@/helpers/greeting/transactions'
 import { notification } from '@/helpers/notification'
-import useCreateGreeting from '@/hooks/useCreateGreeting'
-import useGreet from '@/hooks/useGreet'
-import useReset from '@/hooks/useReset'
+import useTransact from '@/hooks/useTransact'
 import { useCurrentAccount } from '@mysten/dapp-kit'
-import { TransactionBlock } from '@mysten/sui.js/transactions'
-import { isValidSuiObjectId } from '@mysten/sui.js/utils'
 import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
 import useOwnGreeting from '../hooks/useOwnGreeting'
@@ -15,17 +24,18 @@ const GreetingForm = () => {
   const [name, setName] = useState<string>('')
   const currentAccount = useCurrentAccount()
   const { data, isPending, error, refetch } = useOwnGreeting()
-  const { create } = useCreateGreeting({
+  const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
+  const { transact: create } = useTransact({
     onSuccess: () => {
       refetch()
     },
   })
-  const { greet } = useGreet({
+  const { transact: greet } = useTransact({
     onSuccess: () => {
       refetch()
     },
   })
-  const { reset } = useReset({
+  const { transact: reset } = useTransact({
     onSuccess: () => {
       refetch()
     },
@@ -34,9 +44,7 @@ const GreetingForm = () => {
   const handleCreateGreetingClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
 
-    // @todo: Find a way to refactor this code.
-    const txb = new TransactionBlock()
-    create(txb)
+    create(prepareCreateGreetingTransaction(packageId))
   }
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -44,8 +52,8 @@ const GreetingForm = () => {
     setName(e.target.value)
   }
 
-  const handleGreetMe = (objectId: string | undefined) => {
-    if (objectId == null || !isValidSuiObjectId(objectId)) {
+  const handleGreetMe = (objectId: string | null | undefined) => {
+    if (objectId == null) {
       notification.error(null, 'Object ID is not valid')
       return
     }
@@ -55,26 +63,16 @@ const GreetingForm = () => {
       return
     }
 
-    // @todo: Find a way to refactor this code.
-    const txb = new TransactionBlock()
-    const args = [
-      txb.object(objectId),
-      txb.pure.string(name),
-      txb.object('0x8'),
-    ]
-    greet(txb, args)
+    greet(prepareSetGreetingTransaction(packageId, objectId, name))
   }
 
-  const handleReset = (objectId: string | undefined) => {
-    if (objectId == null || !isValidSuiObjectId(objectId)) {
+  const handleReset = (objectId: string | null | undefined) => {
+    if (objectId == null) {
       notification.error(null, 'Object ID is not valid')
       return
     }
 
-    // @todo: Find a way to refactor this code.
-    const txb = new TransactionBlock()
-    const args = [txb.object(objectId)]
-    reset(txb, args)
+    reset(prepareResetGreetingTransaction(packageId, objectId))
   }
 
   if (currentAccount == null)
@@ -97,20 +95,26 @@ const GreetingForm = () => {
         </div>
       ) : (
         <div>
-          {getContentField(data.data[0], 'name')?.length !== 0 ? (
+          {getResponseContentField(data.data[0], 'name')?.length !== 0 ? (
             <div className="flex w-full max-w-xs flex-col gap-6 px-2 sm:max-w-lg">
               <h1 className="bg-gradient-to-r from-sds-blue to-sds-pink bg-clip-text text-center text-4xl font-bold !leading-tight text-transparent sm:text-5xl">
                 Greetings from{' '}
-                <AnimalEmoji index={getContentField(data.data[0], 'emoji')} />,
+                <AnimalEmoji
+                  index={getResponseContentField(data.data[0], 'emoji')}
+                />
+                ,
                 <br />
-                {fromBytesToString(getContentField(data.data[0], 'name'))}!
+                {fromBytesToString(
+                  getResponseContentField(data.data[0], 'name')
+                )}
+                !
               </h1>
               <Button
                 variant="solid"
                 size="4"
                 onClick={(e: MouseEvent<HTMLButtonElement>) => {
                   e.preventDefault()
-                  handleReset(data.data[0].data?.objectId)
+                  handleReset(getResponseObjectId(data.data[0]))
                 }}
               >
                 Start over
@@ -129,7 +133,7 @@ const GreetingForm = () => {
                 size="4"
                 onClick={(e: MouseEvent<HTMLButtonElement>) => {
                   e.preventDefault()
-                  handleGreetMe(data.data[0].data?.objectId)
+                  handleGreetMe(getResponseObjectId(data.data[0]))
                 }}
               >
                 Greet me!
