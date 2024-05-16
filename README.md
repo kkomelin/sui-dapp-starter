@@ -34,9 +34,9 @@ Before you begin, install the following:
 
 ## Installation
 
-#### 1. Get the starter
+#### 1. Create a new repository from the template
 
-[Use this template](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp) to create a new Github project based on the starter.
+[Use this form ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp)
 
 #### 2. Clone the newly created project to your local machine
 
