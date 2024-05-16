@@ -38,7 +38,7 @@ Before you begin, install the following:
 
 [Use this form ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp)
 
-#### 2. Clone the newly created project to your local machine
+#### 2. Clone the newly created repository to your local machine
 
 ```bash
 git clone https://github.com/[your github nickname]/[your new project name].git
