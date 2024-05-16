@@ -42,7 +42,7 @@ Before you begin, install the following:
 #### 2. Clone the newly created repository to your local machine
 
 ```bash
-git clone https://github.com/[your github nickname]/[your new project name].git
+git clone https://github.com/[your github handle]/[your new project name].git
 cd [your new project name]
 ```
 
