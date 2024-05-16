@@ -104,8 +104,6 @@ See the list of ideas for future improvement on our [Wiki](https://github.com/kk
 
 [Join our Discord](https://discord.com/invite/HuDPpXz4Hx)  
 
-[![](https://dcbadge.vercel.app/api/server/HuDPpXz4Hx)](https://discord.com/invite/HuDPpXz4Hx)
-
 ## Links
 
 - [Sui: Developers: Docs, tools and courses](https://sui.io/developers)
