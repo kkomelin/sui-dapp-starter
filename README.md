@@ -59,7 +59,7 @@ pnpm install
 pnpm localnet:start
 ```
 
-Local Sui Explorer will be available on [http://localhost:9001/](http://localhost:9001/)
+Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 
 #### 2. Deploy the demo contract to the local network:
 
