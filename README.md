@@ -54,6 +54,7 @@ pnpm install
 ## Usage
 
 #### 1. Run the local Sui network:
+
 ```bash
 pnpm localnet:start
 ```
@@ -67,11 +68,13 @@ pnpm localnet:deploy
 ```
 
 #### 3. Fund your localnet account via Sui Wallet or the faucet:
+
 ```bash
 pnpm localnet:faucet 0xYOURADDRESS
 ```
 
 #### 4. Run the app:
+
 ```bash
 pnpm start
 ```
