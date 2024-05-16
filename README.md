@@ -42,8 +42,8 @@ Before you begin, install the following:
 #### 2. Clone the newly created repository to your local machine
 
 ```bash
-git clone https://github.com/[your github handle]/[your new project name].git
-cd [your new project name]
+git clone https://github.com/[your-github-handle]/[your-new-project-name].git
+cd [your-new-project-name]
 ```
 
 #### 3. Install dependencies
