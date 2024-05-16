@@ -36,16 +36,16 @@ Before you begin, install the following:
 
 #### 1. Get the starter
 
-[Use this template](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp) on Github and then Git-clone the newly created project to your local machine.
+[Use this template](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp) to create a new Github project based on the starter.
 
-or
+#### 2. Clone the newly created project to your local machine
 
 ```bash
-pnpm dlx degit kkomelin/sui-dapp-starter my-first-sui-dapp
-cd my-first-sui-dapp
+git clone https://github.com/[your github nickname]/[your new project name].git
+cd [your new project name]
 ```
 
-#### 2. Install dependencies
+#### 3. Install dependencies
 
 ```bash
 pnpm install
