@@ -15,7 +15,7 @@ const useBalance = () => {
     return () => {
       clearTimeout(interval)
     }
-  }, [])
+  }, [refetch])
 
   return { balance: data ? formatAmount(data.totalBalance) : undefined }
 }

@@ -1,6 +1,6 @@
+import { formatNetworkType } from '@/helpers/networks'
 import { useCurrentWallet } from '@mysten/dapp-kit'
 import { Badge } from '@radix-ui/themes'
-import c from 'clsx'
 import { useEffect, useState } from 'react'
 
 const CONNECTION_CHECK_DELAY = 2000
@@ -21,7 +21,7 @@ const NetworkType = () => {
     }
 
     setNetworkName(
-      prepareNetworkName(wallet.currentWallet?.accounts?.[0].chains?.[0])
+      formatNetworkType(wallet.currentWallet?.accounts?.[0].chains?.[0])
     )
   }
 
@@ -39,24 +39,20 @@ const NetworkType = () => {
     connectionStatusCheck(wallet)
   }, [wallet])
 
+  let color = 'amber'
+  if (networkName === DISCONNECTED_LABEL) {
+    color = 'tomato'
+  } else if (networkName === MAINNET_LABEL) {
+    color = 'green'
+  }
+
+  // @todo Suggest Sui adding a better type for the color.
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   return (
-    <Badge
-      className={c(
-        'rounded-lg px-3 py-1.5 text-amber-600 shadow',
-        { '!text-red-500': networkName === DISCONNECTED_LABEL },
-        { '!text-green-500': networkName === MAINNET_LABEL }
-      )}
-    >
+    <Badge color={color as any} className="rounded-lg px-3 py-1.5">
       {networkName}
     </Badge>
   )
 }
 
 export default NetworkType
-
-const prepareNetworkName = (machineName: string) => {
-  if (machineName.startsWith('sui:')) {
-    return machineName.substring(4)
-  }
-  return machineName
-}
