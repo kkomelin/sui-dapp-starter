@@ -28,6 +28,9 @@ importers:
       '@mysten/sui.js':
         specifier: ^0.54.1
         version: 0.54.1(svelte@4.2.15)(typescript@5.4.5)
+      '@mysten/wallet-standard':
+        specifier: ^0.11.6
+        version: 0.11.6(svelte@4.2.15)(typescript@5.4.5)
       '@radix-ui/react-toggle':
         specifier: ^1.0.3
         version: 1.0.3(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -37,6 +40,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.36.2
         version: 5.36.2(react@18.3.1)
+      bignumber.js:
+        specifier: ^9.1.2
+        version: 9.1.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1390,6 +1396,9 @@ packages:
 
   bech32@2.0.0:
     resolution: {integrity: sha512-LcknSilhIGatDAsY1ak2I8VtGaHNhgMSYVxFrGLXv+xLHytaKZKcaUJJUE7qmBr7h33o5YQwP55pMI0xmkpJwg==}
+
+  bignumber.js@9.1.2:
+    resolution: {integrity: sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -3938,6 +3947,8 @@ snapshots:
   base-x@4.0.0: {}
 
   bech32@2.0.0: {}
+
+  bignumber.js@9.1.2: {}
 
   binary-extensions@2.3.0: {}
 

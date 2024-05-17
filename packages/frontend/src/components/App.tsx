@@ -3,6 +3,7 @@ import { FC } from 'react'
 import GreetingForm from './GreetingForm'
 import Layout from './Layout'
 import NetworkType from './NetworkType'
+import Balance from './Balance'
 
 const App: FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: FC = () => {
       <div className="flex flex-col items-center justify-center gap-3">
         <NetworkType />
         <ConnectButton />
+        <Balance />
       </div>
 
       <div className="mb-36 mt-10">
