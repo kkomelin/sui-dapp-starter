@@ -1,9 +1,9 @@
 import { Link } from '@radix-ui/themes'
 import { HeartIcon, SearchIcon } from 'lucide-react'
+import Faucet from '~~/components/Faucet'
 import ThemeSwitcher from '~~/components/ThemeSwitcher'
 import { EXPLORER_URL_VARIABLE_NAME } from '~~/config/networks'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
-import Faucet from '../Faucet'
 
 const Footer = () => {
   const { useNetworkVariable } = useNetworkConfig()

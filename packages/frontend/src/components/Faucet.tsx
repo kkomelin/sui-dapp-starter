@@ -8,7 +8,7 @@ const Faucet = () => {
   return (
     <Button
       variant="surface"
-      className="rounded-lg px-3 py-1.5"
+      className="cursor-pointer rounded-lg px-3 py-1.5"
       onClick={() => fund()}
     >
       <HandCoinsIcon />

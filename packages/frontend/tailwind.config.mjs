@@ -9,6 +9,9 @@ export default {
         'sds-dark': 'var(--sds-dark)',
         'sds-pink': 'var(--sds-pink)',
         'sds-blue': 'var(--sds-blue)',
+        // The color from Radix theme is used.
+        // @todo: Move the color to our styles.
+        'sds-accent-a11': 'var(--accent-a11)',
       },
       fontFamily: {
         inter: [
@@ -19,6 +22,11 @@ export default {
           'Arial',
           'sans-serif',
         ],
+      },
+      boxShadow: {
+        // The color from Radix theme is used.
+        // @todo: Move the color to our styles.
+        toast: 'inset 0 0 0 1px var(--accent-a7)',
       },
     },
   },
