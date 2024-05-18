@@ -55,7 +55,6 @@ const useNetworkType = ({
 
     // And this is current app network.
     if (newNetwork != null) {
-      console.log(newNetwork, ctx)
       ctx.selectNetwork(newNetwork)
     }
 

@@ -18,6 +18,7 @@ import useTransact from '~~/hooks/useTransact'
 import useOwnGreeting from '../hooks/useOwnGreeting'
 import CustomConnectButton from './CustomConnectButton'
 import AnimalEmoji from './Emoji'
+import Loading from './Loading'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')
@@ -77,7 +78,7 @@ const GreetingForm = () => {
 
   if (currentAccount == null) return <CustomConnectButton />
 
-  if (isPending) return <TextMessage>Loading...</TextMessage>
+  if (isPending) return <Loading />
 
   // @todo: Handle the following errors with toasts.
   if (error) return <TextMessage>Error: {error.message}</TextMessage>
