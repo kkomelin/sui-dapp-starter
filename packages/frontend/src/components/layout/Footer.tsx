@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="flex w-full flex-col flex-wrap items-center justify-between gap-3 p-3 px-3 py-3 sm:flex-row">
-      <div className="flex flex-row gap-3">
+      <div className="flex flex-row gap-3 lg:w-1/3">
         <Faucet />
         <Link
           href={explorerUrl}
@@ -49,7 +49,9 @@ const Footer = () => {
         </Link>
       </div>
 
-      <ThemeSwitcher />
+      <div className="flex flex-row justify-end lg:w-1/3">
+        <ThemeSwitcher />
+      </div>
     </footer>
   )
 }

@@ -9,7 +9,7 @@ const Header = () => {
     <header className="supports-backdrop-blur:bg-white/60 dark:border-slate-50/1 sticky top-0 z-40 flex w-full flex-row flex-wrap items-center justify-center gap-4 bg-white/95 px-3 py-3 backdrop-blur transition-colors duration-500 sm:justify-between sm:gap-3 lg:z-50 lg:border-b lg:border-slate-900/10 dark:bg-transparent">
       <Link
         href="#"
-        className="flex flex-row items-center justify-center gap-1 text-sds-dark outline-none hover:no-underline dark:text-sds-light"
+        className="flex flex-col sm:flex-row items-center justify-center gap-1 text-sds-dark outline-none hover:no-underline dark:text-sds-light"
       >
         <img src={Logo} alt="Logo" className="h-12 w-12" />
         <div className="pt-1 text-xl sm:text-2xl">
