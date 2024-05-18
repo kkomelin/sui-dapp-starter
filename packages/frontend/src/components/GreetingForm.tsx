@@ -1,6 +1,9 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Button, TextField } from '@radix-ui/themes'
 import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
+import CustomConnectButton from '~~/components/CustomConnectButton'
+import AnimalEmoji from '~~/components/Emoji'
+import Loading from '~~/components/Loading'
 import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
 import {
   fromBytesToString,
@@ -14,11 +17,8 @@ import {
 } from '~~/helpers/greeting/transactions'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
+import useOwnGreeting from '~~/hooks/useOwnGreeting'
 import useTransact from '~~/hooks/useTransact'
-import useOwnGreeting from '../hooks/useOwnGreeting'
-import CustomConnectButton from './CustomConnectButton'
-import AnimalEmoji from './Emoji'
-import Loading from './Loading'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')

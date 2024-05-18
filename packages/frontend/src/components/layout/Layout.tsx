@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from 'react'
-import Body from './Body'
-import Extra from './Extra'
-import Footer from './Footer'
-import Header from './Header'
+import Body from '~~/components/layout/Body'
+import Extra from '~~/components/layout/Extra'
+import Footer from '~~/components/layout/Footer'
+import Header from '~~/components/layout/Header'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (

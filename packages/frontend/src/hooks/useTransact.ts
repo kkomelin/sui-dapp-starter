@@ -7,7 +7,7 @@ import { TransactionBlock } from '@mysten/sui.js/transactions'
 import { EXPLORER_URL_VARIABLE_NAME } from '~~/config/networks'
 import { transactionUrl } from '~~/helpers/networks'
 import { notification } from '~~/helpers/notification'
-import useNetworkConfig from './useNetworkConfig'
+import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
 interface IProps {
   onSuccess?: (response: SuiTransactionBlockResponse) => void
