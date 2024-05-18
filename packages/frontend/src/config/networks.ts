@@ -14,3 +14,5 @@ export const CONTRACT_PACKAGE_VARIABLE_NAME = 'contractPackageId'
 export const CONTRACT_MODULE_NAME = 'greeting'
 
 export const EXPLORER_URL_VARIABLE_NAME = 'explorerUrl'
+
+export const NETWORKS_WITH_FAUCET = ['localnet', 'devnet', 'testnet']
