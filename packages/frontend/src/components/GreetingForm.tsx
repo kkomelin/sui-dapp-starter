@@ -1,21 +1,22 @@
-import { CONTRACT_PACKAGE_VARIABLE_NAME } from '@/config/networks'
+import { useCurrentAccount } from '@mysten/dapp-kit'
+import { Button, TextField } from '@radix-ui/themes'
+import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
+import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
 import {
   fromBytesToString,
   getResponseContentField,
   getResponseObjectId,
-} from '@/helpers/greeting/misc'
+} from '~~/helpers/greeting/misc'
 import {
   prepareCreateGreetingTransaction,
   prepareResetGreetingTransaction,
   prepareSetGreetingTransaction,
-} from '@/helpers/greeting/transactions'
-import { notification } from '@/helpers/notification'
-import useNetworkConfig from '@/hooks/useNetworkConfig'
-import useTransact from '@/hooks/useTransact'
-import { useCurrentAccount } from '@mysten/dapp-kit'
-import { Button, TextField } from '@radix-ui/themes'
-import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
+} from '~~/helpers/greeting/transactions'
+import { notification } from '~~/helpers/notification'
+import useNetworkConfig from '~~/hooks/useNetworkConfig'
+import useTransact from '~~/hooks/useTransact'
 import useOwnGreeting from '../hooks/useOwnGreeting'
+import CustomConnectButton from './CustomConnectButton'
 import AnimalEmoji from './Emoji'
 
 const GreetingForm = () => {
@@ -74,8 +75,7 @@ const GreetingForm = () => {
     reset(prepareResetGreetingTransaction(packageId, objectId))
   }
 
-  if (currentAccount == null)
-    return <TextMessage>Please connect your Sui wallet</TextMessage>
+  if (currentAccount == null) return <CustomConnectButton />
 
   if (isPending) return <TextMessage>Loading...</TextMessage>
 
@@ -85,11 +85,11 @@ const GreetingForm = () => {
   if (!data.data) return <TextMessage>Not found</TextMessage>
 
   return (
-    <div className="my-2 flex flex-col items-center justify-center">
+    <div className="my-2 flex flex-grow flex-col items-center justify-center">
       {data.data.length === 0 ? (
         <div className="flex flex-col">
           <Button variant="solid" size="4" onClick={handleCreateGreetingClick}>
-            Start
+            Get Started
           </Button>
         </div>
       ) : (

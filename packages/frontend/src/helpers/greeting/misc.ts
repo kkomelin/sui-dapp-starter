@@ -1,6 +1,6 @@
-import { CONTRACT_MODULE_NAME } from '@/config/networks'
 import { SuiObjectResponse } from '@mysten/sui.js/client'
 import { isValidSuiObjectId } from '@mysten/sui.js/utils'
+import { CONTRACT_MODULE_NAME } from '~~/config/networks'
 
 export const fullFunctionName = (
   packageId: string,

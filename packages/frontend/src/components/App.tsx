@@ -1,20 +1,11 @@
-import { ConnectButton } from '@mysten/dapp-kit'
 import { FC } from 'react'
-import GreetingForm from './GreetingForm'
-import Layout from './Layout'
-import NetworkType from './NetworkType'
-import Balance from './Balance'
+import GreetingForm from '~~/components/GreetingForm'
+import Layout from '~~/components/layout/Layout'
 
 const App: FC = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center gap-3">
-        <NetworkType />
-        <ConnectButton />
-        <Balance />
-      </div>
-
-      <div className="mb-36 mt-10">
+      <div className="justify-content flex flex-grow flex-col items-center justify-center rounded-md p-3">
         <GreetingForm />
       </div>
     </Layout>

@@ -1,10 +1,13 @@
-import { formatNetworkType } from '@/helpers/networks'
-import { useCurrentWallet } from '@mysten/dapp-kit'
+import {
+  SuiClientProviderContext,
+  useCurrentWallet,
+  useSuiClientContext,
+} from '@mysten/dapp-kit'
 import { useEffect, useState } from 'react'
+import { formatNetworkType } from '~~/helpers/networks'
+import { ENetwork } from '~~/types/ENetwork'
 
 const DEFAULT_REFETCH_INTERVAL = 3000
-
-export type NetworkType = 'localnet' | 'devnet' | 'testnet' | 'mainnet'
 
 export interface IUseNetworkTypeParams {
   /**
@@ -20,7 +23,7 @@ export interface IUseNetworkTypeResponse {
   /**
    * Network type or undefined if wallet is not connected.
    */
-  networkType: NetworkType | undefined
+  networkType: ENetwork | undefined
   refetch: () => void
 }
 
@@ -29,26 +32,38 @@ const useNetworkType = ({
   autoRefetchInterval,
 }: IUseNetworkTypeParams): IUseNetworkTypeResponse => {
   const wallet = useCurrentWallet()
-  const [networkType, setNetworkType] = useState<NetworkType>()
+  const ctx = useSuiClientContext()
+  const [networkType, setNetworkType] = useState<ENetwork | undefined>()
 
   // @todo Find a better type for the wallet.
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const connectionStatusCheck = (wallet: any) => {
+  const connectionStatusCheck = (
+    wallet: any,
+    ctx: SuiClientProviderContext
+  ) => {
     if (!wallet.isConnected) {
       setNetworkType(undefined)
       return
     }
 
-    setNetworkType(
-      formatNetworkType(wallet.currentWallet?.accounts?.[0].chains?.[0]) as
-        | NetworkType
-        | undefined
-    )
+    const newNetwork = formatNetworkType(
+      wallet.currentWallet?.accounts?.[0].chains?.[0]
+    ) as ENetwork | undefined
+
+    // This is currently selected wallet network.
+    setNetworkType(newNetwork)
+
+    // And this is current app network.
+    if (newNetwork != null) {
+      console.log(newNetwork, ctx)
+      ctx.selectNetwork(newNetwork)
+    }
+
     console.debug('debug: Network type refetched')
   }
 
   useEffect(() => {
-    connectionStatusCheck(wallet)
+    connectionStatusCheck(wallet, ctx)
 
     if (autoRefetch == null || autoRefetch === false) {
       return
@@ -63,7 +78,7 @@ const useNetworkType = ({
           return
         }
 
-        connectionStatusCheck(wallet)
+        connectionStatusCheck(wallet, ctx)
       },
       autoRefetch && autoRefetchInterval != null
         ? autoRefetchInterval
@@ -72,11 +87,11 @@ const useNetworkType = ({
     return () => {
       clearTimeout(interval)
     }
-  }, [autoRefetch, autoRefetchInterval, wallet])
+  }, [autoRefetch, autoRefetchInterval, wallet, ctx])
 
   return {
-    networkType,
-    refetch: () => connectionStatusCheck(wallet),
+    networkType: networkType as ENetwork | undefined,
+    refetch: () => connectionStatusCheck(wallet, ctx),
   }
 }
 

@@ -1,12 +1,12 @@
-import { EXPLORER_URL_VARIABLE_NAME } from '@/config/networks'
-import { transactionUrl } from '@/helpers/networks'
-import { notification } from '@/helpers/notification'
 import {
   useSignAndExecuteTransactionBlock,
   useSuiClient,
 } from '@mysten/dapp-kit'
 import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
 import { TransactionBlock } from '@mysten/sui.js/transactions'
+import { EXPLORER_URL_VARIABLE_NAME } from '~~/config/networks'
+import { transactionUrl } from '~~/helpers/networks'
+import { notification } from '~~/helpers/notification'
 import useNetworkConfig from './useNetworkConfig'
 
 interface IProps {

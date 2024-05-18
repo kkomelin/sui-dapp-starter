@@ -1,5 +1,5 @@
-import useBalance from '@/hooks/useBalance'
 import { Badge } from '@radix-ui/themes'
+import useBalance from '~~/hooks/useBalance'
 
 const Balance = () => {
   const { balance } = useBalance({ autoRefetch: true })

@@ -1,5 +1,6 @@
-import Notification from '@/components/Notification'
+import { Link } from '@radix-ui/themes'
 import toast, { Renderable } from 'react-hot-toast'
+import Notification from '~~/components/Notification'
 
 const reportLoading = (message: Renderable) => {
   const content = <Notification type="loading">{message}</Notification>
@@ -62,9 +63,9 @@ const reportTxSuccess = (transactionUrl: string, id?: string) => {
   return reportSuccess(
     <>
       Transaction submitted{' '}
-      <a target="_blank" rel="noopener noreferrer" href={transactionUrl}>
+      <Link target="_blank" rel="noopener noreferrer" href={transactionUrl}>
         (view)
-      </a>
+      </Link>
     </>,
     id
   )

@@ -1,5 +1,5 @@
-import useNetworkType from '@/hooks/useNetworkType'
 import { Badge } from '@radix-ui/themes'
+import useNetworkType from '~~/hooks/useNetworkType'
 
 const NetworkType = () => {
   const { networkType } = useNetworkType({ autoRefetch: true })
