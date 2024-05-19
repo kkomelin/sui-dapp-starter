@@ -1,4 +1,5 @@
 import { useCurrentAccount, useSuiClientContext } from '@mysten/dapp-kit'
+import { formatAddress } from '@mysten/sui.js/utils'
 import { NETWORKS_WITH_FAUCET } from '~~/config/networks'
 import { fundAddress } from '~~/helpers/faucet'
 import { notification } from '~~/helpers/notification'
@@ -41,7 +42,7 @@ const useFaucet = (): IUseFaucetResponse => {
     }
 
     notification.success(
-      `The ${fundedAddress} address has been funded successfully`
+      `The ${formatAddress(fundedAddress)} address has been funded successfully`
     )
   }
 
