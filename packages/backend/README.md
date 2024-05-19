@@ -1,3 +1,3 @@
-# Sui dApp Starter: Frontend
+# Sui dApp Starter: Backend
 
 Please find the root project [README](../../README.md).
