@@ -22,6 +22,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **On-Chain Randomness**: On-Chain Randomness example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
 - **Frontend Deployment**: Firebase deployment commands ([guide](https://github.com/kkomelin/sui-dapp-starter/wiki/Frontend:-Deployment-to-Firebase))
+- **One-liner Install**: Just `pnpm create sui-dapp@latest`
 
 ## Prerequisites
 
