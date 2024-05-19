@@ -35,21 +35,12 @@ Before you begin, install the following:
 
 ## Installation
 
-#### 1. Create a new repository from the template
+**[Use this template ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp)**
 
-[Use this form ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp)
-
-#### 2. Clone the newly created repository to your local machine
+or
 
 ```bash
-git clone https://github.com/[your-github-handle]/[your-new-project-name].git
-cd [your-new-project-name]
-```
-
-#### 3. Install dependencies
-
-```bash
-pnpm install
+pnpm create sui-dapp@latest
 ```
 
 ## Usage
