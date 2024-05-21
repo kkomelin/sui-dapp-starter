@@ -10,7 +10,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 
 ## Features
 
-- **[Suibase](https://suibase.io/)**: Painless work with the local network
+- **[Suibase](https://suibase.io/)**: Painless work with the networks
 - **[Local Sui Explorer](https://github.com/kkomelin/sui-explorer-local)**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript

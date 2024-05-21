@@ -52,7 +52,15 @@
     "testnet:links": "pnpm --filter backend testnet:links",
     "testnet:update": "pnpm --filter backend testnet:update",
     "testnet:deploy": "pnpm --filter backend testnet:deploy",
-    "testnet:address": "pnpm --filter backend testnet:address"
+    "testnet:address": "pnpm --filter backend testnet:address",
+
+    "mainnet:start": "pnpm --filter backend mainnet:start",
+    "mainnet:stop": "pnpm --filter backend mainnet:stop",
+    "mainnet:status": "pnpm --filter backend mainnet:status",
+    "mainnet:links": "pnpm --filter backend mainnet:links",
+    "mainnet:update": "pnpm --filter backend mainnet:update",
+    "mainnet:deploy": "pnpm --filter backend mainnet:deploy",
+    "mainnet:address": "pnpm --filter backend mainnet:address"
   },
   "engines": {
     "node": ">=20"

@@ -35,7 +35,15 @@
     "testnet:update": "testnet update",
     "testnet:links": "testnet links",
     "testnet:address": "tsui client active-address",
-    "testnet:deploy": "testnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n testnet"
+    "testnet:deploy": "testnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n testnet",
+
+    "mainnet:start": "mainnet start",
+    "mainnet:stop": "mainnet stop",
+    "mainnet:status": "mainnet status",
+    "mainnet:update": "mainnet update",
+    "mainnet:links": "mainnet links",
+    "mainnet:address": "msui client active-address",
+    "mainnet:deploy": "mainnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n mainnet"
   },
   "devDependencies": {
     "env-file-rw": "^1.0.0",
