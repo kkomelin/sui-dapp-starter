@@ -24,17 +24,35 @@
     
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",
+
     "localnet:start": "pnpm --filter backend localnet:start && pnpm localnet:explorer:start",
     "localnet:stop": "pnpm --filter backend localnet:stop && pnpm localnet:explorer:stop",
     "localnet:status": "pnpm --filter backend localnet:status",
     "localnet:faucet": "pnpm --filter backend localnet:faucet",
     "localnet:regen": "pnpm --filter backend localnet:regen",
+    "localnet:update": "pnpm --filter backend localnet:update",
     "localnet:deploy": "pnpm --filter backend localnet:deploy",
     "localnet:address": "pnpm --filter backend localnet:address",
     "localnet:explorer:start":  "pnpm --filter backend localnet:explorer:start",
     "localnet:explorer:stop":  "pnpm --filter backend localnet:explorer:stop",
     "localnet:explorer:restart":  "pnpm --filter backend localnet:explorer:restart",
-    "localnet:explorer:rebuild":  "pnpm --filter backend localnet:explorer:rebuild"
+    "localnet:explorer:rebuild": "pnpm --filter backend localnet:explorer:rebuild",
+
+    "devnet:start": "pnpm --filter backend devnet:start",
+    "devnet:stop": "pnpm --filter backend devnet:stop",
+    "devnet:status": "pnpm --filter backend devnet:status",
+    "devnet:links": "pnpm --filter backend devnet:links",
+    "devnet:update": "pnpm --filter backend devnet:update",
+    "devnet:deploy": "pnpm --filter backend devnet:deploy",
+    "devnet:address": "pnpm --filter backend devnet:address",
+
+    "testnet:start": "pnpm --filter backend testnet:start",
+    "testnet:stop": "pnpm --filter backend testnet:stop",
+    "testnet:status": "pnpm --filter backend testnet:status",
+    "testnet:links": "pnpm --filter backend testnet:links",
+    "testnet:update": "pnpm --filter backend testnet:update",
+    "testnet:deploy": "pnpm --filter backend testnet:deploy",
+    "testnet:address": "pnpm --filter backend testnet:address"
   },
   "engines": {
     "node": ">=20"
