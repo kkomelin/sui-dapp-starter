@@ -25,8 +25,12 @@ const main = async () => {
   // Create .env.local file if it doesn't exist.
   await createFileIfNecessary(targetFile);
 
-  // Add VITE_CONTRACT_PACKAGE_ID variable to .env.local or update its value if it exists.
-  await setEnvVar(targetFile, "VITE_CONTRACT_PACKAGE_ID", packageId);
+  // Add VITE_[network]_CONTRACT_PACKAGE_ID variable to .env.local or update its value if it exists.
+  await setEnvVar(
+    targetFile,
+    `VITE_${network.toUpperCase()}_CONTRACT_PACKAGE_ID`,
+    packageId
+  );
 };
 
 const sourceFilePath = (network, deployedModuleName) => {
