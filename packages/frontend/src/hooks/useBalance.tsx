@@ -26,7 +26,7 @@ export interface IUseBalanceResponse {
 const useBalance = ({
   autoRefetch,
   autoRefetchInterval,
-}: IUseBalanceParams): IUseBalanceResponse => {
+}: IUseBalanceParams = {}): IUseBalanceResponse => {
   const currentAccount = useCurrentAccount()
   const { data, refetch, error } = useSuiClientQuery('getBalance', {
     owner: currentAccount?.address as string,

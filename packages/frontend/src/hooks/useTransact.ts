@@ -14,7 +14,7 @@ interface IProps {
   onError?: (e: Error) => void
 }
 
-const useTransact = ({ onSuccess, onError }: IProps) => {
+const useTransact = ({ onSuccess, onError }: IProps = {}) => {
   const client = useSuiClient()
   const { mutate: signAndExecute } = useSignAndExecuteTransactionBlock()
   const { useNetworkVariable } = useNetworkConfig()

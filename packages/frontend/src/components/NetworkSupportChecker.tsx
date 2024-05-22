@@ -3,7 +3,7 @@ import { isNetworkSupported, supportedNetworks } from '~~/helpers/networks'
 import useNetworkType from '~~/hooks/useNetworkType'
 
 const NetworkSupportChecker = () => {
-  const { networkType } = useNetworkType({})
+  const { networkType } = useNetworkType()
   const currentAccount = useCurrentAccount()
 
   const okNetworks = supportedNetworks()

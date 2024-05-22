@@ -30,7 +30,7 @@ export interface IUseNetworkTypeResponse {
 const useNetworkType = ({
   autoRefetch,
   autoRefetchInterval,
-}: IUseNetworkTypeParams): IUseNetworkTypeResponse => {
+}: IUseNetworkTypeParams = {}): IUseNetworkTypeResponse => {
   const wallet = useCurrentWallet()
   const ctx = useSuiClientContext()
   const [networkType, setNetworkType] = useState<ENetwork | undefined>()
