@@ -88,7 +88,7 @@ _Currently we have blockchain tests only._
 
 ## Troubleshoot
 
-If you have any issue with the starter, first try to find it on the [Troubleshooting page](https://sui-dapp-starter.dev/docs/misc/troubleshooting) on the documentation,
+If you have any issue with the starter, first try to find it on the [Troubleshooting](https://sui-dapp-starter.dev/docs/misc/troubleshooting) page on the documentation,
 then check our [issue queue](https://github.com/kkomelin/sui-dapp-starter/issues) for similar issues.
 If nothing found, please [create a new issue](https://github.com/kkomelin/sui-dapp-starter/issues/new) and ask for help on [Discord](https://discord.com/invite/HuDPpXz4Hx).
 
