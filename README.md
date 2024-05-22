@@ -21,14 +21,14 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
 - **On-Chain Randomness**: On-Chain Randomness example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
-- **Frontend Deployment**: Firebase deployment commands ([guide](https://github.com/kkomelin/sui-dapp-starter/wiki/Frontend:-Deployment-to-Firebase))
+- **Frontend Deployment**: deployment commands for [Firebase](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
 
 ## Prerequisites
 
 Before you begin, install the following:
 
-- [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only; not Sui binaries themselves)
+- [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only)
 - [Suibase](https://suibase.io/how-to/install.html)
 - [Docker](https://docs.docker.com/engine/install/)
 - [Node (>= 20)](https://nodejs.org/en/download/)
@@ -76,7 +76,7 @@ More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blo
 
 ## Deployment (frontend)
 
-Follow [this guide](https://github.com/kkomelin/sui-dapp-starter/wiki/Frontend:-Deployment-to-Firebase) to deploy the frontend app to Firebase.
+Follow [this guide](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase) to deploy the frontend app to Firebase.
 
 ## Test
 
@@ -88,13 +88,13 @@ _Currently we have blockchain tests only._
 
 ## Troubleshoot
 
-If you have any issue with the starter, first try to find it in the [Troubleshooting section](https://github.com/kkomelin/sui-dapp-starter/wiki/Troubleshooting) on Wiki,
+If you have any issue with the starter, first try to find it on the [Troubleshooting page](https://sui-dapp-starter.dev/docs/misc/troubleshooting) on the documentation,
 then check our [issue queue](https://github.com/kkomelin/sui-dapp-starter/issues) for similar issues.
 If nothing found, please [create a new issue](https://github.com/kkomelin/sui-dapp-starter/issues/new) and ask for help on [Discord](https://discord.com/invite/HuDPpXz4Hx).
 
 ## Roadmap
 
-See the list of ideas for future improvement on our [Wiki](https://github.com/kkomelin/sui-dapp-starter/wiki).
+See the list of ideas for future improvement in [our documentation](https://sui-dapp-starter.dev/docs/misc/ideas).
 
 ## Community
 
