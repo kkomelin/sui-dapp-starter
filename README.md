@@ -92,6 +92,10 @@ If you have any issue with the starter, first try to find it on the [Troubleshoo
 then check our [issue queue](https://github.com/kkomelin/sui-dapp-starter/issues) for similar issues.
 If nothing found, please [create a new issue](https://github.com/kkomelin/sui-dapp-starter/issues/new) and ask for help on [Discord](https://discord.com/invite/HuDPpXz4Hx).
 
+## Documentation
+
+The project documentation can be found [here](https://sui-dapp-starter.dev/docs).
+
 ## Roadmap
 
 See the list of ideas for future improvement in [our documentation](https://sui-dapp-starter.dev/docs/misc/ideas).
