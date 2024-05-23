@@ -60,17 +60,13 @@ Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 pnpm localnet:deploy
 ```
 
-#### 3. Switch to the local network in your browser wallet settings:
-
-![Network Selection: Sui Wallet](https://github.com/kkomelin/sui-dapp-starter/assets/755066/298892e8-6e69-44b2-be6c-6cd36108c2af)
+#### 3. Switch to the local network in your browser wallet settings.
 
 #### 4. Fund your localnet account/address:
 
 You have a few options here:
 
-a) Use the Faucet button integrated into your wallet (e.g. Sui Wallet):
-
-![Faucet: Sui Wallet](https://github.com/kkomelin/sui-dapp-starter/assets/755066/d903fb9b-3ae5-4a6d-9a22-d10c0012354c)
+a) Use the Faucet button integrated into your wallet (e.g. Sui Wallet).
 
 b) Copy the localnet address from your wallet and run the following in your console:
 
@@ -78,9 +74,7 @@ b) Copy the localnet address from your wallet and run the following in your cons
 pnpm localnet:faucet 0xYOURADDRESS
 ```
 
-c) Run the app and use the Faucet button in the footer:
-
-![Faucet: Demo App](https://github.com/kkomelin/sui-dapp-starter/assets/755066/c033583f-65c6-46be-a830-f1f0725ec824)
+c) Run the app and use the Faucet button in the footer.
 
 #### 5. Run the app:
 
