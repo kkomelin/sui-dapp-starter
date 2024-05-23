@@ -21,7 +21,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
 - **On-Chain Randomness**: On-Chain Randomness example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
-- **Frontend Deployment**: deployment commands for [Firebase](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase)
+- **Frontend Deployment**: [Firebase commands](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
 
 ## Prerequisites
@@ -81,38 +81,31 @@ c) Run the app and use the Faucet button in the footer.
 ```bash
 pnpm start
 ```
-
-More commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
-
-## Deployment (frontend)
-
-Follow [this guide](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase) to deploy the frontend app to Firebase.
+Find all commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
 
 ## Test
+
+#### Backend
 
 ```bash
 pnpm test
 ```
 
-_Currently we have blockchain tests only._
-
 ## Troubleshoot
 
-If you have any issue with the starter, first try to find it on the [Troubleshooting](https://sui-dapp-starter.dev/docs/misc/troubleshooting) page on the documentation,
-then check our [issue queue](https://github.com/kkomelin/sui-dapp-starter/issues) for similar issues.
-If nothing found, please [create a new issue](https://github.com/kkomelin/sui-dapp-starter/issues/new) and ask for help on [Discord](https://discord.com/invite/HuDPpXz4Hx).
+[Troubleshooting guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
 
 ## Documentation
 
-The project documentation can be found [here](https://sui-dapp-starter.dev/docs).
+[Project Documentation](https://sui-dapp-starter.dev/docs)
 
 ## Roadmap
 
-See the list of ideas for future improvement in [our documentation](https://sui-dapp-starter.dev/docs/misc/ideas).
+[Improvement Ideas](https://sui-dapp-starter.dev/docs/misc/ideas)
 
 ## Community
 
-[Join our Discord](https://discord.com/invite/HuDPpXz4Hx)  
+[Discord](https://discord.com/invite/HuDPpXz4Hx)  
 
 ## Links
 
