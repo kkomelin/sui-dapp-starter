@@ -60,13 +60,23 @@ Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 pnpm localnet:deploy
 ```
 
-#### 3. Fund your localnet account via Sui Wallet or the faucet:
+#### 3. Switch to Localnet in your browser wallet settings.
+
+#### 4. Fund your localnet account/address:
+
+You have a few options here:
+
+a) Use  the Faucet button integrated into your wallet (e.g. Sui Wallet)
+
+b) Copy the localnet address from your wallet and run the following in your console:
 
 ```bash
 pnpm localnet:faucet 0xYOURADDRESS
 ```
 
-#### 4. Run the app:
+c) Run the app and use the Faucet button in the footer.
+
+#### 5. Run the app:
 
 ```bash
 pnpm start
