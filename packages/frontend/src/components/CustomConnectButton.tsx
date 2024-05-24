@@ -1,10 +1,10 @@
-import { useConnectWallet, useWallets } from '@mysten/dapp-kit'
+import { ConnectModal, useCurrentAccount, useWallets } from '@mysten/dapp-kit'
 import { Button, Link } from '@radix-ui/themes'
 import { SUI_WALLET_URL } from '~~/config/misc'
 
 const CustomConnectButton = () => {
   const wallets = useWallets()
-  const { mutate: connect } = useConnectWallet()
+  const currentAccount = useCurrentAccount()
 
   if (wallets != null && wallets.length === 0) {
     return (
@@ -19,21 +19,13 @@ const CustomConnectButton = () => {
   }
 
   return (
-    <ul className="text-center">
-      {wallets.map((wallet) => (
-        <li key={wallet.name} className="py-1">
-          <Button
-            variant="solid"
-            size="4"
-            onClick={() => {
-              connect({ wallet })
-            }}
-          >
-            Connect to {wallet.name}
-          </Button>
-        </li>
-      ))}
-    </ul>
+    <ConnectModal
+      trigger={
+        <Button disabled={currentAccount != null} variant="solid" size="4">
+          {currentAccount ? 'Wallet Connected' : 'Connect Wallet'}
+        </Button>
+      }
+    />
   )
 }
 
