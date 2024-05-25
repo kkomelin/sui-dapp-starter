@@ -9,7 +9,7 @@ import { ENetwork } from '~~/types/ENetwork'
 
 const DEFAULT_REFETCH_INTERVAL = 3000
 
-export interface IUseNetworkTypeParams {
+export interface IUseSynchronizedNetworkTypeParams {
   /**
    * Whether the balance needs to be refreshed regularly or just once.
    */
@@ -19,28 +19,25 @@ export interface IUseNetworkTypeParams {
    */
   autoRefetchInterval?: number
 }
-export interface IUseNetworkTypeResponse {
+export interface IUseSynchronizedNetworkTypeResponse {
   /**
    * Network type or undefined if wallet is not connected.
    */
   networkType: ENetwork | undefined
-  refetch: () => void
+  synchronize: () => void
 }
 
-const useNetworkType = ({
+const useSynchronizedNetworkType = ({
   autoRefetch,
   autoRefetchInterval,
-}: IUseNetworkTypeParams = {}): IUseNetworkTypeResponse => {
+}: IUseSynchronizedNetworkTypeParams = {}): IUseSynchronizedNetworkTypeResponse => {
   const wallet = useCurrentWallet()
   const ctx = useSuiClientContext()
   const [networkType, setNetworkType] = useState<ENetwork | undefined>()
 
   // @todo Find a better type for the wallet.
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const connectionStatusCheck = (
-    wallet: any,
-    ctx: SuiClientProviderContext
-  ) => {
+  const synchronizeNetworkType = (wallet: any, ctx: SuiClientProviderContext) => {
     if (!wallet.isConnected) {
       setNetworkType(undefined)
       return
@@ -50,19 +47,19 @@ const useNetworkType = ({
       wallet.currentWallet?.accounts?.[0].chains?.[0]
     ) as ENetwork | undefined
 
-    // This is currently selected wallet network.
+    // Save currently selected wallet network.
     setNetworkType(newNetwork)
 
-    // And this is current app network.
+    // If network is defined, set the app network to it.
     if (newNetwork != null) {
       ctx.selectNetwork(newNetwork)
     }
 
-    console.debug('debug: Network type refetched')
+    console.debug('debug: Network type synchronized')
   }
 
   useEffect(() => {
-    connectionStatusCheck(wallet, ctx)
+    synchronizeNetworkType(wallet, ctx)
 
     if (autoRefetch == null || autoRefetch === false) {
       return
@@ -71,13 +68,13 @@ const useNetworkType = ({
     const interval = setInterval(
       () => {
         if (!wallet.isConnected || !autoRefetch) {
-          console.debug('debug: Network type refetching stopped')
+          console.debug('debug: Network type synchronizing stopped')
           setNetworkType(undefined)
           clearInterval(interval)
           return
         }
 
-        connectionStatusCheck(wallet, ctx)
+        synchronizeNetworkType(wallet, ctx)
       },
       autoRefetch && autoRefetchInterval != null
         ? autoRefetchInterval
@@ -90,8 +87,8 @@ const useNetworkType = ({
 
   return {
     networkType: networkType as ENetwork | undefined,
-    refetch: () => connectionStatusCheck(wallet, ctx),
+    synchronize: () => synchronizeNetworkType(wallet, ctx),
   }
 }
 
-export default useNetworkType
+export default useSynchronizedNetworkType

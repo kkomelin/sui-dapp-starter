@@ -1,8 +1,15 @@
 import { CONTRACT_PACKAGE_ID_NOT_DEFINED } from '~~/config/networks'
 import { ENetwork } from '~~/types/ENetwork'
 
-export const transactionUrl = (explorerUrl: string, txDigest: string) => {
-  return `${explorerUrl}/txblock/${txDigest}`
+export const transactionUrl = (baseExplorerUrl: string, txDigest: string) => {
+  return `${baseExplorerUrl}/txblock/${txDigest}`
+}
+export const packageUrl = (baseExplorerUrl: string, packageId: string) => {
+  // Local explorer doesn't have a package view, so we stick with object view instead.
+  const subpath =
+    baseExplorerUrl.search('localhost') === -1 ? 'package' : 'object'
+
+  return `${baseExplorerUrl}/${subpath}/${packageId}`
 }
 
 export const formatNetworkType = (machineName: string) => {

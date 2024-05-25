@@ -1,8 +1,8 @@
 import { Badge } from '@radix-ui/themes'
-import useNetworkType from '~~/hooks/useNetworkType'
+import useSynchronizedNetworkType from '~~/hooks/useSynchronizedNetworkType'
 
 const NetworkType = () => {
-  const { networkType } = useNetworkType({ autoRefetch: true })
+  const { networkType } = useSynchronizedNetworkType({ autoRefetch: true })
 
   let color = 'amber'
   if (networkType == null) {
@@ -11,7 +11,7 @@ const NetworkType = () => {
     color = 'green'
   }
 
-  // @todo Suggest Sui adding a better type for the color.
+  // @todo Suggest Radix adding a better type for the color.
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   return (
     <Badge color={color as any} className="rounded-lg px-3 py-1.5">
