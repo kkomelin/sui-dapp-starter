@@ -11,25 +11,29 @@ const DEFAULT_REFETCH_INTERVAL = 3000
 
 export interface IUseSynchronizedNetworkTypeParams {
   /**
-   * Whether the balance needs to be refreshed regularly or just once.
+   * Whether the app network needs to be synchronized with the wallet network regularly or just once.
    */
-  autoRefetch?: boolean
+  autoSync?: boolean
   /**
-   * Auto refetch interval in milliseconds.
+   * Auto sync interval in milliseconds.
    */
-  autoRefetchInterval?: number
+  autoSyncInterval?: number
 }
 export interface IUseSynchronizedNetworkTypeResponse {
   /**
    * Network type or undefined if wallet is not connected.
    */
   networkType: ENetwork | undefined
+  /**
+   * Synchronize app network with wallet network on demand.
+   * @returns
+   */
   synchronize: () => void
 }
 
 const useSynchronizedNetworkType = ({
-  autoRefetch,
-  autoRefetchInterval,
+  autoSync,
+  autoSyncInterval,
 }: IUseSynchronizedNetworkTypeParams = {}): IUseSynchronizedNetworkTypeResponse => {
   const wallet = useCurrentWallet()
   const ctx = useSuiClientContext()
@@ -37,7 +41,10 @@ const useSynchronizedNetworkType = ({
 
   // @todo Find a better type for the wallet.
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const synchronizeNetworkType = (wallet: any, ctx: SuiClientProviderContext) => {
+  const synchronizeNetworkType = (
+    wallet: any,
+    ctx: SuiClientProviderContext
+  ) => {
     if (!wallet.isConnected) {
       setNetworkType(undefined)
       return
@@ -61,13 +68,13 @@ const useSynchronizedNetworkType = ({
   useEffect(() => {
     synchronizeNetworkType(wallet, ctx)
 
-    if (autoRefetch == null || autoRefetch === false) {
+    if (autoSync == null || autoSync === false) {
       return
     }
 
     const interval = setInterval(
       () => {
-        if (!wallet.isConnected || !autoRefetch) {
+        if (!wallet.isConnected || !autoSync) {
           console.debug('debug: Network type synchronizing stopped')
           setNetworkType(undefined)
           clearInterval(interval)
@@ -76,14 +83,14 @@ const useSynchronizedNetworkType = ({
 
         synchronizeNetworkType(wallet, ctx)
       },
-      autoRefetch && autoRefetchInterval != null
-        ? autoRefetchInterval
+      autoSync && autoSyncInterval != null
+        ? autoSyncInterval
         : DEFAULT_REFETCH_INTERVAL
     )
     return () => {
       clearTimeout(interval)
     }
-  }, [autoRefetch, autoRefetchInterval, wallet, ctx])
+  }, [autoSync, autoSyncInterval, wallet, ctx])
 
   return {
     networkType: networkType as ENetwork | undefined,

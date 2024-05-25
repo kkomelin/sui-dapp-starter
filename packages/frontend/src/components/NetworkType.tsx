@@ -2,7 +2,7 @@ import { Badge } from '@radix-ui/themes'
 import useSynchronizedNetworkType from '~~/hooks/useSynchronizedNetworkType'
 
 const NetworkType = () => {
-  const { networkType } = useSynchronizedNetworkType({ autoRefetch: true })
+  const { networkType } = useSynchronizedNetworkType({ autoSync: true })
 
   let color = 'amber'
   if (networkType == null) {
