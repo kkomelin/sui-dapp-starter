@@ -6,7 +6,6 @@
     "build": "lsui move build -d -p ./move/greeting",
     "test": "lsui move test -d -p ./move/greeting",
     "copy-package-id": "node ./scripts/copy-package-id",
-
     "localnet:start": "localnet start",
     "localnet:stop": "localnet stop",
     "localnet:status": "localnet status",
@@ -15,12 +14,10 @@
     "localnet:update": "localnet update",
     "localnet:address": "lsui client active-address",
     "localnet:deploy": "localnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n localnet",
-
     "localnet:explorer:start": "sui-explorer-local start",
     "localnet:explorer:stop": "sui-explorer-local stop",
     "localnet:explorer:restart": "sui-explorer-local restart",
     "localnet:explorer:rebuild": "sui-explorer-local rebuild",
-
     "devnet:start": "devnet start",
     "devnet:stop": "devnet stop",
     "devnet:status": "devnet status",
@@ -28,7 +25,6 @@
     "devnet:links": "devnet links",
     "devnet:address": "dsui client active-address",
     "devnet:deploy": "devnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n devnet",
-
     "testnet:start": "testnet start",
     "testnet:stop": "testnet stop",
     "testnet:status": "testnet status",
@@ -36,7 +32,6 @@
     "testnet:links": "testnet links",
     "testnet:address": "tsui client active-address",
     "testnet:deploy": "testnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n testnet",
-
     "mainnet:start": "mainnet start",
     "mainnet:stop": "mainnet stop",
     "mainnet:status": "mainnet status",
@@ -47,6 +42,6 @@
   },
   "devDependencies": {
     "env-file-rw": "^1.0.0",
-    "sui-explorer-local": "^0.3.1"
+    "sui-explorer-local": "^0.4.0"
   }
 }
