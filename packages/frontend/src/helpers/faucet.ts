@@ -1,4 +1,4 @@
-import { getFaucetHost, requestSuiFromFaucetV1 } from '@mysten/sui.js/faucet'
+import { getFaucetHost, requestSuiFromFaucetV1 } from '@mysten/sui/faucet'
 import { ENetworksWithFaucet } from '~~/types/ENetworksWithFaucet'
 
 export const fundAddress = async (

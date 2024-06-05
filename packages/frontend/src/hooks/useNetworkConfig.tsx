@@ -1,5 +1,5 @@
 import { createNetworkConfig } from '@mysten/dapp-kit'
-import { getFullnodeUrl } from '@mysten/sui.js/client'
+import { getFullnodeUrl } from '@mysten/sui/client'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   DEVNET_CONTRACT_PACKAGE_ID,

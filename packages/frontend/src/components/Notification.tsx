@@ -31,7 +31,7 @@ const Notification: FC<PropsWithChildren<INotification>> = ({
       {isCloseButtonVisible && (
         <Button
           variant="ghost"
-          className="-mr-3 cursor-pointer px-1 1text-sds-dark text-sds-accent-a11"
+          className="-mr-3 cursor-pointer px-1 text-sds-accent-a11"
           onClick={() => toast.dismiss(id)}
         >
           <XIcon />

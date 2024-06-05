@@ -1,5 +1,5 @@
-import { SuiObjectResponse } from '@mysten/sui.js/client'
-import { isValidSuiObjectId } from '@mysten/sui.js/utils'
+import { SuiObjectResponse } from '@mysten/sui/client'
+import { isValidSuiObjectId } from '@mysten/sui/utils'
 import { CONTRACT_MODULE_NAME } from '~~/config/networks'
 
 export const fullFunctionName = (

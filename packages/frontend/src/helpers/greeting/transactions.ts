@@ -1,41 +1,41 @@
-import { TransactionBlock } from '@mysten/sui.js/transactions'
+import { Transaction } from '@mysten/sui/transactions'
 import { fullFunctionName } from '~~/helpers/greeting/misc'
 
 export const prepareCreateGreetingTransaction = (
   packageId: string
-): TransactionBlock => {
-  const txb = new TransactionBlock()
-  txb.moveCall({
+): Transaction => {
+  const tx = new Transaction()
+  tx.moveCall({
     arguments: [],
     target: fullFunctionName(packageId, 'create'),
   })
 
-  return txb
+  return tx
 }
 
 export const prepareSetGreetingTransaction = (
   packageId: string,
   objectId: string,
   name: string
-): TransactionBlock => {
-  const txb = new TransactionBlock()
-  txb.moveCall({
-    arguments: [txb.object(objectId), txb.pure.string(name), txb.object('0x8')],
+): Transaction => {
+  const tx = new Transaction()
+  tx.moveCall({
+    arguments: [tx.object(objectId), tx.pure.string(name), tx.object('0x8')],
     target: fullFunctionName(packageId, 'set_greeting'),
   })
 
-  return txb
+  return tx
 }
 
 export const prepareResetGreetingTransaction = (
   packageId: string,
   objectId: string
-): TransactionBlock => {
-  const txb = new TransactionBlock()
-  txb.moveCall({
-    arguments: [txb.object(objectId)],
+): Transaction => {
+  const tx = new Transaction()
+  tx.moveCall({
+    arguments: [tx.object(objectId)],
     target: fullFunctionName(packageId, 'reset_greeting'),
   })
 
-  return txb
+  return tx
 }

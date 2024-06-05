@@ -1,37 +1,28 @@
-import {
-  useSignAndExecuteTransactionBlock,
-  useSuiClient,
-} from '@mysten/dapp-kit'
-import { SuiTransactionBlockResponse } from '@mysten/sui.js/client'
-import { TransactionBlock } from '@mysten/sui.js/transactions'
+import { useSignAndExecuteTransaction, useSuiClient } from '@mysten/dapp-kit'
+import { Transaction } from '@mysten/sui/transactions'
+import { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
 import { EXPLORER_URL_VARIABLE_NAME } from '~~/config/networks'
 import { transactionUrl } from '~~/helpers/networks'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
 interface IProps {
-  onSuccess?: (response: SuiTransactionBlockResponse) => void
+  onSuccess?: (data: SuiSignAndExecuteTransactionOutput) => void
   onError?: (e: Error) => void
 }
 
 const useTransact = ({ onSuccess, onError }: IProps = {}) => {
   const client = useSuiClient()
-  const { mutate: signAndExecute } = useSignAndExecuteTransactionBlock()
+  const { mutate: signAndExecute } = useSignAndExecuteTransaction()
   const { useNetworkVariable } = useNetworkConfig()
   const explorerUrl = useNetworkVariable(EXPLORER_URL_VARIABLE_NAME)
 
-  const transact = (txb: TransactionBlock) => {
+  const transact = (tx: Transaction) => {
     const notificationId = notification.txLoading()
 
     signAndExecute(
       {
-        // @todo: Handle types properly.
-        /* eslint-disable  @typescript-eslint/no-explicit-any */
-        transactionBlock: txb as any,
-        options: {
-          showEffects: true,
-          showObjectChanges: true,
-        },
+        transaction: tx,
       },
       {
         onError: (e: Error) => {
@@ -40,18 +31,18 @@ const useTransact = ({ onSuccess, onError }: IProps = {}) => {
             onError(e)
           }
         },
-        onSuccess: (tx: SuiTransactionBlockResponse) => {
+        onSuccess: (data: SuiSignAndExecuteTransactionOutput) => {
           client
-            .waitForTransactionBlock({
-              digest: tx.digest,
+            .waitForTransaction({
+              digest: data.digest,
             })
             .then(() => {
               notification.txSuccess(
-                transactionUrl(explorerUrl, tx.digest),
+                transactionUrl(explorerUrl, data.digest),
                 notificationId
               )
               if (onSuccess != null) {
-                onSuccess(tx)
+                onSuccess(data)
               }
             })
         },
