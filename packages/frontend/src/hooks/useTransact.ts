@@ -1,6 +1,6 @@
 import { useSignAndExecuteTransaction, useSuiClient } from '@mysten/dapp-kit'
 import { Transaction } from '@mysten/sui/transactions'
-import { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
+import type { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
 import { EXPLORER_URL_VARIABLE_NAME } from '~~/config/networks'
 import { transactionUrl } from '~~/helpers/networks'
 import { notification } from '~~/helpers/notification'
