@@ -4,4 +4,8 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
-
+  ignore:
+    - dependency-name: "eslint"
+      update-types: ["version-update:semver-major"]
+    - dependency-name: "eslint-config-prettier"
+      update-types: ["version-update:semver-major"]
