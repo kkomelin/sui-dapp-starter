@@ -19,8 +19,9 @@
     "frontend:lint": "pnpm --filter frontend lint",
     "frontend:preview": "pnpm --filter frontend preview",
     "frontend:format": "pnpm --filter frontend format",
-    "frontend:deploy:init": "pnpm --filter frontend deploy:firebase:init",
-    "frontend:deploy": "pnpm --filter frontend deploy:firebase",
+    "frontend:deploy:firebase:init": "pnpm --filter frontend deploy:firebase:init",
+    "frontend:deploy:firebase": "pnpm --filter frontend deploy:firebase",
+    "frontend:deploy:walrus": "pnpm --filter frontend deploy:walrus",
     
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",
