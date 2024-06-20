@@ -14,6 +14,7 @@
     "localnet:update": "localnet update",
     "localnet:address": "lsui client active-address",
     "localnet:deploy": "localnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n localnet",
+    "localnet:deploy:no-dependency-check": "localnet publish --path ${PWD}/move/greeting --skip-dependency-verification && pnpm copy-package-id -n localnet",
     "localnet:explorer:start": "sui-explorer-local start",
     "localnet:explorer:stop": "sui-explorer-local stop",
     "localnet:explorer:restart": "sui-explorer-local restart",
