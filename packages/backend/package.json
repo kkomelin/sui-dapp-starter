@@ -42,6 +42,6 @@
   },
   "devDependencies": {
     "env-file-rw": "^1.0.0",
-    "sui-explorer-local": "^0.4.0"
+    "sui-explorer-local": "^0.4.1"
   }
 }
