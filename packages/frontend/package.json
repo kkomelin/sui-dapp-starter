@@ -14,7 +14,7 @@
     "deploy:walrus": "pnpm run build && site-builder --config ./walrus.yaml --wallet ~/suibase/workdirs/testnet/config/client.yaml  publish ./dist"
   },
   "dependencies": {
-    "@mysten/dapp-kit": "^0.14.9",
+    "@mysten/dapp-kit": "^0.14.10",
     "@mysten/sui": "^1.1.2",
     "@mysten/wallet-standard": "^0.12.9",
     "@radix-ui/react-select": "^2.1.0",
