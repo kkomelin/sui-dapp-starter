@@ -9,6 +9,10 @@ module greeting::greeting {
   // use std::debug;
   use sui::event::emit;
   use sui::random::{Random, new_generator};
+  use std::string::{utf8, String};
+  // The creator bundle: `package` and `display` often go together.
+  use sui::package;
+  use sui::display;
 
   // === Constants ===
 
@@ -22,9 +26,12 @@ module greeting::greeting {
 
   public struct Greeting has key {
     id: UID,
-    name: vector<u8>,
+    name: String,
     emoji: u8
   }
+
+  /// One-Time-Witness for the module.
+  public struct GREETING has drop {}
 
   // === Events ===
 
@@ -45,6 +52,56 @@ module greeting::greeting {
 
   // === Initializer ===
 
+  /// In the module initializer one claims the `Publisher` object
+  /// to then create a `Display`. The `Display` is initialized with
+  /// a set of fields (but can be modified later) and published via
+  /// the `update_version` call.
+  ///
+  /// Keys and values are set in the initializer but could also be
+  /// set after publishing if a `Publisher` object was created.
+  fun init(otw: GREETING, ctx: &mut TxContext) {
+    let keys = vector[
+        utf8(b"name"),
+        // utf8(b"link"),
+        utf8(b"image_url"),
+        utf8(b"description"),
+        utf8(b"project_url"),
+        utf8(b"creator"),
+        utf8(b"license"),
+    ];
+
+    let values = vector[
+        // For `name`, we can use the `Greetings.name` property.
+        utf8(b"Greetings to {name}"),
+        // For `link`, one can build a URL using an `id` property.
+        // utf8(b"https://demo.sui-dapp-starter.dev/{id}"),
+        // For `image_url`, use an IPFS template + image url or a Walrus url.
+        utf8(b"http://localhost:5173/emoji/{emoji}.svg"),
+        // Description is static for all `Greeting` objects.
+        utf8(b"Demonstrates Sui Object Display feature"),
+        // Project URL is usually static.
+        utf8(b"https://demo.sui-dapp-starter.dev"),
+        // Creator field can be any.
+        utf8(b"Sui dApp Starter"),
+        // SVG emojis from https://github.com/twitter/twemoji are used, so it's necessary to provide the license info.
+        utf8(b"Graphics borrowed from https://github.com/twitter/twemoji and licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/"),
+    ];
+
+    // Claim the `Publisher` for the package.
+    let publisher = package::claim(otw, ctx);
+
+    // Get a new `Display` object for the `Greeting` type.
+    let mut display = display::new_with_fields<Greeting>(
+        &publisher, keys, values, ctx
+    );
+
+    // Commit first version of `Display` to apply changes.
+    display::update_version(&mut display);
+
+    transfer::public_transfer(publisher, ctx.sender());
+    transfer::public_transfer(display, ctx.sender());
+  }
+
   /// Create and share a Greeting object.
   public fun create(ctx: &mut TxContext) {
     // Create the Greeting object.
@@ -62,7 +119,7 @@ module greeting::greeting {
 
   /// Resets the greeting.
   public fun reset_greeting(g: &mut Greeting) {
-    g.name = vector::empty<u8>();
+    g.name = b"".to_string();
     g.emoji = 0;
 
     let greeting_id = g.id.to_inner();
@@ -75,7 +132,7 @@ module greeting::greeting {
   // === Public-View Functions ===
 
   /// Returns the name of currently greeted person.
-  public fun name(g: &Greeting): vector<u8> {
+  public fun name(g: &Greeting): String {
     g.name
   }
 
@@ -91,8 +148,8 @@ module greeting::greeting {
   /// The function is defined as private entry to prevent calls from other Move functions. (If calls from other
   /// functions are allowed, the calling function might abort the transaction depending on the winner.)
   /// Gas based attacks are not possible since the gas cost of this function is independent of the winner.
-  entry fun set_greeting(g: &mut Greeting, name: vector<u8>, r: &Random, ctx: &mut TxContext) {
-    assert!(name != b"", EEmptyName);
+  entry fun set_greeting(g: &mut Greeting, name: String, r: &Random, ctx: &mut TxContext) {
+    assert!(name != b"".to_string(), EEmptyName);
 
     let mut generator = r.new_generator(ctx);
     let emoji = generator.generate_u8_in_range(0, MaxEmojis);
@@ -113,7 +170,7 @@ module greeting::greeting {
   fun new(ctx: &mut TxContext): Greeting {
     Greeting {
       id: object::new(ctx),
-      name: vector::empty<u8>(),
+      name: b"".to_string(),
       emoji: 0
     }
   }
@@ -121,8 +178,16 @@ module greeting::greeting {
   // === Test Functions ===
 
   #[test_only]
+  // The `init` is not run in tests, and normally a test_only function is
+  // provided so that the module can be initialized in tests. Having it public
+  // is important for tests located in other modules.
+  public fun init_for_testing(ctx: &mut TxContext) {
+    init(GREETING {}, ctx);
+  }
+
+  #[test_only]
   /// Create a new Greeting for tests.
-  public fun new_for_testing(name: vector<u8>, ctx: &mut TxContext): Greeting {
+  public fun new_for_testing(name: String, ctx: &mut TxContext): Greeting {
     let mut greeting = new(ctx);
     greeting.name = name;
     

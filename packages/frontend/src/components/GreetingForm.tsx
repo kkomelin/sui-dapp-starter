@@ -6,7 +6,6 @@ import AnimalEmoji from '~~/components/Emoji'
 import Loading from '~~/components/Loading'
 import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
 import {
-  fromBytesToString,
   getResponseContentField,
   getResponseObjectId,
 } from '~~/helpers/greeting/misc'
@@ -104,10 +103,7 @@ const GreetingForm = () => {
                 />
                 ,
                 <br />
-                {fromBytesToString(
-                  getResponseContentField(data.data[0], 'name')
-                )}
-                !
+                {getResponseContentField(data.data[0], 'name')}!
               </h1>
               <Button
                 variant="solid"

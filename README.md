@@ -20,6 +20,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **Radix UI**: Accessible React components to prototype quicker 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
 - **On-Chain Randomness**: On-Chain Randomness example
+- **Sui Object Display**: Sui Object Display example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
 - **Frontend Deployment**: [Firebase commands](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
@@ -59,6 +60,8 @@ Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 ```bash
 pnpm localnet:deploy
 ```
+
+_If you're having dependency version mismatch issues, try to update the localnet `pnpm localnet:update` or use `pnpm localnet:deploy:no-dependency-check"` instead of the regular deployment command._
 
 #### 3. Switch to the local network in your browser wallet settings.
 
@@ -114,3 +117,11 @@ pnpm test
 - [Move Book](https://move-book.com/)
 - [Suibase Docs](https://suibase.io/intro.html)
 - [@mysten/create-dapp - official starter](https://www.npmjs.com/package/@mysten/create-dapp)
+
+## License & Copyright
+
+Copyright (c) 2024 Konstantin Komelin and other contributors
+
+Code licensed under the MIT License: http://opensource.org/licenses/MIT
+
+SVG Graphics used for NFTs is licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
