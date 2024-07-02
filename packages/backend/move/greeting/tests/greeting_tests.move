@@ -1,4 +1,4 @@
-// Copyright (c) Konstantin Komelin and sui-dapp-starter contributors
+// Copyright (c) Konstantin Komelin and other contributors
 // SPDX-License-Identifier: MIT
 
 #[test_only]
@@ -14,7 +14,7 @@ module greeting::greeting_tests {
     let user1 = @0x0;
     let bob = b"Bob".to_string();
     let alice = b"Alice".to_string();
-    let emptyStr = b"".to_string();
+    let empty = b"".to_string();
     let mut ts = ts::begin(user1);
 
     // Run the module initializer.
@@ -38,17 +38,17 @@ module greeting::greeting_tests {
     ts.next_tx(user1);
     let mut g = greeting::new_for_testing(bob, ts.ctx());
     assert!(greeting::name(&g) == bob, 0);
-    assert!(greeting::emoji(&g) == 0, 1);
+    assert!(greeting::emoji(&g) == greeting::no_emoji_index(), 1);
 
     ts.next_tx(user1);
     greeting::set_greeting(&mut g, alice, &random_state, ts.ctx());
     assert!(greeting::name(&g) == alice, 2);
-    assert!(greeting::emoji(&g) <= greeting::maxEmojis(), 3);
+    assert!(greeting::emoji(&g) >= greeting::min_emoji_index() && greeting::emoji(&g) <= greeting::max_emoji_index(), 3);
 
     ts.next_tx(user1);
     greeting::reset_greeting(&mut g);
-    assert!(greeting::name(&g) == emptyStr, 4);
-    assert!(greeting::emoji(&g) == 0, 5);
+    assert!(greeting::name(&g) == empty, 4);
+    assert!(greeting::emoji(&g) == greeting::no_emoji_index(), 5);
 
     test_utils::destroy(g);
     ts::return_shared(random_state);
@@ -61,7 +61,7 @@ module greeting::greeting_tests {
   fun test_set_greeting_fail() {
     let user1 = @0x0;
     let bob = b"Bob".to_string();
-    let emptyStr = b"".to_string();
+    let empty = b"".to_string();
     let mut ts = ts::begin(user1);
 
     // Run the module initializer.
@@ -83,11 +83,11 @@ module greeting::greeting_tests {
     ts.next_tx(user1);
     let mut g = greeting::new_for_testing(bob, ts.ctx());
     assert!(greeting::name(&g) == bob, 0);
-    assert!(greeting::emoji(&g) == 0, 1);
+    assert!(greeting::emoji(&g) == greeting::no_emoji_index(), 1);
 
     ts.next_tx(user1);
     // Should fail.
-    greeting::set_greeting(&mut g, emptyStr, &random_state, ts.ctx());
+    greeting::set_greeting(&mut g, empty, &random_state, ts.ctx());
 
     test_utils::destroy(g);
     ts::return_shared(random_state);

@@ -1,4 +1,4 @@
-// Copyright (c) Konstantin Komelin and sui-dapp-starter contributors
+// Copyright (c) Konstantin Komelin and other contributors
 // SPDX-License-Identifier: MIT
 
 /// Module: greeting
@@ -16,7 +16,9 @@ module greeting::greeting {
 
   // === Constants ===
 
-  const MaxEmojis: u8 = 63;
+  const NoEmojiIndex: u8 = 0;
+  const MinEmojiIndex: u8 = 1;
+  const MaxEmojiIndex: u8 = 64;
 
   // === Errors ===
 
@@ -59,6 +61,8 @@ module greeting::greeting {
   ///
   /// Keys and values are set in the initializer but could also be
   /// set after publishing if a `Publisher` object was created.
+  /// 
+  /// Implements One Time Witness pattern.
   fun init(otw: GREETING, ctx: &mut TxContext) {
     let keys = vector[
         utf8(b"name"),
@@ -120,7 +124,7 @@ module greeting::greeting {
   /// Resets the greeting.
   public fun reset_greeting(g: &mut Greeting) {
     g.name = b"".to_string();
-    g.emoji = 0;
+    g.emoji = NoEmojiIndex;
 
     let greeting_id = g.id.to_inner();
 
@@ -152,7 +156,7 @@ module greeting::greeting {
     assert!(name != b"".to_string(), EEmptyName);
 
     let mut generator = r.new_generator(ctx);
-    let emoji = generator.generate_u8_in_range(0, MaxEmojis);
+    let emoji = generator.generate_u8_in_range(MinEmojiIndex, MaxEmojiIndex);
 
     // debug::print(g);
     g.name = name;
@@ -171,7 +175,7 @@ module greeting::greeting {
     Greeting {
       id: object::new(ctx),
       name: b"".to_string(),
-      emoji: 0
+      emoji: NoEmojiIndex
     }
   }
 
@@ -195,8 +199,20 @@ module greeting::greeting {
   }
 
   #[test_only]
-  /// Returns the MaxEmojis constant value.
-  public fun maxEmojis(): u8 {
-    MaxEmojis
+  /// Returns the MaxEmojiIndex constant value.
+  public fun no_emoji_index(): u8 {
+    NoEmojiIndex
+  }
+
+  #[test_only]
+  /// Returns the MaxEmojiIndex constant value.
+  public fun min_emoji_index(): u8 {
+    MinEmojiIndex
+  }
+
+  #[test_only]
+  /// Returns the MaxEmojiIndex constant value.
+  public fun max_emoji_index(): u8 {
+    MaxEmojiIndex
   }
 }

@@ -7,6 +7,7 @@ import Loading from '~~/components/Loading'
 import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
 import {
   getResponseContentField,
+  getResponseDisplayField,
   getResponseObjectId,
 } from '~~/helpers/greeting/misc'
 import {
@@ -101,11 +102,26 @@ const GreetingForm = () => {
                 <AnimalEmoji
                   index={getResponseContentField(data.data[0], 'emoji')}
                 />
-                ,
-                <br />
-                {getResponseContentField(data.data[0], 'name')}!
+                , {getResponseContentField(data.data[0], 'name')}!
               </h1>
+
+              <div className="my-3 flex flex-col items-center justify-center">
+                <h2 className="bg-gradient-to-r from-sds-pink to-sds-blue bg-clip-text text-center text-2xl font-bold !leading-tight text-transparent sm:text-3xl">
+                  You've got a new NFT
+                </h2>
+
+                <img
+                  className="mt-3 w-3/4 rounded-md border border-sds-blue p-5"
+                  src={
+                    getResponseDisplayField(data.data[0], 'image_url') ||
+                    undefined
+                  }
+                  alt="Greeting NFT Image"
+                />
+              </div>
+
               <Button
+                className="mx-auto"
                 variant="solid"
                 size="4"
                 onClick={(e: MouseEvent<HTMLButtonElement>) => {
