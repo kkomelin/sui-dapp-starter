@@ -80,7 +80,7 @@ module greeting::greeting {
         // For `link`, one can build a URL using an `id` property.
         // utf8(b"https://demo.sui-dapp-starter.dev/{id}"),
         // For `image_url`, use an IPFS template + image url or a Walrus url.
-        utf8(b"http://localhost:5173/emoji/{emoji}.svg"),
+        utf8(b"https://demo.sui-dapp-starter.dev/emoji/{emoji}.svg"),
         // Description is static for all `Greeting` objects.
         utf8(b"Demonstrates Sui Object Display feature"),
         // Project URL is usually static.
