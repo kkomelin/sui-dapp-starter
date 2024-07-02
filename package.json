@@ -1,11 +1,7 @@
 {
   "name": "sui-dapp-starter",
-  "version": "0.0.0",
+  "version": "0.6.0",
   "description": "Full-Stack Sui Starter on Steroids",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kkomelin/sui-dapp-starter.git"
-  },
   "scripts": {
     "dev": "pnpm frontend:dev",
     "start": "pnpm dev",
@@ -86,7 +82,11 @@
     "packages/*",
     "!**/test/**"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kkomelin/sui-dapp-starter.git"
+  },
   "bugs": {
     "url": "https://github.com/kkomelin/sui-dapp-starter/issues"
-  }
+  } 
 }
