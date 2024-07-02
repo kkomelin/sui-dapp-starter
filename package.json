@@ -45,6 +45,7 @@
     "devnet:status": "pnpm --filter backend devnet:status",
     "devnet:links": "pnpm --filter backend devnet:links",
     "devnet:update": "pnpm --filter backend devnet:update",
+    "devnet:deploy:no-dependency-check": "pnpm --filter backend devnet:deploy:no-dependency-check",
     "devnet:deploy": "pnpm --filter backend devnet:deploy",
     "devnet:address": "pnpm --filter backend devnet:address",
 
@@ -54,6 +55,7 @@
     "testnet:links": "pnpm --filter backend testnet:links",
     "testnet:update": "pnpm --filter backend testnet:update",
     "testnet:deploy": "pnpm --filter backend testnet:deploy",
+    "testnet:deploy:no-dependency-check": "pnpm --filter backend testnet:deploy:no-dependency-check",
     "testnet:address": "pnpm --filter backend testnet:address",
 
     "mainnet:start": "pnpm --filter backend mainnet:start",
@@ -62,6 +64,7 @@
     "mainnet:links": "pnpm --filter backend mainnet:links",
     "mainnet:update": "pnpm --filter backend mainnet:update",
     "mainnet:deploy": "pnpm --filter backend mainnet:deploy",
+    "mainnet:deploy:no-dependency-check": "pnpm --filter backend mainnet:deploy:no-dependency-check",
     "mainnet:address": "pnpm --filter backend mainnet:address"
   },
   "engines": {

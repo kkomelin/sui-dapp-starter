@@ -26,6 +26,7 @@
     "devnet:links": "devnet links",
     "devnet:address": "dsui client active-address",
     "devnet:deploy": "devnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n devnet",
+    "devnet:deploy:no-dependency-check": "devnet publish --path ${PWD}/move/greeting --skip-dependency-verification && pnpm copy-package-id -n devnet",
     "testnet:start": "testnet start",
     "testnet:stop": "testnet stop",
     "testnet:status": "testnet status",
@@ -33,13 +34,15 @@
     "testnet:links": "testnet links",
     "testnet:address": "tsui client active-address",
     "testnet:deploy": "testnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n testnet",
+    "testnet:deploy:no-dependency-check": "testnet publish --path ${PWD}/move/greeting --skip-dependency-verification && pnpm copy-package-id -n testnet",
     "mainnet:start": "mainnet start",
     "mainnet:stop": "mainnet stop",
     "mainnet:status": "mainnet status",
     "mainnet:update": "mainnet update",
     "mainnet:links": "mainnet links",
     "mainnet:address": "msui client active-address",
-    "mainnet:deploy": "mainnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n mainnet"
+    "mainnet:deploy": "mainnet publish --path ${PWD}/move/greeting && pnpm copy-package-id -n mainnet",
+    "mainnet:deploy:no-dependency-check": "mainnet publish --path ${PWD}/move/greeting --skip-dependency-verification && pnpm copy-package-id -n mainnet"
   },
   "devDependencies": {
     "env-file-rw": "^1.0.0",
