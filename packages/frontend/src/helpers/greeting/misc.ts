@@ -60,7 +60,6 @@ export const getResponseDisplayField = (
   }
 
   // @todo Find a better way to extract fields from SuiParsedData.
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const display = response.data.display
 
   if (display.data == null) {
