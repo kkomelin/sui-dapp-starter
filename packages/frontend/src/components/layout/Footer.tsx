@@ -60,7 +60,7 @@ const Footer = () => {
             Support
           </Link>
         </div>
-        <div className="text-center opacity-70 text-sm">
+        <div className="text-center text-sm opacity-70">
           SVG graphics, used in NFTs, have been borrowed from{' '}
           <Link
             href="https://github.com/twitter/twemoji"
@@ -69,8 +69,7 @@ const Footer = () => {
             highContrast={true}
           >
             twitter/twemoji
-          </Link>{' '}
-          and licensed under{' '}
+          </Link><br/>and licensed under{' '}
           <Link
             href="https://creativecommons.org/licenses/by/4.0/"
             target="_blank"
