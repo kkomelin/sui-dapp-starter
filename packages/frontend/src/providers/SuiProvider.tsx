@@ -1,6 +1,7 @@
 import { SuiClientProvider, WalletProvider } from '@mysten/dapp-kit'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { FC, PropsWithChildren } from 'react'
+import { APP_NAME } from '~~/config/main'
 import { darkTheme, lightTheme } from '~~/config/themes'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 import { ENetwork } from '~~/types/ENetwork'
@@ -18,6 +19,9 @@ const SuiProvider: FC<PropsWithChildren> = ({ children }) => {
       >
         <WalletProvider
           autoConnect={false}
+          stashedWallet={{
+            name: APP_NAME,
+          }}
           theme={[
             {
               // Default to light theme.
