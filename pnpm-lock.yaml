@@ -23,8 +23,8 @@ importers:
         specifier: ^0.14.10
         version: 0.14.10(@tanstack/react-query@5.49.2(react@18.3.1))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(svelte@4.2.15)(typescript@5.5.3)
       '@mysten/sui':
-        specifier: ^1.2.0
-        version: 1.2.0(svelte@4.2.15)(typescript@5.5.3)
+        specifier: ^1.2.1
+        version: 1.2.1(svelte@4.2.15)(typescript@5.5.3)
       '@mysten/wallet-standard':
         specifier: ^0.12.10
         version: 0.12.10(svelte@4.2.15)(typescript@5.5.3)
@@ -400,6 +400,10 @@ packages:
 
   '@mysten/sui@1.2.0':
     resolution: {integrity: sha512-USDOckZPGcwi2QAuKHEcieoVuW8Xgsm8vtKyXaRrhVLG2t2q3hCEigquiLXh7S3okBbD/P35xjvhR9PdUeqweA==}
+    engines: {node: '>=18'}
+
+  '@mysten/sui@1.2.1':
+    resolution: {integrity: sha512-1vPJOxuQhYGiDPFXs1diLFHZ8HaYSvhWipg1BSk/VkwTN2Kxa1cJTA2iN6AiuBwC6KEbtEXfHD9CeCnPRhJchg==}
     engines: {node: '>=18'}
 
   '@mysten/wallet-standard@0.12.10':
@@ -2834,6 +2838,24 @@ snapshots:
       - typescript
 
   '@mysten/sui@1.2.0(svelte@4.2.15)(typescript@5.5.3)':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
+      '@mysten/bcs': 1.0.2
+      '@noble/curves': 1.4.2
+      '@noble/hashes': 1.4.0
+      '@scure/bip32': 1.4.0
+      '@scure/bip39': 1.3.0
+      '@suchipi/femver': 1.0.0
+      bech32: 2.0.0
+      gql.tada: 1.8.0(graphql@16.9.0)(svelte@4.2.15)(typescript@5.5.3)
+      graphql: 16.9.0
+      tweetnacl: 1.0.3
+      valibot: 0.25.0
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+
+  '@mysten/sui@1.2.1(svelte@4.2.15)(typescript@5.5.3)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
       '@mysten/bcs': 1.0.2
