@@ -8,7 +8,7 @@
 
 ## Motivation
 
-Most of the Sui starters I found were either very basic or aimed for developing frontend-only apps. Thanks to my experience with various full-stack starters and templates, I knew how to do better, so I started this template with the goal of providing all basic tools and components for you to focus on your business logic from day one and not spend weeks on creating your app skeleton.
+Most of the Sui starters I found were either very basic or aimed for developing frontend-only apps. Thanks to my experience with various full-stack starters and templates, I knew how to do better, so I started this template with the goal of providing all basic tools and components for you to focus on your business logic from day one and not spend weeks on creating your app skeleton. // @kkomelin
 
 ## Features
 
