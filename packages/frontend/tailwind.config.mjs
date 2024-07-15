@@ -14,14 +14,7 @@ export default {
         'sds-accent-a11': 'var(--accent-a11)',
       },
       fontFamily: {
-        inter: [
-          'Inter',
-          'system-ui',
-          'Avenir',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
-        ],
+        inter: 'var(--sds-font-inter)'
       },
       boxShadow: {
         // The color from Radix theme is used.
