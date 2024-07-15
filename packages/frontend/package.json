@@ -14,13 +14,13 @@
     "deploy:walrus": "pnpm run build && site-builder --config ./walrus.yaml --wallet ~/suibase/workdirs/testnet/config/client.yaml  publish ./dist"
   },
   "dependencies": {
-    "@mysten/dapp-kit": "^0.14.10",
-    "@mysten/sui": "^1.2.0",
-    "@mysten/wallet-standard": "^0.12.10",
+    "@mysten/dapp-kit": "^0.14.11",
+    "@mysten/sui": "^1.2.1",
+    "@mysten/wallet-standard": "^0.12.11",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-toggle": "^1.1.0",
     "@radix-ui/themes": "^3.1.1",
-    "@tanstack/react-query": "^5.49.2",
+    "@tanstack/react-query": "^5.51.1",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.1.1",
     "lucide-react": "^0.395.0",
@@ -30,23 +30,23 @@
     "react-use": "^17.5.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-react-refresh": "^0.4.8",
     "postcss": "^8.4.39",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3",
-    "vite": "^5.3.2",
+    "vite": "^5.3.3",
     "vite-tsconfig-paths": "^4.3.2"
   }
 }

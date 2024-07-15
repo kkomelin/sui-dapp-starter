@@ -28,7 +28,7 @@
     "localnet:faucet": "pnpm --filter backend localnet:faucet",
     "localnet:regen": "pnpm --filter backend localnet:regen",
     "localnet:update": "pnpm --filter backend localnet:update",
-    "localnet:deploy": "pnpm --filter backend localnet:deploy",
+    "localnet:deploy": "pnpm localnet:deploy:no-dependency-check",
     "localnet:deploy:no-dependency-check": "pnpm --filter backend localnet:deploy:no-dependency-check",
     "localnet:address": "pnpm --filter backend localnet:address",
     "localnet:explorer:start":  "pnpm --filter backend localnet:explorer:start",
