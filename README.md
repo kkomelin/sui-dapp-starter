@@ -24,7 +24,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **On-Chain Randomness**: On-Chain Randomness example
 - **Sui Object Display**: Sui Object Display example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
-- **Frontend Deployment**: [Firebase commands](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase)
+- **Frontend Deployment**: [Firebase](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase), [Walrus Sites](https://sui-dapp-starter.dev/docs/frontend/deployment/walrus), [Arweave](https://sui-dapp-starter.dev/docs/frontend/deployment/arweave)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
 
 ## Prerequisites
