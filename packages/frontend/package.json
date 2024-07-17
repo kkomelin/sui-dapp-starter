@@ -11,7 +11,8 @@
     "format": "prettier --write './index.html' './src/**/*.{js,jsx,ts,tsx}'",
     "deploy:firebase:init": "firebase login && firebase use --add",
     "deploy:firebase": "firebase deploy --only hosting",
-    "deploy:walrus": "pnpm run build && site-builder --config ./walrus.yaml --wallet ~/suibase/workdirs/testnet/config/client.yaml  publish ./dist"
+    "deploy:walrus": "pnpm run build && site-builder --config ./walrus.yaml --wallet ~/suibase/workdirs/testnet/config/client.yaml  publish ./dist",
+    "deploy:arweave": "ARWEAVE_DEPLOYMENT=true pnpm run build && pnpx arkb deploy ./dist -w ./arweave-keyfile.json --auto-confirm"
   },
   "dependencies": {
     "@mysten/dapp-kit": "^0.14.11",

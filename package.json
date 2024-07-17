@@ -18,6 +18,7 @@
     "frontend:deploy:firebase:init": "pnpm --filter frontend deploy:firebase:init",
     "frontend:deploy:firebase": "pnpm --filter frontend deploy:firebase",
     "frontend:deploy:walrus": "pnpm --filter frontend deploy:walrus",
+    "frontend:deploy:arweave": "pnpm --filter frontend deploy:arweave",
     
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",
