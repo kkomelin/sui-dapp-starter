@@ -21,11 +21,10 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 - **Vite + SWC**: Faster app bundling and optimizing
 - **Radix UI**: Accessible React components to prototype quicker 
 - **Sui dApp Kit**: All you need to work with Sui network on frontend
-- **On-Chain Randomness**: On-Chain Randomness example
-- **Sui Object Display**: Sui Object Display example
 - **Components and Hooks**: useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
 - **Frontend Deployment**: [Firebase](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase), [Walrus Sites](https://sui-dapp-starter.dev/docs/frontend/deployment/walrus), [Arweave](https://sui-dapp-starter.dev/docs/frontend/deployment/arweave)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
+- **[Demo app](https://demo.sui-dapp-starter.dev/)**: Illustrates the use of Sui On-Chain Randomness and Sui Object Display (NFT)
 
 ## Prerequisites
 
