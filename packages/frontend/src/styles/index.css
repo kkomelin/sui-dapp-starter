@@ -36,6 +36,7 @@ body, #root {
   div {
     font-size: 16px !important;
     line-height: 24px !important;
+    font-family: inherit !important;
   }
 }
 /* ~ Custom styles where it's not possible to use Tailwind classes. */
