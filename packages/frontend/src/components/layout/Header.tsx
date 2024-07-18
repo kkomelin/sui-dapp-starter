@@ -23,9 +23,11 @@ const Header = () => {
           <NetworkType />
         </div>
 
-        {/* @todo: Find a way to style the connect button */}
-        {/* className="!rounded-full !border !border-red-800 p-10 !px-3 !py-2 !shadow" */}
-        <ConnectButton />
+        {/* @todo: Find a better way to style ConnectButton for example through className, which is currently not supported. */}
+        {/* className="[&>button]:!px-4 [&>button]:!py-2 [&>div]:!text-base" */}
+        <div className="sds-connect-button-container">
+          <ConnectButton />
+        </div>
       </div>
     </header>
   )

@@ -26,3 +26,20 @@ body, #root {
   min-width: 100%;
   min-height: 100vh;
 }
+
+/* Custom styles where it's not possible to use Tailwind classes. */
+.sds-connect-button-container {
+  button {
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+  }
+  div {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* ~ Custom styles where it's not possible to use Tailwind classes. */
