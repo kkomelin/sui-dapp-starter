@@ -36,10 +36,6 @@ body, #root {
   div {
     font-size: 16px !important;
     line-height: 24px !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 }
 /* ~ Custom styles where it's not possible to use Tailwind classes. */
