@@ -13,7 +13,7 @@ Most of the Sui starters I found were either very basic or aimed for developing 
 ## Features
 
 - **[Suibase](https://suibase.io/)**: Painless work with the networks
-- **[Local Sui Explorer](https://github.com/kkomelin/sui-explorer-local)**: Browse your transactions and objects locally
+- **[Local Sui Explorer](https://github.com/kkomelin/sui-explorer)**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript
 - **React**: Good old React for truly decentralized apps
@@ -32,7 +32,6 @@ Before you begin, install the following:
 
 - [Sui prerequisites](https://docs.sui.io/build/install#prerequisites) (Sui prerequisites only)
 - [Suibase](https://suibase.io/how-to/install.html)
-- [Docker](https://docs.docker.com/engine/install/)
 - [Node (>= 20)](https://nodejs.org/en/download/)
 - [pnpm (>= 9)](https://pnpm.io/installation)
 
