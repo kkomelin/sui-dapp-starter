@@ -18,7 +18,6 @@
     "localnet:explorer:start": "sui-explorer-local start",
     "localnet:explorer:stop": "sui-explorer-local stop",
     "localnet:explorer:restart": "sui-explorer-local restart",
-    "localnet:explorer:rebuild": "sui-explorer-local rebuild",
     "devnet:start": "devnet start",
     "devnet:stop": "devnet stop",
     "devnet:status": "devnet status",
@@ -46,6 +45,6 @@
   },
   "devDependencies": {
     "env-file-rw": "^1.0.0",
-    "sui-explorer-local": "^0.4.1"
+    "sui-explorer-local": "^2.1.0"
   }
 }

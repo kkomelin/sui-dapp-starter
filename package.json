@@ -35,7 +35,6 @@
     "localnet:explorer:start":  "pnpm --filter backend localnet:explorer:start",
     "localnet:explorer:stop":  "pnpm --filter backend localnet:explorer:stop",
     "localnet:explorer:restart":  "pnpm --filter backend localnet:explorer:restart",
-    "localnet:explorer:rebuild": "pnpm --filter backend localnet:explorer:rebuild",
 
     "devnet:start": "pnpm --filter backend devnet:start",
     "devnet:stop": "pnpm --filter backend devnet:stop",
