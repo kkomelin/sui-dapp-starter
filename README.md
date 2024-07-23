@@ -61,7 +61,7 @@ Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 pnpm localnet:deploy
 ```
 
-_This command skips dependency verifications to prevent dependency version mismatch issues, which are caused by local and remote Sui version mismatch. The deploy commands for devnet, testnet and mainnet do perform those verifications._
+_This command skips dependency verifications to prevent dependency version mismatch issues, which are caused by local and remote Sui version mismatch. The deploy commands for devnet, testnet and mainnet do perform such verifications._
 
 #### 3. Switch to the local network in your browser wallet settings.
 
