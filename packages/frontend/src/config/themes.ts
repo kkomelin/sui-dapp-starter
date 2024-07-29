@@ -1,7 +1,5 @@
 import type { ThemeVars } from '@mysten/dapp-kit'
 
-// Light theme has been borrowed from dapp-kit https://github.com/MystenLabs/sui/blob/main/sdk/dapp-kit/src/themes/lightTheme.ts 
-// and adapted to our context.
 export const lightTheme: ThemeVars = {
   blurs: {
     modalOverlay: 'blur(0)',
@@ -9,26 +7,26 @@ export const lightTheme: ThemeVars = {
   backgroundColors: {
     primaryButton: '#F6F7F9',
     primaryButtonHover: '#F0F2F5',
-    outlineButtonHover: '#F4F4F5',
-    modalOverlay: 'rgba(24 36 53 / 20%)',
-    modalPrimary: 'white',
-    modalSecondary: '#F7F8F8',
+    outlineButtonHover: '#F0F2F5',
+    modalOverlay: 'rgba(6, 42, 87, 0.1)',
+    modalPrimary: '#F6F7F9',
+    modalSecondary: '#F0F2F5',
     iconButton: 'transparent',
-    iconButtonHover: '#F0F1F2',
-    dropdownMenu: '#FFFFFF',
-    dropdownMenuSeparator: '#F3F6F8',
-    walletItemSelected: 'white',
-    walletItemHover: '#3C424226',
+    iconButtonHover: '#F0F2F5',
+    dropdownMenu: '#F6F7F9',
+    dropdownMenuSeparator: '#F0F2F5',
+    walletItemSelected: '#F6F7F9',
+    walletItemHover: '#F0F2F5',
   },
   borderColors: {
-    outlineButton: '#E4E4E7',
+    outlineButton: '#F0F2F5',
   },
   colors: {
-    primaryButton: '#373737',
-    outlineButton: '#373737',
-    iconButton: '#000000',
-    body: '#182435',
-    bodyMuted: '#767A81',
+    primaryButton: '#062a57',
+    outlineButton: '#062a57',
+    iconButton: '#062a57',
+    body: '#062a57',
+    bodyMuted: 'rgba(6, 42, 87, 0.7)',
     bodyDanger: '#FF794B',
   },
   radii: {
@@ -38,8 +36,8 @@ export const lightTheme: ThemeVars = {
     xlarge: '16px',
   },
   shadows: {
-    primaryButton: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-    walletItemSelected: '0px 2px 6px rgba(0, 0, 0, 0.05)',
+    primaryButton: '0px 4px 12px rgba(246, 247, 249, 0.1)',
+    walletItemSelected: '0px 2px 6px rgba(246, 247, 249, 0.05)',
   },
   fontWeights: {
     normal: '400',
@@ -53,42 +51,40 @@ export const lightTheme: ThemeVars = {
     xlarge: '20px',
   },
   typography: {
-    // The CSS variable is defined in styles/index.css.
-    fontFamily: 'var(--sds-font-inter)',
+    fontFamily: 'inherit',
     fontStyle: 'normal',
     lineHeight: '1.3',
     letterSpacing: '1',
   },
 }
 
-// Dark theme borrowed from https://github.com/MystenLabs/sui/pull/17670 and adapted to our context.
 export const darkTheme: ThemeVars = {
   blurs: {
     modalOverlay: 'blur(0)',
   },
   backgroundColors: {
-    primaryButton: '#373737',
-    primaryButtonHover: '#2C2C2C',
-    outlineButtonHover: '#2C2C2C',
-    modalOverlay: 'rgba(255, 255, 255, 0.1)',
-    modalPrimary: '#373737',
-    modalSecondary: '#2C2C2C',
+    primaryButton: '#062a57',
+    primaryButtonHover: '#052246',
+    outlineButtonHover: '#052246',
+    modalOverlay: 'rgba(246, 247, 249, 0.1)',
+    modalPrimary: '#062a57',
+    modalSecondary: '#052246',
     iconButton: 'transparent',
-    iconButtonHover: '#2C2C2C',
-    dropdownMenu: '#373737',
-    dropdownMenuSeparator: '#2C2C2C',
-    walletItemSelected: '#373737',
-    walletItemHover: '#2C2C2C',
+    iconButtonHover: '#052246',
+    dropdownMenu: '#062a57',
+    dropdownMenuSeparator: '#052246',
+    walletItemSelected: '#062a57',
+    walletItemHover: '#052246',
   },
   borderColors: {
-    outlineButton: '#2C2C2C',
+    outlineButton: '#052246',
   },
   colors: {
     primaryButton: '#F6F7F9',
     outlineButton: '#F6F7F9',
     iconButton: '#F6F7F9',
     body: '#F6F7F9',
-    bodyMuted: '#E4E4E7',
+    bodyMuted: 'rgba(246, 247, 249, 0.7)',
     bodyDanger: '#FF794B',
   },
   radii: {
@@ -98,8 +94,8 @@ export const darkTheme: ThemeVars = {
     xlarge: '16px',
   },
   shadows: {
-    primaryButton: '0px 4px 12px rgba(0, 0, 0, 0.5)',
-    walletItemSelected: '0px 2px 6px rgba(0, 0, 0, 0.5)',
+    primaryButton: '0px 4px 12px rgba(6, 42, 87, 0.1)',
+    walletItemSelected: '0px 2px 6px rgba(6, 42, 87, 0.05)',
   },
   fontWeights: {
     normal: '400',
@@ -113,8 +109,7 @@ export const darkTheme: ThemeVars = {
     xlarge: '20px',
   },
   typography: {
-    // The CSS variable is defined in styles/index.css.
-    fontFamily: 'var(--sds-font-inter)',
+    fontFamily: 'inherit',
     fontStyle: 'normal',
     lineHeight: '1.3',
     letterSpacing: '1',
