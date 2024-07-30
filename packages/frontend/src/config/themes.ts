@@ -1,4 +1,4 @@
-// Generated with https://sui-dapp-kit-theme-creator.app
+// Created with https://sui-dapp-kit-theme-creator.app
 // Installation guide https://sdk.mystenlabs.com/dapp-kit/themes
 
 import type { ThemeVars } from '@mysten/dapp-kit'
