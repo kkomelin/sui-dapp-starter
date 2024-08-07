@@ -10,4 +10,4 @@ updates:
     - dependency-name: "eslint-config-prettier"
       update-types: ["version-update:semver-major"]
     - dependency-name: "lucide-react"
-      update-types: ["version-update:semver-patch"]
+      update-types: ["version-update:semver-major"]
