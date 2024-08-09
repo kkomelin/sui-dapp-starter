@@ -1,11 +1,9 @@
 {
   "recommendations": [
-    // Backend
     "mysten.move",
     "damirka.move-syntax",
     "tamasfe.even-better-toml",
 
-    // Frontend
     "esbenp.prettier-vscode"
   ]
 }
