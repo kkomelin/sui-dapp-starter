@@ -114,8 +114,8 @@ importers:
         specifier: ^5.4.0
         version: 5.4.0(@types/node@20.14.14)
       vite-tsconfig-paths:
-        specifier: ^4.3.2
-        version: 4.3.2(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.14))
+        specifier: ^5.0.1
+        version: 5.0.1(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.14))
 
 packages:
 
@@ -2742,8 +2742,8 @@ packages:
   valibot@0.36.0:
     resolution: {integrity: sha512-CjF1XN4sUce8sBK9TixrDqFM7RwNkuXdJu174/AwmQUB62QbCQADg5lLe8ldBalFgtj1uKj+pKwDJiNo4Mn+eQ==}
 
-  vite-tsconfig-paths@4.3.2:
-    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
+  vite-tsconfig-paths@5.0.1:
+    resolution: {integrity: sha512-yqwv+LstU7NwPeNqajZzLEBVpUFU6Dugtb2P84FXuvaoYA+/70l9MHE+GYfYAycVyPSDYZ7mjOFuYBRqlEpTig==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
@@ -5502,7 +5502,7 @@ snapshots:
 
   valibot@0.36.0: {}
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.14)):
+  vite-tsconfig-paths@5.0.1(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.14)):
     dependencies:
       debug: 4.3.6
       globrex: 0.1.2
