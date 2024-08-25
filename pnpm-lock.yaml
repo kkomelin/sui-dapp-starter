@@ -83,6 +83,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
+      env-file-rw:
+        specifier: ^1.0.0
+        version: 1.0.0
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
