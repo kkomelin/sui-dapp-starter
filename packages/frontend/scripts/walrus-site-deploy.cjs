@@ -32,6 +32,7 @@ const main = async () => {
   // If the site has not yet been published (no site object ID in the config),
   // then publish the site to Walrus Sites.
   if (siteObjectId == null) {
+    console.log('Publishing the app to Walrus Sites...')
     const { stdout, stderr } = await exec(
       `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} publish ${sitePathFull}`
     )
@@ -42,21 +43,13 @@ const main = async () => {
 
       const regex = /New site object ID: (.+)/
       const result = data.match(regex)
+
+      // If the line doesn't have site object ID, ignore it.
       if (result == null) {
         return
       }
 
       siteObjectId = result[1].trim()
-
-      // if the publish command output doesn't contain site object ID, then report the error.
-      if (siteObjectId == null) {
-        // @todo: Handle error.
-        console.error('~ Could not find the site object ID in the output.')
-        console.error(
-          '~ If no errors occurred, please add WALRUS_SITE_OBJECT_ID=[site object ID from the output] to packages/frontend/.env.local manually.'
-        )
-        return
-      }
 
       // Save site object ID to the config file.
       await setEnvVar(
@@ -68,12 +61,21 @@ const main = async () => {
 
     stderr.on('data', async (error) => {
       console.error(error)
+      process.exit()
     })
 
     return
   }
 
-  // Update the site on Walrus Sites.
+  if (siteObjectId == null) {
+    console.error('~ The script could not find the site object ID in the output.')
+    console.error(
+      '~ If you see it, please add WALRUS_SITE_OBJECT_ID=[site object ID from the output] into packages/frontend/.env.local manually.'
+    )
+    return
+  }
+
+  console.log('Updating the app on Walrus Sites...')
   execSync(
     `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} update ${sitePathFull} ${siteObjectId}`,
     { stdio: 'inherit' }
