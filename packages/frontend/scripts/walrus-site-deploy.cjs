@@ -61,6 +61,11 @@ const main = async () => {
 
     stderr.on('data', async (error) => {
       console.error(error)
+      // Do not exit if it's a warning.
+      // @todo: Find a better way to catch warnings, e.g. by severity level or error code.
+      if (error.startsWith('[warn]')) {
+        return
+      }
       process.exit()
     })
 
