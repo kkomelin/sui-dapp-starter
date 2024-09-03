@@ -6,11 +6,11 @@ const DEFAULT_REFETCH_INTERVAL = 3000
 
 export interface IUseBalanceParams {
   /**
-   * Whether the balance needs to be refreshed regularly or just once.
+   * (Optional) The flag determines whether the balance needs to be refreshed regularly or just once.
    */
   autoRefetch?: boolean
   /**
-   * Auto refetch interval in milliseconds.
+   * (Optional) Auto refetch interval in milliseconds.
    */
   autoRefetchInterval?: number
 }
@@ -20,9 +20,42 @@ export interface IUseBalanceResponse {
    */
   balance: string | undefined
   error: Error | null
+  /**
+   * Refetch the balance.
+   */
   refetch: () => void
 }
 
+/**
+ * The `useBalance()` hook lets you request SUI balance for current user address on the currently active network.
+ * 
+ * It's possible to request the balance once or on a regular basis.
+ * 
+ * Usage:
+ * - One-time request
+ * ```ts
+ * const { balance } = useBalance({ 
+ *   autoRefetch: false 
+ * })
+ * ```
+ * - On demand
+ * ```ts
+ * const { balance, error, refetch } = useBalance()
+ * refetch()
+ * ```
+ * - Regular update
+ * ```ts
+ * const { balance } = useBalance({ 
+ *   autoRefetch: true, 
+ *   autoRefetchInterval: 3000
+ * })
+ * ```
+ * 
+ * Where `autoRefetchInterval` is in milliseconds. Default value is 3000 milliseconds (3 seconds).
+ * 
+ * @param {IUseBalanceParams} params The parameter object.
+ * @returns {IUseBalanceResponse} An object with the balance, error and refetch function.
+ */
 const useBalance = ({
   autoRefetch,
   autoRefetchInterval,

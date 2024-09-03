@@ -11,11 +11,11 @@ const DEFAULT_REFETCH_INTERVAL = 3000
 
 export interface IUseSynchronizedNetworkTypeParams {
   /**
-   * Whether the app network needs to be synchronized with the wallet network regularly or just once.
+   * (Optional) The flag determines whether the app network needs to be synchronized with the wallet network regularly or just once.
    */
   autoSync?: boolean
   /**
-   * Auto sync interval in milliseconds.
+   * (Optional) Auto sync interval in milliseconds.
    */
   autoSyncInterval?: number
 }
@@ -26,11 +26,40 @@ export interface IUseSynchronizedNetworkTypeResponse {
   networkType: ENetwork | undefined
   /**
    * Synchronize app network with wallet network on demand.
-   * @returns
    */
   synchronize: () => void
 }
 
+/**
+ * The useSynchronizedNetworkType() hook lets you determine which network is currently active in the user wallet.
+ * 
+ * It's possible to request the network type once or on a regular basis.
+ * If a wallet is not connected, the network type will be undefined.
+ * Please note the user wallet is the single point of truth and the only way to switch the network now is through wallet settings.
+ * 
+ * Usage:
+ * - One-time request
+ * ```ts
+ * const { networkType } = useSynchronizedNetworkType({ 
+ *  autoSync: false 
+ * })
+ * ```
+ * - On demand
+ * ```ts
+ * const { networkType, synchronize } = useSynchronizedNetworkType()
+ * synchronize()
+ * ```
+ * - Regular update
+ * ```ts
+ * const { networkType } = useSynchronizedNetworkType({ 
+ *  autoSync: true, 
+ *  autoSyncInterval: 3000 
+ * })
+ * ```
+ * 
+ * @param {IUseSynchronizedNetworkTypeParams} params The parameter object.
+ * @returns {IUseSynchronizedNetworkTypeResponse} An object with the network type and synchronize function.
+ */
 const useSynchronizedNetworkType = ({
   autoSync,
   autoSyncInterval,
