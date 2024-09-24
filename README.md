@@ -112,10 +112,9 @@ pnpm test
 
 ## Links
 
-- [Sui: Developers: Docs, tools and courses](https://sui.io/developers)
-- [Sui: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
-- [Move Book](https://move-book.com/)
 - [Suibase Docs](https://suibase.io/intro.html)
+- [Move Book](https://move-book.com/)
+- [Sui Move: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
 - [@mysten/create-dapp - official starter](https://www.npmjs.com/package/@mysten/create-dapp)
 
 ## License & Copyright
