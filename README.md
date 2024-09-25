@@ -96,7 +96,7 @@ pnpm test
 
 ## Troubleshoot
 
-[Troubleshooting guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
+[Troubleshooting Guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
 
 ## Documentation
 
