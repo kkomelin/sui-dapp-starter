@@ -1,7 +1,7 @@
 {
   "name": "sui-dapp-starter",
   "version": "0.9.0",
-  "description": "Full-Stack Sui Starter on Steroids",
+  "description": "Easy-to-Use Full-Stack Sui Starter",
   "scripts": {
     "dev": "pnpm frontend:dev",
     "start": "pnpm dev",
