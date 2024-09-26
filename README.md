@@ -84,7 +84,7 @@ c) Run the app and use the Faucet button in the footer.
 ```bash
 pnpm start
 ```
-Find all commands in [package.json](https://github.com/kkomelin/sui-dapp-starter/blob/main/package.json)
+Find all commands in the [documentation](https://sui-dapp-starter.dev/docs/misc/commands/).
 
 ## Test
 
