@@ -116,6 +116,7 @@ pnpm test
 - [Move Book](https://move-book.com/)
 - [Sui Move: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
 - [@mysten/create-dapp - official starter](https://www.npmjs.com/package/@mysten/create-dapp)
+- [Awesome Sui](https://github.com/sui-foundation/awesome-sui)
 
 ## License & Copyright
 
