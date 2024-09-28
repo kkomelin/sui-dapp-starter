@@ -113,6 +113,6 @@ pnpm test
 
 Copyright (c) 2024 Konstantin Komelin and other contributors
 
-Code licensed under the [MIT](https://github.com/kkomelin/sui-dapp-starter?tab=MIT-1-ov-file) License: 
+Code is licensed under [MIT](https://github.com/kkomelin/sui-dapp-starter?tab=MIT-1-ov-file)
 
 SVG Graphics used for NFTs is licensed under [CC-BY 4.0](https://github.com/kkomelin/sui-dapp-starter?tab=CC-BY-4.0-2-ov-file)
