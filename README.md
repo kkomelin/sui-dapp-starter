@@ -94,23 +94,14 @@ Find all commands in the [documentation](https://sui-dapp-starter.dev/docs/misc/
 pnpm test
 ```
 
-## Troubleshoot
+## Docs & Support
 
-[Troubleshooting Guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
+- [Troubleshooting Guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
+- [Project Documentation](https://sui-dapp-starter.dev/docs)
+- [Improvement Ideas](https://sui-dapp-starter.dev/docs/misc/ideas)
+- [Discord Support](https://discord.com/invite/HuDPpXz4Hx)  
 
-## Documentation
-
-[Project Documentation](https://sui-dapp-starter.dev/docs)
-
-## Roadmap
-
-[Improvement Ideas](https://sui-dapp-starter.dev/docs/misc/ideas)
-
-## Community
-
-[Discord](https://discord.com/invite/HuDPpXz4Hx)  
-
-## Links
+## Useful Links
 
 - [Suibase Docs](https://suibase.io/intro.html)
 - [Move Book](https://move-book.com/)
