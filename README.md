@@ -122,6 +122,6 @@ pnpm test
 
 Copyright (c) 2024 Konstantin Komelin and other contributors
 
-Code licensed under the MIT License: http://opensource.org/licenses/MIT
+Code licensed under the [MIT](http://opensource.org/licenses/MIT) License: 
 
-SVG Graphics used for NFTs is licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+SVG Graphics used for NFTs is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
